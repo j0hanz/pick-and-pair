@@ -6,27 +6,18 @@ export default function Timer({ resetTrigger, isGameComplete }) {
   const [isRunning, setIsRunning] = useState(true);
 
   useEffect(() => {
-    if (isGameComplete) {
-      setIsRunning(false);
-    } else {
-      setIsRunning(true);
-    }
+    setIsRunning(!isGameComplete);
   }, [isGameComplete]);
 
   useEffect(() => {
-    if (isGameComplete) {
-      setIsRunning(false);
-      return;
-    }
+    if (isGameComplete) return;
 
     let interval;
     if (isRunning) {
-      interval = setInterval(() => {
-        setTime((prevTime) => prevTime + 1);
-      }, 1000);
+      interval = setInterval(() => setTime((prevTime) => prevTime + 1), 1000);
     }
 
-    return () => interval && clearInterval(interval);
+    return () => clearInterval(interval);
   }, [isRunning, isGameComplete]);
 
   useEffect(() => {

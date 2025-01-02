@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from '../App.module.css';
 
-export default function RightOrWrong({
+function RightOrWrong({
   status,
   rightMessage = 'Correct!',
   wrongMessage = 'Try Again!',
@@ -18,15 +18,19 @@ export default function RightOrWrong({
     }
   }, [status, displayTime]);
 
+  const feedbackMessage = status === 'right' ? rightMessage : wrongMessage;
+
   return (
     <div
-      className={`${styles.feedback} ${visible ? styles.visible : ''} ${
-        status === 'right' ? styles.right : styles.wrong
-      }`}
+      className={`
+        ${styles.feedback}
+        ${visible ? styles.visible : ''}
+        ${status === 'right' ? styles.right : styles.wrong}
+      `}
       role="alert"
       aria-live="polite"
     >
-      {status === 'right' ? rightMessage : wrongMessage}
+      {feedbackMessage}
     </div>
   );
 }
@@ -37,3 +41,5 @@ RightOrWrong.propTypes = {
   wrongMessage: PropTypes.string,
   displayTime: PropTypes.number,
 };
+
+export default RightOrWrong;

@@ -10,27 +10,19 @@ export const matchCheck = (
   const selectedCard = updatedCards[selectedCardIndex];
 
   const handleMatch = () => {
-    currentCard.status = 'active matched';
-    selectedCard.status = 'active matched';
+    currentCard.status = selectedCard.status = 'active matched';
+    setCards([...updatedCards]);
   };
 
   const handleNoMatch = () => {
-    currentCard.status = 'active';
-    selectedCard.status = 'active';
-    setCards(updatedCards);
+    currentCard.status = selectedCard.status = 'active';
+    setCards([...updatedCards]);
     setTimeout(() => {
-      currentCard.status = '';
-      selectedCard.status = '';
+      currentCard.status = selectedCard.status = '';
       setCards([...updatedCards]);
     }, 1000);
   };
 
-  if (currentCard.id === selectedCard.id) {
-    handleMatch();
-  } else {
-    handleNoMatch();
-  }
-
+  currentCard.id === selectedCard.id ? handleMatch() : handleNoMatch();
   setSelectedCardIndex(null);
-  setCards(updatedCards);
 };

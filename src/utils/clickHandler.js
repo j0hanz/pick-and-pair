@@ -9,14 +9,10 @@ export const clickHandler = (
   previousIndex,
   handleMatchUpdate
 ) => {
-  if (index === previousIndex.current || index === selectedCardIndex) {
-    return;
-  }
+  if (index === previousIndex.current || index === selectedCardIndex) return;
 
   const card = cards[index];
-  if (!card || card.status === 'active matched') {
-    return;
-  }
+  if (!card || card.status === 'active matched') return;
 
   const updatedCards = [...cards];
 
@@ -28,24 +24,26 @@ export const clickHandler = (
     return;
   }
 
-  matchCheck(index, cards, setCards, selectedCardIndex, setSelectedCardIndex);
+  matchCheck(
+    index,
+    updatedCards,
+    setCards,
+    selectedCardIndex,
+    setSelectedCardIndex
+  );
 
-  const currentCard = updatedCards[index];
-  const previousCard = updatedCards[selectedCardIndex];
-  const isMatch = currentCard.id === previousCard.id;
-
-  updatedCards[index] = { ...currentCard, status: 'active' };
+  const isMatch = updatedCards[index].id === updatedCards[selectedCardIndex].id;
+  updatedCards[index].status = 'active';
 
   if (isMatch) {
-    updatedCards[index].status = 'active matched';
-    updatedCards[selectedCardIndex].status = 'active matched';
+    updatedCards[index].status = updatedCards[selectedCardIndex].status =
+      'active matched';
     handleMatchUpdate('right');
-    setTimeout(() => handleMatchUpdate(null), 1500);
   } else {
     handleMatchUpdate('wrong');
     setTimeout(() => {
       setCards(
-        cards.map((c, i) =>
+        updatedCards.map((c, i) =>
           i === index || i === selectedCardIndex ? { ...c, status: '' } : c
         )
       );
