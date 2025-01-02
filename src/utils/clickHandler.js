@@ -17,19 +17,19 @@ export const clickHandler = (
   )
     return;
 
-  const updatedCards = [...cards];
+  const newCards = [...cards];
 
   if (selectedCardIndex === null) {
     previousIndex.current = index;
-    updatedCards[index] = { ...cards[index], status: 'active' };
-    setCards(updatedCards);
+    newCards[index] = { ...cards[index], status: 'active' };
+    setCards(newCards);
     setSelectedCardIndex(index);
     return;
   }
 
   matchCheck(
     index,
-    updatedCards,
+    newCards,
     setCards,
     selectedCardIndex,
     setSelectedCardIndex,

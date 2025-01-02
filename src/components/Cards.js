@@ -53,14 +53,14 @@ export default function Cards() {
     setResetTrigger((prev) => !prev);
   }, []);
 
-  const handleMatchUpdate = useCallback((status) => {
+  const updateFeedback = useCallback((status) => {
     if (status === 'right') {
       setMatchedPairs((prev) => prev + 1);
     }
     setFeedback(status);
   }, []);
 
-  const handleCardClick = useCallback(
+  const handleCardSelection = useCallback(
     (index) => {
       clickHandler(
         index,
@@ -69,10 +69,10 @@ export default function Cards() {
         selectedCardIndex,
         setSelectedCardIndex,
         previousIndex,
-        handleMatchUpdate
+        updateFeedback
       );
     },
-    [cards, selectedCardIndex, handleMatchUpdate]
+    [cards, selectedCardIndex, updateFeedback]
   );
 
   return (
@@ -93,7 +93,11 @@ export default function Cards() {
       <div className={styles.row}>
         {cards.map((card, index) => (
           <div className="col-6 col-md-4 col-lg-3 mb-4" key={index}>
-            <Card card={card} index={index} clickHandler={handleCardClick} />
+            <Card
+              card={card}
+              index={index}
+              clickHandler={handleCardSelection}
+            />
           </div>
         ))}
       </div>
