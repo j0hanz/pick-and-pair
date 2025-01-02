@@ -12,7 +12,9 @@ export const matchCheck = (
     updatedCards[selectedCardIndex],
   ];
 
-  const isMatch = currentCard.id === selectedCard.id;
+  const isMatch =
+    currentCard.id === selectedCard.id &&
+    currentCard.name === selectedCard.name;
   const status = isMatch ? 'active matched' : 'active';
 
   currentCard.status = selectedCard.status = status;
