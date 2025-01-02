@@ -6,7 +6,10 @@ function App() {
   return (
     <div className={styles.App}>
       <header className={styles.AppHeader}>
-        <Cards />
+        <h1 className={styles.gameTitle}>Pick & Pair</h1>
+        <div className={styles.container}>
+          <Cards />
+        </div>
       </header>
     </div>
   );

@@ -10,6 +10,9 @@ import img07 from '../assets/images/07.jpg';
 import img08 from '../assets/images/08.jpg';
 import { clickHandler } from '../utils/clickHandler';
 import styles from '../App.module.css';
+import Timer from './Timer';
+import Score from './Score';
+import { shuffleCards } from '../utils/shuffleCards';
 
 const initialCards = [
   { id: 0, name: 'Bryan Cranston', img: img01 },
@@ -28,42 +31,41 @@ const initialCards = [
   { id: 13, name: 'Bob Odenkirk', img: img07 },
   { id: 14, name: 'Jonathan Banks', img: img08 },
   { id: 15, name: 'Jonathan Banks', img: img08 },
-]
-  .map((card) => ({ ...card, status: '' }))
-  .sort(() => Math.random() - 0.5);
+].map((card) => ({ ...card, status: '' }));
 
 export default function Cards() {
-  const [cards, setCards] = useState(initialCards);
+  const [cards, setCards] = useState(shuffleCards(initialCards));
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
+  const [matchedPairs, setMatchedPairs] = useState(0);
   const previousIndex = useRef(null);
 
   const resetGame = () => {
-    const shuffledCards = initialCards
-      .map((card) => ({ ...card, status: '' }))
-      .sort(() => Math.random() - 0.5);
-    setCards(shuffledCards);
+    setCards(
+      shuffleCards(initialCards.map((card) => ({ ...card, status: '' })))
+    );
     setSelectedCardIndex(null);
+    setMatchedPairs(0);
     previousIndex.current = null;
   };
 
-  const shuffleCards = () => {
-    const shuffledCards = [...cards].sort(() => Math.random() - 0.5);
-    setCards(shuffledCards);
+  const handleMatchUpdate = () => {
+    setMatchedPairs((prev) => prev + 1);
   };
 
   return (
     <div className={styles.container}>
+      <div className={styles.stats}>
+        <Timer resetTrigger={resetGame} />
+        <Score matchedPairs={matchedPairs} />
+      </div>
       <div className={styles.buttonGroup}>
         <button onClick={resetGame} className="btn btn-primary mb-4">
           Reset Game
         </button>
-        <button onClick={shuffleCards} className="btn btn-secondary mb-4">
-          Shuffle Cards
-        </button>
       </div>
       <div className={styles.row}>
         {cards.map((card, index) => (
-          <div className="col-6 col-md-4 col-lg-3 mb-4" key={index}>
+          <div className="col-8 col-md-4 col-lg-6 mb-4" key={index}>
             <Card
               card={card}
               index={index}
@@ -74,7 +76,8 @@ export default function Cards() {
                   setCards,
                   selectedCardIndex,
                   setSelectedCardIndex,
-                  previousIndex
+                  previousIndex,
+                  handleMatchUpdate
                 )
               }
             />
