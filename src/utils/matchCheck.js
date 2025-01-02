@@ -3,26 +3,35 @@ export const matchCheck = (
   cards,
   setCards,
   selectedCardIndex,
-  setSelectedCardIndex
+  setSelectedCardIndex,
+  handleMatchUpdate
 ) => {
   const updatedCards = [...cards];
-  const currentCard = updatedCards[currentCardIndex];
-  const selectedCard = updatedCards[selectedCardIndex];
+  const [currentCard, selectedCard] = [
+    updatedCards[currentCardIndex],
+    updatedCards[selectedCardIndex],
+  ];
 
-  const handleMatch = () => {
-    currentCard.status = selectedCard.status = 'active matched';
-    setCards([...updatedCards]);
-  };
+  const isMatch = currentCard.id === selectedCard.id;
+  const newStatus = isMatch ? 'active matched' : 'active';
 
-  const handleNoMatch = () => {
-    currentCard.status = selectedCard.status = 'active';
-    setCards([...updatedCards]);
+  currentCard.status = selectedCard.status = newStatus;
+  setCards([...updatedCards]);
+
+  if (!isMatch) {
+    handleMatchUpdate('wrong');
     setTimeout(() => {
       currentCard.status = selectedCard.status = '';
       setCards([...updatedCards]);
+      handleMatchUpdate(null); // Reset feedback after cards flip back
     }, 1000);
-  };
+  } else {
+    handleMatchUpdate('right');
+    setTimeout(() => {
+      handleMatchUpdate(null); // Reset feedback after match
+    }, 1000);
+  }
 
-  currentCard.id === selectedCard.id ? handleMatch() : handleNoMatch();
   setSelectedCardIndex(null);
+  return isMatch;
 };

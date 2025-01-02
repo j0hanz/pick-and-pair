@@ -1,45 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import styles from '../App.module.css';
 
-function RightOrWrong({
-  status,
-  rightMessage = 'Correct!',
-  wrongMessage = 'Try Again!',
-  displayTime = 1500,
-}) {
-  const [visible, setVisible] = useState(false);
+const RightOrWrong = memo(
+  ({ status, rightMessage = 'Correct!', wrongMessage = 'Try Again!' }) => {
+    if (!status) return null;
 
-  useEffect(() => {
-    if (status !== null) {
-      setVisible(true);
-      const timer = setTimeout(() => setVisible(false), displayTime);
-      return () => clearTimeout(timer);
-    }
-  }, [status, displayTime]);
+    const message = status === 'right' ? rightMessage : wrongMessage;
+    const className = `${styles.feedback} ${styles.visible} ${
+      status === 'right' ? styles.right : styles.wrong
+    }`;
 
-  const feedbackMessage = status === 'right' ? rightMessage : wrongMessage;
-
-  return (
-    <div
-      className={`
-        ${styles.feedback}
-        ${visible ? styles.visible : ''}
-        ${status === 'right' ? styles.right : styles.wrong}
-      `}
-      role="alert"
-      aria-live="polite"
-    >
-      {feedbackMessage}
-    </div>
-  );
-}
+    return (
+      <div className={className} role="alert" aria-live="assertive">
+        {message}
+      </div>
+    );
+  }
+);
 
 RightOrWrong.propTypes = {
   status: PropTypes.oneOf(['right', 'wrong', null]),
   rightMessage: PropTypes.string,
   wrongMessage: PropTypes.string,
-  displayTime: PropTypes.number,
 };
 
+RightOrWrong.displayName = 'RightOrWrong';
 export default RightOrWrong;
