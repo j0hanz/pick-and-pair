@@ -14,6 +14,7 @@ import styles from '../App.module.css';
 import Timer from './Timer';
 import Score from './Score';
 import { shuffleCards } from '../utils/shuffleCards';
+import { useSound } from '../hooks/useSound';
 
 const initialCards = [
   { id: 0, name: 'Bryan Cranston', img: img01 },
@@ -43,6 +44,9 @@ export default function Cards() {
   const [resetTrigger, setResetTrigger] = useState(false);
   const [, startTransition] = useTransition();
 
+  const playCorrectSound = useSound();
+  const playWrongSound = useSound();
+
   const resetGame = useCallback(() => {
     startTransition(() => {
       setCards(
@@ -56,12 +60,18 @@ export default function Cards() {
     });
   }, []);
 
-  const updateFeedback = useCallback((status) => {
-    if (status === 'right') {
-      setMatchedPairs((prev) => prev + 1);
-    }
-    setFeedback(status);
-  }, []);
+  const updateFeedback = useCallback(
+    (status) => {
+      if (status === 'right') {
+        playCorrectSound();
+        setMatchedPairs((prev) => prev + 1);
+      } else if (status === 'wrong') {
+        playWrongSound();
+      }
+      setFeedback(status);
+    },
+    [playCorrectSound, playWrongSound]
+  );
 
   const handleCardSelection = useCallback(
     (index) => {
@@ -89,7 +99,7 @@ export default function Cards() {
       </div>
       <RightOrWrong status={feedback} />
       <div className={styles.buttonGroup}>
-        <button onClick={resetGame} className="btn btn-primary mb-4">
+        <button onClick={resetGame} className={styles.btnPrimary}>
           Reset Game
         </button>
       </div>
