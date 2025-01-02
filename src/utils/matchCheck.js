@@ -16,22 +16,17 @@ export const matchCheck = (
   const status = isMatch ? 'active matched' : 'active';
 
   currentCard.status = selectedCard.status = status;
-  setCards([...updatedCards]);
+  setCards(updatedCards);
 
-  if (!isMatch) {
-    handleMatchUpdate('wrong');
-    setTimeout(() => {
+  setTimeout(() => {
+    if (!isMatch) {
       currentCard.status = selectedCard.status = '';
-      setCards([...updatedCards]);
-      handleMatchUpdate(null); // Reset feedback after cards flip back
-    }, 1000);
-  } else {
-    handleMatchUpdate('right');
-    setTimeout(() => {
-      handleMatchUpdate(null); // Reset feedback after match
-    }, 1000);
-  }
+      setCards(updatedCards);
+    }
+    handleMatchUpdate(null); // Reset feedback
+  }, 1000);
 
+  handleMatchUpdate(isMatch ? 'right' : 'wrong');
   setSelectedCardIndex(null);
   return isMatch;
 };
