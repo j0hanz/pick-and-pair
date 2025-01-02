@@ -34,12 +34,12 @@ export const matchCheck = (
   setTimeout(() => {
     if (!isMatch) {
       currentCard.status = selectedCard.status = '';
-      setCards(updatedCards);
+      setCards([...updatedCards]);
       handleWrongAnswer(onMismatch);
     } else {
       handleRightAnswer(onMatch);
     }
-  }, 1000);
+  }, 500);
 
   setSelectedCardIndex(null);
   return isMatch;
