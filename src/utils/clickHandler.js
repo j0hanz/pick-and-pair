@@ -21,7 +21,7 @@ export const clickHandler = (
 
   if (selectedCardIndex === null) {
     previousIndex.current = index;
-    newCards[index] = { ...cards[index], status: 'active' };
+    newCards[index].status = 'active';
     setCards(newCards);
     setSelectedCardIndex(index);
     return;
