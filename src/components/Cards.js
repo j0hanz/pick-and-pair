@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useTransition } from 'react';
 import Card from './Card';
 import RightOrWrong from './RightOrWrong';
 import img01 from '../assets/images/01.jpg';
@@ -41,16 +41,19 @@ export default function Cards() {
   const [feedback, setFeedback] = useState(null);
   const previousIndex = useRef(null);
   const [resetTrigger, setResetTrigger] = useState(false);
+  const [, startTransition] = useTransition();
 
   const resetGame = useCallback(() => {
-    setCards(
-      shuffleCards(initialCards.map((card) => ({ ...card, status: '' })))
-    );
-    setSelectedCardIndex(null);
-    setMatchedPairs(0);
-    setFeedback(null);
-    previousIndex.current = null;
-    setResetTrigger((prev) => !prev);
+    startTransition(() => {
+      setCards(
+        shuffleCards(initialCards.map((card) => ({ ...card, status: '' })))
+      );
+      setSelectedCardIndex(null);
+      setMatchedPairs(0);
+      setFeedback(null);
+      previousIndex.current = null;
+      setResetTrigger((prev) => !prev);
+    });
   }, []);
 
   const updateFeedback = useCallback((status) => {
