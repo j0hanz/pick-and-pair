@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import Card from './Card';
+import RightOrWrong from './RightOrWrong';
 import img01 from '../assets/images/01.jpg';
 import img02 from '../assets/images/02.jpg';
 import img03 from '../assets/images/03.png';
@@ -34,30 +35,56 @@ const initialCards = [
 ].map((card) => ({ ...card, status: '' }));
 
 export default function Cards() {
-  const [cards, setCards] = useState(shuffleCards(initialCards));
+  const [cards, setCards] = useState(() => shuffleCards(initialCards));
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [matchedPairs, setMatchedPairs] = useState(0);
+  const [feedback, setFeedback] = useState(null);
   const previousIndex = useRef(null);
+  const [resetTrigger, setResetTrigger] = useState(false);
 
-  const resetGame = () => {
+  const resetGame = useCallback(() => {
     setCards(
       shuffleCards(initialCards.map((card) => ({ ...card, status: '' })))
     );
     setSelectedCardIndex(null);
     setMatchedPairs(0);
+    setFeedback(null);
     previousIndex.current = null;
-  };
+    setResetTrigger((prev) => !prev);
+  }, []);
 
-  const handleMatchUpdate = () => {
-    setMatchedPairs((prev) => prev + 1);
-  };
+  const handleMatchUpdate = useCallback((status) => {
+    if (status === 'right') {
+      setMatchedPairs((prev) => prev + 1);
+    }
+    setFeedback(status);
+  }, []);
+
+  const handleCardClick = useCallback(
+    (index) => {
+      clickHandler(
+        index,
+        cards,
+        setCards,
+        selectedCardIndex,
+        setSelectedCardIndex,
+        previousIndex,
+        handleMatchUpdate
+      );
+    },
+    [cards, selectedCardIndex, handleMatchUpdate]
+  );
 
   return (
     <div className={styles.container}>
       <div className={styles.stats}>
-        <Timer resetTrigger={resetGame} />
+        <Timer
+          resetTrigger={resetTrigger}
+          isGameComplete={matchedPairs === initialCards.length / 2}
+        />
         <Score matchedPairs={matchedPairs} />
       </div>
+      <RightOrWrong status={feedback} />
       <div className={styles.buttonGroup}>
         <button onClick={resetGame} className="btn btn-primary mb-4">
           Reset Game
@@ -65,22 +92,8 @@ export default function Cards() {
       </div>
       <div className={styles.row}>
         {cards.map((card, index) => (
-          <div className="col-8 col-md-4 col-lg-6 mb-4" key={index}>
-            <Card
-              card={card}
-              index={index}
-              clickHandler={(index) =>
-                clickHandler(
-                  index,
-                  cards,
-                  setCards,
-                  selectedCardIndex,
-                  setSelectedCardIndex,
-                  previousIndex,
-                  handleMatchUpdate
-                )
-              }
-            />
+          <div className="col-6 col-md-4 col-lg-3 mb-4" key={index}>
+            <Card card={card} index={index} clickHandler={handleCardClick} />
           </div>
         ))}
       </div>

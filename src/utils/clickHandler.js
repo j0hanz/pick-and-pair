@@ -6,31 +6,54 @@ export const clickHandler = (
   setCards,
   selectedCardIndex,
   setSelectedCardIndex,
-  previousIndex
+  previousIndex,
+  handleMatchUpdate
 ) => {
-  if (index === previousIndex.current) {
-    alert('card currently selected');
+  if (index === previousIndex.current || index === selectedCardIndex) {
     return;
   }
 
   const card = cards[index];
-  if (card.status === 'active matched') {
-    alert('already matched');
+  if (!card || card.status === 'active matched') {
     return;
   }
 
-  const handleFirstSelection = () => {
+  const updatedCards = [...cards];
+
+  if (selectedCardIndex === null) {
     previousIndex.current = index;
-    const updatedCards = [...cards];
-    updatedCards[index].status = 'active';
+    updatedCards[index] = { ...card, status: 'active' };
     setCards(updatedCards);
     setSelectedCardIndex(index);
-  };
+    return;
+  }
 
-  const handleSecondSelection = () => {
-    matchCheck(index, cards, setCards, selectedCardIndex, setSelectedCardIndex);
-    previousIndex.current = null;
-  };
+  matchCheck(index, cards, setCards, selectedCardIndex, setSelectedCardIndex);
 
-  selectedCardIndex === null ? handleFirstSelection() : handleSecondSelection();
+  const currentCard = updatedCards[index];
+  const previousCard = updatedCards[selectedCardIndex];
+  const isMatch = currentCard.id === previousCard.id;
+
+  updatedCards[index] = { ...currentCard, status: 'active' };
+
+  if (isMatch) {
+    updatedCards[index].status = 'active matched';
+    updatedCards[selectedCardIndex].status = 'active matched';
+    handleMatchUpdate('right');
+    setTimeout(() => handleMatchUpdate(null), 1500);
+  } else {
+    handleMatchUpdate('wrong');
+    setTimeout(() => {
+      setCards(
+        cards.map((c, i) =>
+          i === index || i === selectedCardIndex ? { ...c, status: '' } : c
+        )
+      );
+      handleMatchUpdate(null);
+    }, 1000);
+  }
+
+  setCards(updatedCards);
+  setSelectedCardIndex(null);
+  previousIndex.current = null;
 };

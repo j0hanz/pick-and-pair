@@ -25,7 +25,12 @@ export const matchCheck = (
     }, 1000);
   };
 
-  currentCard.id === selectedCard.id ? handleMatch() : handleNoMatch();
+  if (currentCard.id === selectedCard.id) {
+    handleMatch();
+  } else {
+    handleNoMatch();
+  }
+
   setSelectedCardIndex(null);
   setCards(updatedCards);
 };
