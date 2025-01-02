@@ -16,6 +16,7 @@ export const matchCheck = (
 
   const handleNoMatch = () => {
     currentCard.status = 'active';
+    selectedCard.status = 'active';
     setCards(updatedCards);
     setTimeout(() => {
       currentCard.status = '';

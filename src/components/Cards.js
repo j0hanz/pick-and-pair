@@ -36,15 +36,27 @@ export default function Cards() {
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const previousIndex = useRef(null);
 
+  const resetGame = () => {
+    const shuffledCards = initialCards
+      .map((card) => ({ ...card, status: '' }))
+      .sort(() => Math.random() - 0.5);
+    setCards(shuffledCards);
+    setSelectedCardIndex(null);
+    previousIndex.current = null;
+  };
+
   return (
     <div className="container">
+      <button onClick={resetGame} className="btn btn-primary mb-4">
+        Reset Game
+      </button>
       <div className="row">
         {cards.map((card, index) => (
           <div className="col-6 col-md-4 col-lg-3 mb-4" key={index}>
             <Card
               card={card}
               index={index}
-              clickHandler={() =>
+              clickHandler={(index) =>
                 clickHandler(
                   index,
                   cards,
