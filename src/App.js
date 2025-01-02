@@ -10,6 +10,10 @@ function App() {
   ]);
 
   const saveScore = (playerName, points) => {
+    if (!playerName || points < 0) {
+      console.error('Invalid score data');
+      return;
+    }
     setScores((prevScores) => [...prevScores, { name: playerName, points }]);
   };
 

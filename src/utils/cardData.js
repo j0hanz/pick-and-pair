@@ -6,6 +6,8 @@ export const generateCards = (difficulty = 'medium') => {
   };
 
   const totalPairs = difficulties[difficulty];
+  if (!totalPairs) return [];
+
   const cards = [];
 
   for (let i = 1; i <= totalPairs; i++) {

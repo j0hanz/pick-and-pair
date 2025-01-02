@@ -6,6 +6,13 @@ export const matchCheck = (
   setSelectedCardIndex,
   handleMatchUpdate
 ) => {
+  if (
+    currentCardIndex === selectedCardIndex ||
+    !cards[currentCardIndex] ||
+    !cards[selectedCardIndex]
+  )
+    return false;
+
   const updatedCards = [...cards];
   const [currentCard, selectedCard] = [
     updatedCards[currentCardIndex],
