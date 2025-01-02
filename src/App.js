@@ -1,11 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import styles from './App.module.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import styles from "./App.module.css";
+import Cards from "./components/Cards";
 
 function App() {
   return (
     <div className={styles.App}>
       <header className={styles.AppHeader}>
-        <div>Pick & Pair</div>
+        <Cards />
       </header>
     </div>
   );
