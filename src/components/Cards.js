@@ -1,6 +1,5 @@
 import React, { useState, useRef, useCallback, useTransition } from 'react';
 import Card from './Card';
-import RightOrWrong from './RightOrWrong';
 import img01 from '../assets/images/01.jpg';
 import img02 from '../assets/images/02.jpg';
 import img03 from '../assets/images/03.png';
@@ -39,7 +38,6 @@ export default function Cards() {
   const [cards, setCards] = useState(() => shuffleCards(initialCards));
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [matchedPairs, setMatchedPairs] = useState(0);
-  const [feedback, setFeedback] = useState(null);
   const previousIndex = useRef(null);
   const [resetTrigger, setResetTrigger] = useState(false);
   const [, startTransition] = useTransition();
@@ -54,24 +52,10 @@ export default function Cards() {
       );
       setSelectedCardIndex(null);
       setMatchedPairs(0);
-      setFeedback(null);
       previousIndex.current = null;
       setResetTrigger((prev) => !prev);
     });
   }, []);
-
-  const updateFeedback = useCallback(
-    (status) => {
-      if (status === 'right') {
-        playCorrectSound();
-        setMatchedPairs((prev) => prev + 1);
-      } else if (status === 'wrong') {
-        playWrongSound();
-      }
-      setFeedback(status);
-    },
-    [playCorrectSound, playWrongSound]
-  );
 
   const handleCardSelection = useCallback(
     (index) => {
@@ -82,10 +66,14 @@ export default function Cards() {
         selectedCardIndex,
         setSelectedCardIndex,
         previousIndex,
-        updateFeedback
+        () => {
+          setMatchedPairs((prev) => prev + 1);
+          playCorrectSound();
+        },
+        playWrongSound
       );
     },
-    [cards, selectedCardIndex, updateFeedback]
+    [cards, selectedCardIndex, playCorrectSound, playWrongSound]
   );
 
   return (
@@ -97,7 +85,6 @@ export default function Cards() {
         />
         <Score matchedPairs={matchedPairs} />
       </div>
-      <RightOrWrong status={feedback} />
       <div className={styles.buttonGroup}>
         <button onClick={resetGame} className={styles.btnPrimary}>
           Reset Game

@@ -1,30 +1,16 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
-export const useFeedback = (displayTime = 1000) => {
-  const [feedback, setFeedback] = useState({ status: null, visible: false });
-
-  const clearFeedback = useCallback(() => {
-    setFeedback({ status: null, visible: false });
-  }, []);
-
-  const showFeedback = useCallback(
-    (status) => {
-      if (status === null) {
-        clearFeedback();
-        return;
-      }
-      setFeedback({ status, visible: true });
-    },
-    [clearFeedback]
-  );
+export const useFeedback = () => {
+  const [feedback, setFeedback] = useState(null);
 
   useEffect(() => {
-    let timer;
-    if (feedback.visible) {
-      timer = setTimeout(clearFeedback, displayTime);
+    if (feedback) {
+      const timer = setTimeout(() => {
+        setFeedback(null);
+      }, 1000);
+      return () => clearTimeout(timer);
     }
-    return () => timer && clearTimeout(timer);
-  }, [feedback.visible, displayTime, clearFeedback]);
+  }, [feedback]);
 
-  return [feedback.status, showFeedback];
+  return [feedback, setFeedback];
 };

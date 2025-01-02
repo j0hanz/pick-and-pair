@@ -1,10 +1,14 @@
+import handleRightAnswer from './handleRightAnswer';
+import handleWrongAnswer from './handleWrongAnswer';
+
 export const matchCheck = (
   currentCardIndex,
   cards,
   setCards,
   selectedCardIndex,
   setSelectedCardIndex,
-  handleMatchUpdate
+  onMatch,
+  onMismatch
 ) => {
   if (
     currentCardIndex === selectedCardIndex ||
@@ -31,11 +35,12 @@ export const matchCheck = (
     if (!isMatch) {
       currentCard.status = selectedCard.status = '';
       setCards(updatedCards);
+      handleWrongAnswer(onMismatch);
+    } else {
+      handleRightAnswer(onMatch);
     }
-    handleMatchUpdate(null); // Reset feedback
   }, 1000);
 
-  handleMatchUpdate(isMatch ? 'right' : 'wrong');
   setSelectedCardIndex(null);
   return isMatch;
 };
