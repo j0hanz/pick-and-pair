@@ -12,8 +12,7 @@ export default function Card({ card, index, clickHandler }) {
       <img
         src={card.img}
         alt={card.name}
-        className="img-fluid"
-        style={{ width: '100%', height: 'auto' }}
+        className={`${styles.img} img-fluid`}
       />
     </div>
   );

@@ -9,6 +9,7 @@ import img06 from '../assets/images/06.jpg';
 import img07 from '../assets/images/07.jpg';
 import img08 from '../assets/images/08.jpg';
 import { clickHandler } from '../utils/clickHandler';
+import styles from '../App.module.css';
 
 const initialCards = [
   { id: 0, name: 'Bryan Cranston', img: img01 },
@@ -45,12 +46,22 @@ export default function Cards() {
     previousIndex.current = null;
   };
 
+  const shuffleCards = () => {
+    const shuffledCards = [...cards].sort(() => Math.random() - 0.5);
+    setCards(shuffledCards);
+  };
+
   return (
-    <div className="container">
-      <button onClick={resetGame} className="btn btn-primary mb-4">
-        Reset Game
-      </button>
-      <div className="row">
+    <div className={styles.container}>
+      <div className={styles.buttonGroup}>
+        <button onClick={resetGame} className="btn btn-primary mb-4">
+          Reset Game
+        </button>
+        <button onClick={shuffleCards} className="btn btn-secondary mb-4">
+          Shuffle Cards
+        </button>
+      </div>
+      <div className={styles.row}>
         {cards.map((card, index) => (
           <div className="col-6 col-md-4 col-lg-3 mb-4" key={index}>
             <Card
