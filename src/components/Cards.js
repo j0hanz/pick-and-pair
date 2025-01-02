@@ -1,74 +1,63 @@
 import { useState, useRef } from 'react';
 import Card from './Card';
+import img01 from '../assets/images/01.jpg';
+import img02 from '../assets/images/02.jpg';
+import img03 from '../assets/images/03.png';
+import img04 from '../assets/images/04.jpg';
+import img05 from '../assets/images/05.jpg';
+import img06 from '../assets/images/06.jpg';
+import img07 from '../assets/images/07.jpg';
+import img08 from '../assets/images/08.jpg';
+import { clickHandler } from '../utils/clickHandler';
+
+const initialCards = [
+  { id: 0, name: 'Bryan Cranston', img: img01 },
+  { id: 1, name: 'Bryan Cranston', img: img01 },
+  { id: 2, name: 'Aaron Paul', img: img02 },
+  { id: 3, name: 'Aaron Paul', img: img02 },
+  { id: 4, name: 'Anna Gunn', img: img03 },
+  { id: 5, name: 'Anna Gunn', img: img03 },
+  { id: 6, name: 'Dean Norris', img: img04 },
+  { id: 7, name: 'Dean Norris', img: img04 },
+  { id: 8, name: 'Betsy Brandt', img: img05 },
+  { id: 9, name: 'Betsy Brandt', img: img05 },
+  { id: 10, name: 'RJ Mitte', img: img06 },
+  { id: 11, name: 'RJ Mitte', img: img06 },
+  { id: 12, name: 'Bob Odenkirk', img: img07 },
+  { id: 13, name: 'Bob Odenkirk', img: img07 },
+  { id: 14, name: 'Jonathan Banks', img: img08 },
+  { id: 15, name: 'Jonathan Banks', img: img08 },
+]
+  .map((card) => ({ ...card, status: '' }))
+  .sort(() => Math.random() - 0.5);
 
 export default function Cards() {
-    const [cards, setCards] = useState([
-        { id: 0, name: 'Bryan Cranston', status: '', img: 'src/assets/images/01.jpg' },
-        { id: 0, name: 'Bryan Cranston', status: '', img: 'src/assets/images/01.jpg' },
-        { id: 1, name: 'Bryan Cranston', status: '', img: '../assets/images/03.png' },
-        { id: 1, name: 'Bryan Cranston', status: '', img: 'src/assets/images/02.jpg' },
-        { id: 2, name: 'Bryan Cranston', status: '', img: 'src/assets/images/03.png' },
-        { id: 2, name: 'Bryan Cranston', status: '', img: 'src/assets/images/03.png' },
-        { id: 3, name: 'Bryan Cranston', status: '', img: 'src/assets/images/04.jpg' },
-        { id: 3, name: 'Bryan Cranston', status: '', img: 'src/assets/images/04.jpg' },
-        { id: 4, name: 'Bryan Cranston', status: '', img: 'src/assets/images/05.jpg' },
-        { id: 4, name: 'Bryan Cranston', status: '', img: 'src/assets/images/05.jpg' },
-        { id: 5, name: 'Bryan Cranston', status: '', img: 'src/assets/images/06.jpg' },
-        { id: 5, name: 'Bryan Cranston', status: '', img: 'src/assets/images/06.jpg' },
-        { id: 6, name: 'Bryan Cranston', status: '', img: 'src/assets/images/07.jpg' },
-        { id: 6, name: 'Bryan Cranston', status: '', img: 'src/assets/images/07.jpg' },
-        { id: 7, name: 'Bryan Cranston', status: '', img: 'src/assets/images/08.jpg' },
-        { id: 7, name: 'Bryan Cranston', status: '', img: 'src/assets/images/08.jpg' },
-    ].sort(() => Math.random() - 0.5));
+  const [cards, setCards] = useState(initialCards);
+  const [selectedCardIndex, setSelectedCardIndex] = useState(null);
+  const previousIndex = useRef(null);
 
-    const [selectedCardIndex, setSelectedCardIndex] = useState(null);
-    const previousIndex = useRef(null);
-
-    const matchCheck = (currentCardIndex) => {
-        const updatedCards = [...cards];
-        if (updatedCards[currentCardIndex].id === updatedCards[selectedCardIndex].id) {
-            updatedCards[selectedCardIndex].status = 'active matched';
-            updatedCards[currentCardIndex].status = 'active matched';
-            setSelectedCardIndex(null);
-        } else {
-            updatedCards[currentCardIndex].status = 'active';
-            setCards(updatedCards);
-            setTimeout(() => {
-                updatedCards[currentCardIndex].status = '';
-                updatedCards[selectedCardIndex].status = '';
-                setCards(updatedCards);
-                setSelectedCardIndex(null);
-            }, 1000);
-        }
-        setCards(updatedCards);
-    };
-
-    const clickHandler = (index) => {
-        if (index !== previousIndex.current) {
-            if (cards[index].status === 'active matched') {
-                alert('already matched');
-            } else {
-                if (selectedCardIndex === null) {
-                    previousIndex.current = index;
-                    const updatedCards = [...cards];
-                    updatedCards[index].status = 'active';
-                    setCards(updatedCards);
-                    setSelectedCardIndex(index);
-                } else {
-                    matchCheck(index);
-                    previousIndex.current = null;
-                }
-            }
-        } else {
-            alert('card currently selected');
-        }
-    };
-
-    return (
-        <div className="container">
-            {cards.map((card, index) => (
-                <Card key={index} card={card} index={index} clickHandler={clickHandler} />
-            ))}
-        </div>
-    );
+  return (
+    <div className="container">
+      <div className="row">
+        {cards.map((card, index) => (
+          <div className="col-6 col-md-4 col-lg-3 mb-4" key={index}>
+            <Card
+              card={card}
+              index={index}
+              clickHandler={() =>
+                clickHandler(
+                  index,
+                  cards,
+                  setCards,
+                  selectedCardIndex,
+                  setSelectedCardIndex,
+                  previousIndex
+                )
+              }
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
