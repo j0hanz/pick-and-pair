@@ -9,10 +9,12 @@ export const matchCheck = (
   const currentCard = updatedCards[currentCardIndex];
   const selectedCard = updatedCards[selectedCardIndex];
 
-  if (currentCard.id === selectedCard.id) {
+  const handleMatch = () => {
     currentCard.status = 'active matched';
     selectedCard.status = 'active matched';
-  } else {
+  };
+
+  const handleNoMatch = () => {
     currentCard.status = 'active';
     setCards(updatedCards);
     setTimeout(() => {
@@ -20,7 +22,9 @@ export const matchCheck = (
       selectedCard.status = '';
       setCards([...updatedCards]);
     }, 1000);
-  }
+  };
+
+  currentCard.id === selectedCard.id ? handleMatch() : handleNoMatch();
   setSelectedCardIndex(null);
   setCards(updatedCards);
 };

@@ -19,14 +19,18 @@ export const clickHandler = (
     return;
   }
 
-  if (selectedCardIndex === null) {
+  const handleFirstSelection = () => {
     previousIndex.current = index;
     const updatedCards = [...cards];
     updatedCards[index].status = 'active';
     setCards(updatedCards);
     setSelectedCardIndex(index);
-  } else {
+  };
+
+  const handleSecondSelection = () => {
     matchCheck(index, cards, setCards, selectedCardIndex, setSelectedCardIndex);
     previousIndex.current = null;
-  }
+  };
+
+  selectedCardIndex === null ? handleFirstSelection() : handleSecondSelection();
 };
