@@ -6,7 +6,10 @@ export default function Timer({ resetTrigger, isGameComplete }) {
 
   useEffect(() => {
     if (isGameComplete) return;
-    let interval = setInterval(() => setTime((prevTime) => prevTime + 1), 1000);
+    const interval = setInterval(
+      () => setTime((prevTime) => prevTime + 1),
+      1000
+    );
     return () => clearInterval(interval);
   }, [isGameComplete]);
 
