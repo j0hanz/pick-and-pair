@@ -1,4 +1,5 @@
 import React, { memo, useState } from 'react';
+import { Image } from 'react-bootstrap';
 import styles from './styles/Card.module.css';
 
 const Card = memo(({ card, index, clickHandler }) => {
@@ -10,12 +11,13 @@ const Card = memo(({ card, index, clickHandler }) => {
       className={cardClassName}
       onClick={() => imageLoaded && clickHandler(index)}
     >
-      <img
+      <Image
         src={card.img}
         alt={card.name}
-        className={`${styles.img} img-fluid`}
+        className={styles.img}
         onLoad={() => setImageLoaded(true)}
         loading="lazy"
+        fluid
       />
       {!imageLoaded && <div className={styles.loader}>Loading...</div>}
     </div>
