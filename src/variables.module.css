@@ -1,4 +1,9 @@
 :root {
+  --bs-modal-border-color: none !important;
+  --bs-modal-border-width: 0 !important;
+  --bs-modal-box-shadow: none !important;
+  --bs-modal-margin: 0 !important;
+  --bs-modal-padding: 0 !important;
   --color-white: #e0e0e0;
   --color-correct-bg: #5a9e5e;
   --color-correct-border: #3a8a3d;
@@ -15,4 +20,10 @@
   --stats-background-color: #2a2a2a;
   --stats-text-color: #e0e0e0;
   --button-hover-color: #1976d2;
+  --modal-bg: linear-gradient(
+    180deg,
+    #181818d8 0%,
+    #232323c9 50%,
+    #181818d8 100%
+  );
 }
