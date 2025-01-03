@@ -42,7 +42,7 @@ h1 {
   justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
-  gap: 2rem !important;
+  gap: 1rem !important;
 }
 
 .stats div,
@@ -53,7 +53,7 @@ h1 {
   justify-content: center !important;
   align-items: center !important;
   flex: 1 !important;
-  height: 4rem !important;
+  height: 3.5rem !important;
   border-radius: 10px !important;
   background-color: var(--stats-background-color) !important;
   color: var(--stats-text-color) !important;
@@ -66,12 +66,8 @@ h1 {
 }
 
 /* Buttons */
-button,
-.btnPrimary {
+button {
   border: none !important;
-  border-radius: 5px !important;
-  font-size: 1rem !important;
-  font-weight: 500 !important;
   cursor: pointer !important;
   color: var(--color-white) !important;
   transition: background-color 0.5s ease !important;
@@ -80,7 +76,7 @@ button,
 .row {
   display: grid !important;
   grid-template-columns: repeat(6, 1fr) !important;
-  gap: 2rem !important;
+  gap: 1rem !important;
   width: 100% !important;
 }
 
@@ -123,7 +119,7 @@ button,
   }
 
   .gameTitle {
-    font-size: 2rem !important;
+    font-size: 1rem !important;
   }
 
   .row {
