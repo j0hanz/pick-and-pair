@@ -16,6 +16,7 @@ export default function Cards() {
   const [, startTransition] = useTransition();
   const [timeLeft, setTimeLeft] = useState(120);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [isInitialFlip, setIsInitialFlip] = useState(true);
 
   const { resetGameWithTimer, handleCardSelection } = useGameLogic({
     cards,
@@ -38,6 +39,23 @@ export default function Cards() {
     }
   }, [matchedPairs]);
 
+  useEffect(() => {
+    // Flip all cards initially
+    setCards((prevCards) =>
+      prevCards.map((card) => ({ ...card, status: 'active' }))
+    );
+
+    // Flip back after 2 seconds
+    const timer = setTimeout(() => {
+      setCards((prevCards) =>
+        prevCards.map((card) => ({ ...card, status: '' }))
+      );
+      setIsInitialFlip(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={`${styles.stats} my-3`}>
@@ -59,7 +77,7 @@ export default function Cards() {
             <Card
               card={card}
               index={index}
-              clickHandler={handleCardSelection}
+              clickHandler={isInitialFlip ? null : handleCardSelection}
             />
           </div>
         ))}
