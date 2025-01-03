@@ -5,7 +5,7 @@ export const shuffleCards = (cards, seed = null) => {
   if (cards.length === 0) return [];
 
   const shuffled = [...cards];
-  let random = seed
+  const random = seed
     ? () => {
         const x = Math.sin(seed++) * 10000;
         return x - Math.floor(x);
