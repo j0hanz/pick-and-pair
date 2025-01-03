@@ -1,4 +1,4 @@
-import React, { useState, useRef, useTransition } from 'react';
+import React, { useState, useRef, useTransition, useEffect } from 'react';
 import Card from './Card';
 import { initialCards } from '../data/cardData';
 import styles from '../App.module.css';
@@ -14,8 +14,10 @@ export default function Cards() {
   const previousIndex = useRef(null);
   const [resetTrigger, setResetTrigger] = useState(false);
   const [, startTransition] = useTransition();
+  const [timeLeft, setTimeLeft] = useState(120);
+  const [isGameOver, setIsGameOver] = useState(false);
 
-  const { resetGame, handleCardSelection } = useGameLogic({
+  const { resetGameWithTimer, handleCardSelection } = useGameLogic({
     cards,
     setCards,
     selectedCardIndex,
@@ -26,16 +28,27 @@ export default function Cards() {
     resetTrigger,
     setResetTrigger,
     startTransition,
+    setIsGameOver,
+    setTimeLeft,
   });
+
+  useEffect(() => {
+    if (matchedPairs === initialCards.length / 2) {
+      setIsGameOver(true);
+    }
+  }, [matchedPairs]);
 
   return (
     <div className={styles.container}>
       <div className={styles.stats}>
         <Timer
           resetTrigger={resetTrigger}
-          isGameComplete={matchedPairs === initialCards.length / 2}
+          isGameComplete={isGameOver}
+          timeLimit={timeLeft}
+          setIsGameOver={setIsGameOver}
+          setTimeLeft={setTimeLeft}
         />
-        <button onClick={resetGame} className={styles.button}>
+        <button onClick={resetGameWithTimer} className={styles.button}>
           Reset Game
         </button>
         <Score matchedPairs={matchedPairs} />
