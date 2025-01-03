@@ -10,7 +10,6 @@ export const useGameStats = () => {
     bestMoves: localStorage.getItem('bestMoves') || null,
   });
 
-  // Add time tracking
   useEffect(() => {
     let interval;
     if (!stats.isComplete) {
