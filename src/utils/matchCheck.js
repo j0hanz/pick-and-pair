@@ -10,13 +10,16 @@ const updateCardStatus = (
   onMismatch
 ) => {
   setTimeout(() => {
-    if (!cards[currentCardIndex] || !cards[selectedCardIndex]) {
+    const currentCard = cards[currentCardIndex];
+    const selectedCard = cards[selectedCardIndex];
+
+    if (!currentCard || !selectedCard) {
       console.error('Card data missing after timeout');
       return;
     }
 
     if (!isMatch) {
-      cards[currentCardIndex].status = cards[selectedCardIndex].status = '';
+      currentCard.status = selectedCard.status = '';
       setCards([...cards]);
       handleWrongAnswer(onMismatch);
     } else {
@@ -47,16 +50,11 @@ export const matchCheck = (
   const currentCard = updatedCards[currentCardIndex];
   const selectedCard = updatedCards[selectedCardIndex];
 
-  console.log('Current Card:', currentCard);
-  console.log('Selected Card:', selectedCard);
-
   const isMatch = currentCard.pairId === selectedCard.pairId;
 
-  if (isMatch) {
-    currentCard.status = selectedCard.status = 'active matched';
-  } else {
-    currentCard.status = selectedCard.status = 'active';
-  }
+  currentCard.status = selectedCard.status = isMatch
+    ? 'active matched'
+    : 'active';
 
   setCards(updatedCards);
   updateCardStatus(
@@ -69,8 +67,6 @@ export const matchCheck = (
     onMismatch
   );
   setSelectedCardIndex(null);
-
-  console.log('Match Status:', isMatch ? 'Matched' : 'Not Matched');
 
   return isMatch;
 };
