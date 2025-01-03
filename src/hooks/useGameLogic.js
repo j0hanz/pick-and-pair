@@ -38,7 +38,7 @@ export function useGameLogic({
 
   const resetGameWithTimer = useCallback(() => {
     setIsGameOver(false);
-    setTimeLeft(120);
+    setTimeLeft(60);
 
     // Shuffle cards before flipping
     setCards(
