@@ -2,12 +2,12 @@ export const fetchScores = async () => {
   try {
     const response = await fetch('/api/scores');
     if (!response.ok) {
-      throw new Error('Failed to fetch scores');
+      throw new Error(`Failed to fetch scores: ${response.statusText}`);
     }
     return response.json();
   } catch (error) {
     console.error(error);
-    alert('Error fetching scores. Please try again later.');
+    alert(`Error fetching scores: ${error.message}`);
     return [];
   }
 };
@@ -20,10 +20,10 @@ export const submitScore = async (score) => {
       body: JSON.stringify(score),
     });
     if (!response.ok) {
-      throw new Error('Failed to submit score');
+      throw new Error(`Failed to submit score: ${response.statusText}`);
     }
   } catch (error) {
     console.error(error);
-    alert('Error submitting score. Please try again later.');
+    alert(`Error submitting score: ${error.message}`);
   }
 };
