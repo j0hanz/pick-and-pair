@@ -1,7 +1,6 @@
 import '../feedback.css';
 
-const showFeedback = (type, message, callback) => {
-  // Remove any existing feedback toasts
+const showFeedback = (type, message, duration = 3000, callback) => {
   const existingToasts = document.querySelectorAll('.feedback-toast');
   existingToasts.forEach((toast) => toast.remove());
 
@@ -10,17 +9,16 @@ const showFeedback = (type, message, callback) => {
   feedback.textContent = message;
   document.body.appendChild(feedback);
 
-  // Remove the feedback after animation completes
-  feedback.addEventListener('animationend', () => {
+  setTimeout(() => {
     feedback.remove();
     if (callback) callback();
-  });
+  }, duration);
 };
 
 export const handleRightAnswer = (callback) => {
-  showFeedback('correct', 'Correct Match!', callback);
+  showFeedback('correct', 'Correct Match!', 3000, callback);
 };
 
 export const handleWrongAnswer = (callback) => {
-  showFeedback('wrong', 'Wrong Match!', callback);
+  showFeedback('wrong', 'Wrong Match!', 3000, callback);
 };
