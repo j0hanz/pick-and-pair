@@ -1,6 +1,6 @@
 /* Card */
 .card {
-  background-color: #2a2a3b !important;
+  background-color: var(--color-card-bg) !important;
   border-radius: 10px !important;
   position: relative !important;
   perspective: 1000px !important;
@@ -8,19 +8,19 @@
   transition:
     transform 0.5s ease,
     box-shadow 0.5s ease !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 6px 12px var(--color-card-shadow) !important;
   min-width: 160px !important;
   min-height: 160px !important;
 }
 
 .card:hover {
   transform: scale(1.05) !important;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 8px 16px var(--color-card-shadow-hover) !important;
 }
 
 .card.active {
   transform: rotateY(180deg) !important;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 10px 20px var(--color-card-shadow-active) !important;
   transition:
     transform 0.6s ease,
     box-shadow 0.6s ease !important;
