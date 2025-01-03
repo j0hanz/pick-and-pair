@@ -36,24 +36,12 @@ export const generateCards = (difficulty = 'medium') => {
   const totalPairs = difficulties[difficulty];
   if (!totalPairs) return [];
 
-  const cards = [];
+  const cards = Array.from({ length: totalPairs }, (_, i) => ({
+    id: i + 1,
+    img: `/images/card${i + 1}.jpg`,
+    name: `Card ${i + 1}`,
+    status: '',
+  }));
 
-  for (let i = 1; i <= totalPairs; i++) {
-    cards.push(
-      {
-        id: i,
-        img: `/images/card${i}.jpg`,
-        name: `Card ${i}`,
-        status: '',
-      },
-      {
-        id: i,
-        img: `/images/card${i}.jpg`,
-        name: `Card ${i}`,
-        status: '',
-      }
-    );
-  }
-
-  return cards;
+  return [...cards, ...cards];
 };

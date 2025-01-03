@@ -18,10 +18,8 @@ export const matchCheck = (
     return false;
 
   const updatedCards = [...cards];
-  const [currentCard, selectedCard] = [
-    updatedCards[currentCardIndex],
-    updatedCards[selectedCardIndex],
-  ];
+  const currentCard = updatedCards[currentCardIndex];
+  const selectedCard = updatedCards[selectedCardIndex];
 
   const isMatch =
     currentCard.id === selectedCard.id &&
