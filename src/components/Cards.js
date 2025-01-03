@@ -40,7 +40,7 @@ export default function Cards() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.stats}>
+      <div className={`${styles.stats} my-3`}>
         <Timer
           resetTrigger={resetTrigger}
           isGameComplete={isGameOver}
