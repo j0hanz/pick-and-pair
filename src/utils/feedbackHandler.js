@@ -1,13 +1,13 @@
 import '../feedback.css';
 
-const handleWrongAnswer = (callback) => {
+const showFeedback = (type, message, callback) => {
   // Remove any existing feedback toasts
   const existingToasts = document.querySelectorAll('.feedback-toast');
   existingToasts.forEach((toast) => toast.remove());
 
   const feedback = document.createElement('div');
-  feedback.className = 'feedback-toast wrong';
-  feedback.textContent = 'Wrong Match!';
+  feedback.className = `feedback-toast ${type}`;
+  feedback.textContent = message;
   document.body.appendChild(feedback);
 
   // Remove the feedback after animation completes
@@ -17,4 +17,10 @@ const handleWrongAnswer = (callback) => {
   });
 };
 
-export default handleWrongAnswer;
+export const handleRightAnswer = (callback) => {
+  showFeedback('correct', 'Correct Match!', callback);
+};
+
+export const handleWrongAnswer = (callback) => {
+  showFeedback('wrong', 'Wrong Match!', callback);
+};
