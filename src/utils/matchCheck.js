@@ -1,5 +1,4 @@
-import handleRightAnswer from './handleRightAnswer';
-import handleWrongAnswer from './handleWrongAnswer';
+import { handleRightAnswer, handleWrongAnswer } from './feedbackHandler';
 
 const updateCardStatus = (
   cards,
