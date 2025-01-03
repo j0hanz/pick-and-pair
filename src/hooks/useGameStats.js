@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 
 export const useGameStats = () => {
   const [stats, setStats] = useState({
@@ -41,5 +41,15 @@ export const useGameStats = () => {
     [stats.bestTime, stats.bestMoves, updateStats]
   );
 
-  return [stats, updateStats, saveHighScore];
+  const derivedStats = useMemo(
+    () => ({
+      ...stats,
+      averageTimePerMove: stats.moves
+        ? (stats.time / stats.moves).toFixed(2)
+        : 0,
+    }),
+    [stats]
+  );
+
+  return [derivedStats, updateStats, saveHighScore];
 };
