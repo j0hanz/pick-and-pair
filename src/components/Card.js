@@ -10,6 +10,8 @@ const Card = memo(({ card, index, clickHandler }) => {
     <div
       className={cardClassName}
       onClick={() => imageLoaded && clickHandler(index)}
+      role="button"
+      aria-label={`Card ${card.name}`}
     >
       <Image
         src={card.img}
