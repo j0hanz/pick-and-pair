@@ -1,3 +1,4 @@
+/* Import fonts and variables */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 @import './variables.module.css';
 
@@ -6,8 +7,8 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   font-family: 'Poppins', sans-serif !important;
-  background-color: #1e1e2f !important;
-  color: #f5f5f5 !important;
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
@@ -30,12 +31,12 @@ h1 {
 .gameTitle,
 h1 {
   color: #ff6f61 !important;
-  text-shadow: 0 0 10px rgba(255, 111, 97, 0.3) !important;
+  text-shadow: 0 0 15px rgba(255, 111, 97, 0.5) !important;
 }
 
 .gameTitle {
   font-size: 3rem !important;
-  margin-bottom: 2rem !important;
+  margin-bottom: 1rem !important;
 }
 
 h1 {
@@ -44,13 +45,6 @@ h1 {
 }
 
 /* Container */
-.container,
-.gameContainer {
-  margin: 0 auto !important;
-  border-radius: 15px !important;
-  padding: 0 !important;
-}
-
 .gameContainer {
   padding: 2rem !important;
   max-width: 1200px !important;
@@ -58,23 +52,32 @@ h1 {
 
 /* Stats section */
 .stats {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
-  gap: 1rem !important;
-  margin-bottom: 2rem !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  padding: 1rem !important;
-  border-radius: 8px !important;
-  font-size: 1.2rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-bottom: 1rem !important;
 }
 
-.stats div {
-  padding: 1rem !important;
-  border-radius: 10px !important;
-  background-color: #2e2e3e !important;
-  color: #f5f5f5 !important;
+.stats div,
+.stats button,
+.button {
   text-align: center !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex: 1 !important;
+  height: 4rem !important;
+  margin: 0 0.5rem !important;
+  border-radius: 10px !important;
+  background-color: #333 !important;
+  color: #f5f5f5 !important;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.stats button:hover,
+.button:hover {
+  background-color: #007bff !important;
 }
 
 /* Buttons */
@@ -103,13 +106,13 @@ button,
 .row {
   display: grid !important;
   grid-template-columns: repeat(6, 1fr) !important;
-  gap: 2rem !important;
+  gap: 1.5rem !important;
   width: 100% !important;
 }
 
 /* Card */
 .card {
-  background-color: #3b3b58 !important;
+  background-color: #2a2a3b !important;
   border-radius: 10px !important;
   position: relative !important;
   perspective: 1000px !important;
@@ -117,14 +120,14 @@ button,
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
   min-width: 160px !important;
   min-height: 160px !important;
 }
 
 .card:hover {
   transform: translateY(-5px) !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4) !important;
 }
 
 .card.active {
@@ -174,6 +177,7 @@ button,
   transition:
     opacity 0.3s ease,
     visibility 0.3s ease !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
 .feedback.visible {
@@ -200,6 +204,7 @@ button,
   font-weight: bold !important;
   animation: slideIn 0.3s ease-in-out !important;
   z-index: 1000 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
 .feedback-toast.correct {
@@ -254,12 +259,13 @@ button,
 @media (max-width: 1024px) {
   .row {
     grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.25rem !important;
   }
 }
 
 @media (max-width: 768px) {
   .App {
-    padding: 1rem !important;
+    padding: 1.5rem !important;
   }
 
   .gameTitle {
@@ -268,18 +274,18 @@ button,
 
   .row {
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.25rem !important;
+    gap: 1rem !important;
   }
 }
 
 @media (max-width: 480px) {
   .row {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
+    gap: 0.75rem !important;
   }
 
   .card {
-    min-width: 120px !important;
-    min-height: 120px !important;
+    min-width: 100px !important;
+    min-height: 100px !important;
   }
 }
