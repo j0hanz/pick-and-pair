@@ -39,10 +39,9 @@ h1 {
 /* Stats section */
 .stats {
   display: flex !important;
-  justify-content: center !important;
+  justify-content: space-between !important;
   align-items: center !important;
-  width: 100% !important;
-  gap: 1.5rem !important;
+  gap: 2rem !important;
 }
 
 .stats div,
@@ -74,10 +73,9 @@ button {
 }
 
 .row {
-  display: grid !important;
-  grid-template-columns: repeat(6, 1fr) !important;
-  gap: 1.5rem !important;
-  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 2rem !important;
 }
 
 @keyframes shake {
@@ -106,14 +104,19 @@ button {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
   .row {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1.25rem !important;
   }
+
+  .card {
+    flex: 1 0 23% !important;
+    max-width: 23% !important;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .App {
     padding: 1.5rem !important;
   }
@@ -128,14 +131,14 @@ button {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   .row {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.75rem !important;
   }
 
   .card {
-    min-width: 100px !important;
-    min-height: 100px !important;
+    min-width: 6.25rem !important;
+    min-height: 6.25rem !important;
   }
 }

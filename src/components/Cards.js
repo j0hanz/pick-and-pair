@@ -59,7 +59,7 @@ export default function Cards() {
 
   return (
     <div className={styles.container}>
-      <div className={`${styles.stats} my-3`}>
+      <div className={`${styles.stats} mb-3`}>
         <Timer
           resetTrigger={resetTrigger}
           isGameComplete={isGameOver}
@@ -74,11 +74,11 @@ export default function Cards() {
       </div>
       <Row className={styles.row}>
         {cards.map((card, index) => (
-          <Col xs={6} md={4} lg={3} key={index}>
+          <Col xs={2} key={index}>
             <Card
               card={card}
               index={index}
-              clickHandler={isInitialFlip ? null : handleCardSelection}
+              clickHandler={isInitialFlip ? undefined : handleCardSelection}
             />
           </Col>
         ))}
