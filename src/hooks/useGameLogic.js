@@ -40,18 +40,20 @@ export function useGameLogic({
     setIsGameOver(false);
     setTimeLeft(120);
 
-    // Flip all cards initially
-    setCards((prevCards) =>
-      prevCards.map((card) => ({ ...card, status: 'active' }))
+    // Shuffle cards before flipping
+    setCards(
+      shuffleCards(initialCards.map((card) => ({ ...card, status: 'active' })))
     );
 
-    // Flip back after 2 seconds
+    // Flip back after 2 seconds without reshuffling
     const timer = setTimeout(() => {
-      resetGame();
+      setCards((prevCards) =>
+        prevCards.map((card) => ({ ...card, status: '' }))
+      );
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [resetGame, setIsGameOver, setTimeLeft, setCards]);
+  }, [setIsGameOver, setTimeLeft, setCards]);
 
   const handleCardSelection = useCallback(
     (index) => {
