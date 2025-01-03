@@ -42,7 +42,7 @@ export default function Cards() {
       </div>
       <div className={styles.row}>
         {cards.map((card, index) => (
-          <div className="col-6 col-md-4 col-lg-3 my-1" key={index}>
+          <div className="col-6 col-md-4 col-lg-3" key={index}>
             <Card
               card={card}
               index={index}

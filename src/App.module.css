@@ -17,10 +17,8 @@ body {
 }
 
 .App {
-  width: 100% !important;
-  max-width: 1200px !important;
+  max-width: 100% !important;
   margin: 0 auto !important;
-  padding: 1rem !important;
 }
 
 .AppHeader,
@@ -35,19 +33,13 @@ h1 {
 }
 
 .gameTitle {
-  font-size: 3rem !important;
+  font-size: 4rem !important;
   margin-bottom: 1rem !important;
 }
 
 h1 {
   font-size: 2rem !important;
   margin-bottom: 1rem !important;
-}
-
-/* Container */
-.gameContainer {
-  padding: 2rem !important;
-  max-width: 1200px !important;
 }
 
 /* Stats section */
@@ -57,7 +49,7 @@ h1 {
   align-items: center !important;
   width: 100% !important;
   margin-bottom: 1rem !important;
-  gap: 2rem !important;
+  gap: 2.5rem !important;
 }
 
 .stats div,
@@ -92,20 +84,11 @@ button,
   transition: background-color 0.5s ease !important;
 }
 
-.btnPrimary {
-  background-color: #007bff !important;
-  margin-bottom: 1rem !important;
-}
-
-.btnPrimary:hover {
-  background-color: #0056b3 !important;
-}
-
 /* Card grid */
 .row {
   display: grid !important;
   grid-template-columns: repeat(6, 1fr) !important;
-  gap: 2rem !important;
+  gap: 2.5rem !important;
   width: 100% !important;
 }
 
@@ -130,7 +113,7 @@ button,
 }
 
 .card.active {
-  transform: rotateY(180deg) scale(1.05) !important;
+  transform: rotateY(180deg) !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important;
   transition:
     transform 0.6s ease,
