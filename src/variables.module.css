@@ -1,18 +1,18 @@
 :root {
-  --color-white: #fff;
-  --color-correct-bg: #28a745;
-  --color-correct-border: #1e7e34;
-  --color-wrong-bg: #dc3545;
-  --color-wrong-border: #bd2130;
-  --color-card-bg: #2a2a3b;
-  --color-shadow: rgba(0, 0, 0, 0.15);
-  --color-card-shadow: rgba(0, 0, 0, 0.3);
-  --color-card-shadow-hover: rgba(0, 0, 0, 0.4);
-  --color-card-shadow-active: rgba(0, 0, 0, 0.5);
-  --background-color: #121212;
-  --text-color: #e0e0e0;
-  --highlight-color: #ff6f61;
-  --stats-background-color: #333;
-  --stats-text-color: #f5f5f5;
-  --button-hover-color: #007bff;
+  --color-white: #e0e0e0;
+  --color-correct-bg: #5a9e5e;
+  --color-correct-border: #3a8a3d;
+  --color-wrong-bg: #cc5c5c;
+  --color-wrong-border: #b22222;
+  --color-card-bg: #3a3a3a;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-card-shadow: rgba(0, 0, 0, 0.5);
+  --color-card-shadow-hover: rgba(0, 0, 0, 0.6);
+  --color-card-shadow-active: rgba(0, 0, 0, 0.7);
+  --background-color: #1a1a1a;
+  --text-color: #c0c0c0;
+  --highlight-color: #e67c55;
+  --stats-background-color: #2a2a2a;
+  --stats-text-color: #e0e0e0;
+  --button-hover-color: #1976d2;
 }
