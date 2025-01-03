@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import styles from '../App.module.css';
+import styles from './styles/Card.module.css';
 
 const Card = memo(({ card, index, clickHandler }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
