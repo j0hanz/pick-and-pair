@@ -35,16 +35,14 @@ export default function Cards() {
           resetTrigger={resetTrigger}
           isGameComplete={matchedPairs === initialCards.length / 2}
         />
-        <Score matchedPairs={matchedPairs} />
-      </div>
-      <div className={styles.buttonGroup}>
-        <button onClick={resetGame} className={styles.btnPrimary}>
+        <button onClick={resetGame} className={styles.button}>
           Reset Game
         </button>
+        <Score matchedPairs={matchedPairs} />
       </div>
       <div className={styles.row}>
         {cards.map((card, index) => (
-          <div className="col-6 col-md-4 col-lg-3 mb-4" key={index}>
+          <div className="col-6 col-md-4 col-lg-3 my-1" key={index}>
             <Card
               card={card}
               index={index}
