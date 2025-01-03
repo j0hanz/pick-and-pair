@@ -64,9 +64,7 @@ export function useGameLogic({
         selectedCardIndex,
         setSelectedCardIndex,
         previousIndex,
-        () => {
-          setMatchedPairs((prev) => prev + 1);
-        }
+        () => setMatchedPairs((prev) => prev + 1)
       );
     },
     [
