@@ -9,11 +9,8 @@
     transform 0.5s ease,
     box-shadow 0.5s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  min-width: 1rem;
-  min-height: 9rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-width: 1.25rem;
+  min-height: 9.5rem;
 }
 
 .card:hover {

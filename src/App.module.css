@@ -73,7 +73,7 @@ button {
 .row {
   display: flex !important;
   justify-content: space-between !important;
-  gap: 2rem !important;
+  gap: 1.75rem !important;
 }
 
 @keyframes shake {
