@@ -1,12 +1,11 @@
-import React, { useState, useRef, useCallback, useTransition } from 'react';
+import React, { useState, useRef, useTransition } from 'react';
 import Card from './Card';
-import { initialCards } from '../utils/cardData'; // Import initialCards from cardData.js
-import { clickHandler } from '../utils/clickHandler';
+import { initialCards } from '../data/cardData';
 import styles from '../App.module.css';
 import Timer from './Timer';
 import Score from './Score';
 import { shuffleCards } from '../utils/shuffleCards';
-import { useSound } from '../hooks/useSound';
+import { useGameLogic } from '../hooks/useGameLogic'; // Import custom hook
 
 export default function Cards() {
   const [cards, setCards] = useState(() => shuffleCards(initialCards));
@@ -16,39 +15,18 @@ export default function Cards() {
   const [resetTrigger, setResetTrigger] = useState(false);
   const [, startTransition] = useTransition();
 
-  const playCorrectSound = useSound();
-  const playWrongSound = useSound();
-
-  const resetGame = useCallback(() => {
-    startTransition(() => {
-      setCards(
-        shuffleCards(initialCards.map((card) => ({ ...card, status: '' })))
-      );
-      setSelectedCardIndex(null);
-      setMatchedPairs(0);
-      previousIndex.current = null;
-      setResetTrigger((prev) => !prev);
-    });
-  }, []);
-
-  const handleCardSelection = useCallback(
-    (index) => {
-      clickHandler(
-        index,
-        cards,
-        setCards,
-        selectedCardIndex,
-        setSelectedCardIndex,
-        previousIndex,
-        () => {
-          setMatchedPairs((prev) => prev + 1);
-          playCorrectSound();
-        },
-        playWrongSound
-      );
-    },
-    [cards, selectedCardIndex, playCorrectSound, playWrongSound]
-  );
+  const { resetGame, handleCardSelection } = useGameLogic({
+    cards,
+    setCards,
+    selectedCardIndex,
+    setSelectedCardIndex,
+    matchedPairs,
+    setMatchedPairs,
+    previousIndex,
+    resetTrigger,
+    setResetTrigger,
+    startTransition,
+  });
 
   return (
     <div className={styles.container}>
