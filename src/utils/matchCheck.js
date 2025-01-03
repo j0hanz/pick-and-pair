@@ -32,6 +32,9 @@ export const matchCheck = (
   setCards(updatedCards);
 
   setTimeout(() => {
+    if (!updatedCards[currentCardIndex] || !updatedCards[selectedCardIndex])
+      return;
+
     if (!isMatch) {
       currentCard.status = selectedCard.status = '';
       setCards([...updatedCards]);

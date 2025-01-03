@@ -5,7 +5,7 @@ import styles from '../App.module.css';
 import Timer from './Timer';
 import Score from './Score';
 import { shuffleCards } from '../utils/shuffleCards';
-import { useGameLogic } from '../hooks/useGameLogic'; // Import custom hook
+import { useGameLogic } from '../hooks/useGameLogic';
 
 export default function Cards() {
   const [cards, setCards] = useState(() => shuffleCards(initialCards));
