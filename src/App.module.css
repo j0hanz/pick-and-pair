@@ -34,12 +34,6 @@ h1 {
 
 .gameTitle {
   font-size: 4rem !important;
-  margin-bottom: 1rem !important;
-}
-
-h1 {
-  font-size: 2rem !important;
-  margin-bottom: 1rem !important;
 }
 
 /* Stats section */
@@ -48,8 +42,7 @@ h1 {
   justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
-  margin-bottom: 1rem !important;
-  gap: 2.5rem !important;
+  gap: 2rem !important;
 }
 
 .stats div,
@@ -87,7 +80,7 @@ button,
 .row {
   display: grid !important;
   grid-template-columns: repeat(6, 1fr) !important;
-  gap: 2.5rem !important;
+  gap: 2rem !important;
   width: 100% !important;
 }
 
