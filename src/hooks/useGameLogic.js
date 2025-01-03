@@ -39,8 +39,19 @@ export function useGameLogic({
   const resetGameWithTimer = useCallback(() => {
     setIsGameOver(false);
     setTimeLeft(120);
-    resetGame();
-  }, [resetGame, setIsGameOver, setTimeLeft]);
+
+    // Flip all cards initially
+    setCards((prevCards) =>
+      prevCards.map((card) => ({ ...card, status: 'active' }))
+    );
+
+    // Flip back after 2 seconds
+    const timer = setTimeout(() => {
+      resetGame();
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [resetGame, setIsGameOver, setTimeLeft, setCards]);
 
   const handleCardSelection = useCallback(
     (index) => {
