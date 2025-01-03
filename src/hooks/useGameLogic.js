@@ -14,6 +14,8 @@ export function useGameLogic({
   resetTrigger,
   setResetTrigger,
   startTransition,
+  setIsGameOver,
+  setTimeLeft,
 }) {
   const resetGame = useCallback(() => {
     startTransition(() => {
@@ -33,6 +35,12 @@ export function useGameLogic({
     setResetTrigger,
     startTransition,
   ]);
+
+  const resetGameWithTimer = useCallback(() => {
+    setIsGameOver(false);
+    setTimeLeft(120);
+    resetGame();
+  }, [resetGame, setIsGameOver, setTimeLeft]);
 
   const handleCardSelection = useCallback(
     (index) => {
@@ -60,9 +68,9 @@ export function useGameLogic({
 
   useEffect(() => {
     if (matchedPairs === initialCards.length / 2) {
-      alert('You have matched all pairs!');
+      setIsGameOver(true);
     }
-  }, [matchedPairs]);
+  }, [matchedPairs, setIsGameOver]);
 
   useEffect(() => {
     if (resetTrigger) {
@@ -70,5 +78,5 @@ export function useGameLogic({
     }
   }, [resetTrigger, resetGame]);
 
-  return { resetGame, handleCardSelection };
+  return { resetGame, resetGameWithTimer, handleCardSelection };
 }
