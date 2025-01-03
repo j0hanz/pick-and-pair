@@ -16,7 +16,7 @@ const Card = memo(({ card, index, clickHandler }) => {
   };
 
   const handleClick = () => {
-    if (imageLoaded) {
+    if (imageLoaded && clickHandler) {
       setFlipped(true);
       clickHandler(index);
     }
