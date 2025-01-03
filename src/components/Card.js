@@ -4,7 +4,7 @@ import styles from './styles/Card.module.css';
 
 const Card = memo(({ card, index, clickHandler }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const cardClassName = `${styles.card} ${card.status ? styles.active : ''} ${!imageLoaded ? styles.loading : ''}`;
+  const cardClassName = `${styles.card} ${card.status ? styles.active : ''} ${card.status === 'active matched' ? styles.matched : ''} ${!imageLoaded ? styles.loading : ''}`;
 
   return (
     <div
