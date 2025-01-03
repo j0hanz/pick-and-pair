@@ -42,7 +42,7 @@ h1 {
   justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
-  gap: 1rem !important;
+  gap: 1.5rem !important;
 }
 
 .stats div,
@@ -76,7 +76,7 @@ button {
 .row {
   display: grid !important;
   grid-template-columns: repeat(6, 1fr) !important;
-  gap: 1rem !important;
+  gap: 1.5rem !important;
   width: 100% !important;
 }
 
@@ -119,12 +119,12 @@ button {
   }
 
   .gameTitle {
-    font-size: 1rem !important;
+    font-size: 1.5rem !important;
   }
 
   .row {
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1rem !important;
+    gap: 1.5rem !important;
   }
 }
 
