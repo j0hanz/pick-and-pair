@@ -19,7 +19,7 @@ const Card = memo(({ card, index, clickHandler }) => {
         loading="lazy"
         fluid
       />
-      {!imageLoaded && <div className={styles.loader}>Loading...</div>}
+      {!imageLoaded && <div className={styles.loader}></div>}
     </div>
   );
 });
