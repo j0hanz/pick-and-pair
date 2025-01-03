@@ -6,6 +6,7 @@ import Timer from './Timer';
 import Score from './Score';
 import { shuffleCards } from '../utils/shuffleCards';
 import { useGameLogic } from '../hooks/useGameLogic';
+import { Row, Col, Button } from 'react-bootstrap';
 
 export default function Cards() {
   const [cards, setCards] = useState(() => shuffleCards(initialCards));
@@ -66,22 +67,22 @@ export default function Cards() {
           setIsGameOver={setIsGameOver}
           setTimeLeft={setTimeLeft}
         />
-        <button onClick={resetGameWithTimer} className={styles.button}>
+        <Button onClick={resetGameWithTimer} className={styles.button}>
           Reset Game
-        </button>
+        </Button>
         <Score matchedPairs={matchedPairs} />
       </div>
-      <div className={styles.row}>
+      <Row className={styles.row}>
         {cards.map((card, index) => (
-          <div className="col-6 col-md-4 col-lg-3" key={index}>
+          <Col xs={6} md={4} lg={3} key={index}>
             <Card
               card={card}
               index={index}
               clickHandler={isInitialFlip ? null : handleCardSelection}
             />
-          </div>
+          </Col>
         ))}
-      </div>
+      </Row>
     </div>
   );
 }
