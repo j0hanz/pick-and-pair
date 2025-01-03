@@ -1,43 +1,36 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { formatTime } from '../utils/formatTime';
 
-export default function Timer({
-  resetTrigger,
-  isGameComplete,
-  timeLimit = 120,
-  setIsGameOver,
-  setTimeLeft,
-}) {
-  const [time, setTime] = useState(0);
+export default function Timer({ resetTrigger, isGameOver, setTimeLeft }) {
+  const [time, setTime] = useState(60);
   const timerRef = useRef(null);
 
-  const startTimer = useCallback(() => {
-    if (timerRef.current) clearInterval(timerRef.current);
+  useEffect(() => {
+    if (isGameOver) return clearInterval(timerRef.current);
+
     timerRef.current = setInterval(() => {
       setTime((prevTime) => {
-        if (prevTime >= timeLimit || isGameComplete) {
+        if (prevTime <= 1) {
           clearInterval(timerRef.current);
-          setIsGameOver(true);
-          return prevTime;
+          return 0;
         }
-        return prevTime + 1;
+        return prevTime - 1;
       });
     }, 1000);
-  }, [timeLimit, isGameComplete, setIsGameOver]);
 
-  useEffect(() => {
-    if (isGameComplete || time >= timeLimit) return;
-    startTimer();
     return () => clearInterval(timerRef.current);
-  }, [isGameComplete, time, timeLimit, startTimer]);
+  }, [isGameOver]);
 
   useEffect(() => {
     if (resetTrigger) {
-      setTime(0);
-      setTimeLeft(timeLimit);
-      startTimer();
+      setTime(60);
+      setTimeLeft(60);
     }
-  }, [resetTrigger, timeLimit, startTimer, setTimeLeft]);
+  }, [resetTrigger, setTimeLeft]);
+
+  useEffect(() => {
+    return () => clearInterval(timerRef.current);
+  }, []);
 
   return <div>Time: {formatTime(time)}</div>;
 }
