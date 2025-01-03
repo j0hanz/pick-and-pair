@@ -1,12 +1,12 @@
 /* Import fonts and variables */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import './variables.module.css';
 
 /* General styles */
 body {
   margin: 0 !important;
   padding: 0 !important;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Roboto', sans-serif !important;
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
   display: flex !important;
@@ -14,6 +14,7 @@ body {
   justify-content: center !important;
   align-items: center !important;
   min-height: 100vh !important;
+  letter-spacing: 3px !important;
 }
 
 .App {
@@ -21,19 +22,14 @@ body {
   margin: 0 auto !important;
 }
 
-.AppHeader,
-h1 {
+.AppHeader {
   text-align: center !important;
-}
-
-.gameTitle,
-h1 {
-  color: var(--highlight-color) !important;
-  text-shadow: 0 0 15px rgba(255, 111, 97, 0.5) !important;
 }
 
 .gameTitle {
   font-size: 4rem !important;
+  color: var(--highlight-color) !important;
+  text-shadow: 0 0 15px rgba(255, 111, 97, 0.5) !important;
 }
 
 /* Stats section */
@@ -57,6 +53,8 @@ h1 {
   background-color: var(--stats-background-color) !important;
   color: var(--stats-text-color) !important;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2) !important;
+  letter-spacing: 1.5px !important;
+  font-size: 1.1rem !important;
 }
 
 .stats button:hover,
