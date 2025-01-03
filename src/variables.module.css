@@ -26,4 +26,10 @@
     #232323c9 50%,
     #181818d8 100%
   );
+  --modal-background: #1a1a1a;
+  --modal-button-primary: #2a2a2a;
+  --modal-button-primary-hover: #0056b3;
+  --modal-button-secondary: #2a2a2a;
+  --modal-button-secondary-hover: #5a6268;
+  --modal-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

@@ -10,29 +10,19 @@ export default function CustomModal({
   children,
 }) {
   return (
-    <Modal show={show} onHide={onClose} centered>
-      <Modal.Body className={styles.modalBody}>
-        <div className={styles.modalTitle}>{title}</div>
-        <div className={styles.modalContent}>{children}</div>
-        <div
-          className={`${styles.modalButtons} d-flex justify-content-between`}
-        >
-          <Button
-            variant="secondary"
-            onClick={onClose}
-            className={styles.modalButton}
-          >
-            Close
-          </Button>
-          <Button
-            variant="primary"
-            onClick={onRestart}
-            className={styles.modalButton}
-          >
-            Restart
-          </Button>
-        </div>
-      </Modal.Body>
+    <Modal show={show} onHide={onClose} centered className={styles.modal}>
+      <Modal.Header closeButton closeVariant="white" className="border-0">
+        <Modal.Title>{title}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>{children}</Modal.Body>
+      <Modal.Footer className="border-0">
+        <Button variant="secondary" onClick={onClose}>
+          Close
+        </Button>
+        <Button variant="primary" onClick={onRestart}>
+          Restart
+        </Button>
+      </Modal.Footer>
     </Modal>
   );
 }
