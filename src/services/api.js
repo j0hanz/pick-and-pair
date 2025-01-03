@@ -7,6 +7,7 @@ export const fetchScores = async () => {
     return response.json();
   } catch (error) {
     console.error(error);
+    alert('Error fetching scores. Please try again later.');
     return [];
   }
 };
@@ -23,5 +24,6 @@ export const submitScore = async (score) => {
     }
   } catch (error) {
     console.error(error);
+    alert('Error submitting score. Please try again later.');
   }
 };
