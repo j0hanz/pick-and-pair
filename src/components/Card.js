@@ -4,11 +4,18 @@ import styles from './styles/Card.module.css';
 
 const Card = memo(({ card, index, clickHandler }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const cardClassName = `${styles.card} ${card.status ? styles.active : ''} ${card.status === 'active matched' ? styles.matched : ''} ${!imageLoaded ? styles.loading : ''}`;
+
+  const getCardClassName = () => {
+    let className = styles.card;
+    if (card.status) className += ` ${styles.active}`;
+    if (card.status === 'active matched') className += ` ${styles.matched}`;
+    if (!imageLoaded) className += ` ${styles.loading}`;
+    return className;
+  };
 
   return (
     <div
-      className={cardClassName}
+      className={getCardClassName()}
       onClick={() => imageLoaded && clickHandler(index)}
       role="button"
       aria-label={`Card ${card.name}`}
