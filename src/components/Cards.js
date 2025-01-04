@@ -2,7 +2,7 @@ import React, { useState, useRef, useTransition, useEffect } from 'react';
 import Card from './Card';
 import { initialCards } from '../data/cardData';
 import styles from '../App.module.css';
-import Timer from './Timer';
+// import Timer from './Timer'; // Removed Timer import
 import Score from './Score';
 import { shuffleCards } from '../utils/shuffleCards';
 import { useGameLogic } from '../hooks/useGameLogic';
@@ -16,8 +16,7 @@ export default function Cards({ onRestart }) {
   const previousIndex = useRef(null);
   const [resetTrigger, setResetTrigger] = useState(false);
   const [, startTransition] = useTransition();
-  const [timeLeft, setTimeLeft] = useState(60);
-  const [isGameOver, setIsGameOver] = useState(false);
+  // const [timeLeft, setTimeLeft] = useState(60); // Removed timeLeft state
   const [isInitialFlip, setIsInitialFlip] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
@@ -33,24 +32,16 @@ export default function Cards({ onRestart }) {
     resetTrigger,
     setResetTrigger,
     startTransition,
-    setIsGameOver,
-    setTimeLeft,
   });
 
   useEffect(() => {
     if (matchedPairs === initialCards.length / 2) {
-      setIsGameOver(true);
       setModalMessage('Congratulations! You matched all cards!');
       setShowModal(true);
     }
   }, [matchedPairs]);
 
-  useEffect(() => {
-    if (isGameOver && timeLeft === 0) {
-      setModalMessage('Time is up! Game over.');
-      setShowModal(true);
-    }
-  }, [isGameOver, timeLeft]);
+  // Removed useEffect for timeLeft and isGameOver
 
   useEffect(() => {
     // Flip all cards initially
@@ -72,13 +63,7 @@ export default function Cards({ onRestart }) {
   return (
     <div className={styles.container}>
       <div className={`${styles.stats} mb-3`}>
-        <Timer
-          resetTrigger={resetTrigger}
-          isGameComplete={isGameOver}
-          timeLimit={timeLeft}
-          setIsGameOver={setIsGameOver}
-          setTimeLeft={setTimeLeft}
-        />
+        {/* Removed Timer component */}
         <Button onClick={resetGameWithTimer} className={styles.button}>
           Reset Game
         </Button>

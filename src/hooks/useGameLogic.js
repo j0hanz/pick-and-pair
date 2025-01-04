@@ -25,7 +25,6 @@ export function useGameLogic({
   setResetTrigger,
   startTransition,
   setIsGameOver,
-  setTimeLeft,
 }) {
   const totalPairs = initialCards.length / 2;
 
@@ -52,7 +51,6 @@ export function useGameLogic({
   const resetGameWithTimer = useCallback(() => {
     console.log('Resetting game with timer');
     setIsGameOver(false);
-    setTimeLeft(60);
     setCards(getShuffledCardsWithStatus('active'));
     const timer = setTimeout(() => {
       console.log('Flipping cards status after timer');
@@ -60,7 +58,7 @@ export function useGameLogic({
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [setIsGameOver, setTimeLeft, setCards]);
+  }, [setIsGameOver, setCards]);
 
   // Handles card selection
   const handleCardSelection = useCallback(
