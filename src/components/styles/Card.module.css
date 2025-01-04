@@ -11,6 +11,8 @@
   box-shadow: 0 6px 12px var(--color-card-shadow);
   width: 100% !important;
   min-height: 9rem;
+  min-width: 4rem;
+  margin-bottom: 2rem;
 }
 
 .card img {
