@@ -34,24 +34,20 @@ export default function App() {
   }, []);
 
   return (
-    <div className={styles.App}>
-      <header className={styles.AppHeader}>
-        <Container>
-          {isGameActive ? (
-            <GameLogic
-              onRestart={handleRestart}
-              onExit={handleExit}
-              difficulty={difficulty}
-            />
-          ) : showDifficultyButtons ? (
-            <DifficultyButtons onSelectDifficulty={startGame} />
-          ) : (
-            <Button onClick={showDifficultySelection} className={styles.button}>
-              Start Game
-            </Button>
-          )}
-        </Container>
-      </header>
-    </div>
+    <Container>
+      {isGameActive ? (
+        <GameLogic
+          onRestart={handleRestart}
+          onExit={handleExit}
+          difficulty={difficulty}
+        />
+      ) : showDifficultyButtons ? (
+        <DifficultyButtons onSelectDifficulty={startGame} />
+      ) : (
+        <Button onClick={showDifficultySelection} className={styles.button}>
+          Start Game
+        </Button>
+      )}
+    </Container>
   );
 }
