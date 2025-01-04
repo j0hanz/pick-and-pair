@@ -123,6 +123,7 @@ export default function GameLogic({ onRestart, difficulty }) {
           show={showModal}
           onClose={() => setShowModal(false)}
           onRestart={handleRestart}
+          backdrop="static"
         >
           {modalMessage}
         </Modal>
@@ -146,6 +147,7 @@ export default function GameLogic({ onRestart, difficulty }) {
             show={showModal}
             onClose={() => setShowModal(false)}
             onRestart={handleRestart}
+            backdrop="static"
           >
             {modalMessage}
           </Modal>
