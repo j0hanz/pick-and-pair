@@ -62,20 +62,20 @@
 }
 
 .card:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   box-shadow: 0 10px 20px var(--color-card-shadow-hover);
 }
 
 .card.active {
   transform: rotateY(180deg);
-  box-shadow: 0 0 12px 6px var(--color-card-shadow-active);
+  box-shadow: 0 0 8px 3px var(--color-card-shadow-active);
   transition:
     transform 0.6s ease,
     box-shadow 0.6s ease;
 }
 
 .card.matched {
-  box-shadow: 0 0 12px 6px var(--color-card-shadow-matched);
+  box-shadow: 0 0 8px 3px var(--color-card-shadow-matched);
   transition: box-shadow 0.6s ease;
 }
 
