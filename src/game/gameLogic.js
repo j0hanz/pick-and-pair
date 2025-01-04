@@ -92,14 +92,13 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
         </Modal>
       ) : (
         <>
-          <div className={`${styles.stats} mb-3`}>
-            <Score matchedPairs={matchedPairs} />
-            <Timer initialTime={60} onTimeUp={() => setIsGameOver(true)} />
-          </div>
           <Cards
             cards={cards}
             isInitialFlip={isInitialFlip}
             handleCardSelection={handleCardSelection}
+            matchedPairs={matchedPairs}
+            initialTime={60}
+            onTimeUp={() => setIsGameOver(true)}
           />
           <Modal
             show={showModal}
