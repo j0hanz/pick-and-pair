@@ -9,16 +9,16 @@ export const getTotalPairs = (difficulty) => {
 // Renders difficulty buttons
 export function DifficultyButtons({ onSelectDifficulty }) {
   return (
-    <div>
+    <div className="d-flex justify-content-center gap-3">
       <Button
         onClick={() => onSelectDifficulty('easy')}
-        className={styles.button}
+        className={styles.difficultyButton}
       >
         Easy
       </Button>
       <Button
         onClick={() => onSelectDifficulty('hard')}
-        className={styles.button}
+        className={styles.difficultyButton}
       >
         Hard
       </Button>
