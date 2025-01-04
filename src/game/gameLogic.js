@@ -5,6 +5,8 @@ import { useGameLogic } from '../hooks/useGameLogic';
 import Cards from '../components/Cards';
 import Score from '../components/Score';
 import Modal from '../components/Modal';
+import Timer from '../components/Timer';
+import { handleTimeUp } from './timerLogic';
 import styles from '../App.module.css';
 import { Row } from 'react-bootstrap';
 import { getTotalPairs } from './difficultyLogic';
@@ -48,6 +50,7 @@ export default function GameLogic({ onRestart, difficulty }) {
   );
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [matchedPairs, setMatchedPairs] = useState(0);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   // Reference to keep track of the previously clicked card’s index
   const previousIndex = useRef(null);
@@ -71,7 +74,7 @@ export default function GameLogic({ onRestart, difficulty }) {
     matchedPairs,
     setMatchedPairs,
     previousIndex,
-    startTransition,
+    setIsGameOver,
     difficulty,
   });
 
@@ -81,10 +84,19 @@ export default function GameLogic({ onRestart, difficulty }) {
   // Show modal once all pairs are matched
   useCheckAllMatched(matchedPairs, totalPairs, setModalMessage, setShowModal);
 
+  // Handle game over when time runs out
+  useEffect(() => {
+    if (isGameOver) {
+      setModalMessage('Game Over! Better luck next time.');
+      setShowModal(true);
+    }
+  }, [isGameOver]);
+
   return (
     <div className={styles.container}>
       <div className={`${styles.stats} mb-3`}>
         <Score matchedPairs={matchedPairs} />
+        <Timer initialTime={60} onTimeUp={() => handleTimeUp(setIsGameOver)} />
       </div>
       <Row className={styles.row}>
         <Cards
