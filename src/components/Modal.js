@@ -12,11 +12,14 @@ function CustomModalHeader({ title }) {
 }
 
 // Footer with close and restart buttons
-function CustomModalFooter({ onRestart }) {
+function CustomModalFooter({ onRestart, onExit }) {
   return (
     <Modal.Footer className="border-0">
       <Button variant="primary" onClick={onRestart}>
         Restart
+      </Button>
+      <Button variant="secondary" onClick={onExit}>
+        Exit
       </Button>
     </Modal.Footer>
   );
@@ -27,6 +30,7 @@ export default function CustomModal({
   show,
   onClose,
   onRestart,
+  onExit,
   title,
   children,
 }) {
@@ -40,7 +44,7 @@ export default function CustomModal({
     >
       <CustomModalHeader title={title} onClose={onClose} />
       <Modal.Body>{children}</Modal.Body>
-      <CustomModalFooter onClose={onClose} onRestart={onRestart} />
+      <CustomModalFooter onRestart={onRestart} onExit={onExit} />
     </Modal>
   );
 }
