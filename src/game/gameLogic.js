@@ -62,7 +62,7 @@ function useHandleGameOver(
   }, [isGameOver, matchedPairs, totalPairs, setModalMessage, setShowModal]);
 }
 
-export default function GameLogic({ onRestart, difficulty }) {
+export default function GameLogic({ onRestart, onExit, difficulty }) {
   const [cards, setCards] = useState(() =>
     shuffleCards(generateCards(difficulty))
   );
@@ -123,6 +123,7 @@ export default function GameLogic({ onRestart, difficulty }) {
           show={showModal}
           onClose={() => setShowModal(false)}
           onRestart={handleRestart}
+          onExit={onExit}
           backdrop="static"
         >
           {modalMessage}
@@ -147,6 +148,7 @@ export default function GameLogic({ onRestart, difficulty }) {
             show={showModal}
             onClose={() => setShowModal(false)}
             onRestart={handleRestart}
+            onExit={onExit}
             backdrop="static"
           >
             {modalMessage}
