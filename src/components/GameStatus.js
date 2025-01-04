@@ -7,19 +7,24 @@ export default function GameStatus({ onRestart, onExit }) {
   const [modalTitle, setModalTitle] = useState('');
   const [modalMessage, setModalMessage] = useState('');
 
+  // Handle game over scenario
   const handleGameOver = () => {
     setModalTitle('Game Over');
     setModalMessage(gameOverMessage);
     setShowModal(true);
   };
 
+  // Handle victory scenario
   const handleVictory = () => {
     setModalTitle('Victory');
     setModalMessage(victoryMessage);
     setShowModal(true);
   };
 
+  // Close the modal
   const handleClose = () => setShowModal(false);
+
+  // Restart the game
   const handleRestart = () => {
     onRestart();
     setShowModal(false);
