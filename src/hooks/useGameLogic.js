@@ -1,5 +1,6 @@
 import { useCallback, useEffect } from 'react';
 import { clickHandler } from '../utils/clickHandler';
+import { getTotalPairs } from '../game/difficultyLogic';
 
 export function useGameLogic({
   cards,
@@ -12,7 +13,7 @@ export function useGameLogic({
   setIsGameOver,
   difficulty,
 }) {
-  const totalPairs = difficulty === 'hard' ? 10 : 6;
+  const totalPairs = getTotalPairs(difficulty);
 
   // Handles card selection
   const handleCardSelection = useCallback(
