@@ -3,26 +3,30 @@ import styles from './styles/Timer.module.css';
 
 // Custom hook for countdown
 function useCountdown(initialTime, onTimeUp) {
-  const [time, setTime] = useState(initialTime);
+  const [remainingTime, setRemainingTime] = useState(initialTime);
 
   useEffect(() => {
-    if (time === 0) {
+    // If time is up, call the onTimeUp callback
+    if (remainingTime === 0) {
       onTimeUp();
       return;
     }
 
+    // Decrement the remaining time every second
     const timerId = setInterval(() => {
-      setTime((prev) => prev - 1);
+      setRemainingTime((prevTime) => prevTime - 1);
     }, 1000);
 
+    // Cleanup interval on component unmount or when remainingTime changes
     return () => clearInterval(timerId);
-  }, [time, onTimeUp]);
+  }, [remainingTime, onTimeUp]);
 
-  return time;
+  return remainingTime;
 }
 
 export default function Timer({ initialTime, onTimeUp }) {
-  const time = useCountdown(initialTime, onTimeUp);
+  // Use the custom countdown hook
+  const remainingTime = useCountdown(initialTime, onTimeUp);
 
-  return <div className={styles.timer}>Time Remaining: {time} seconds</div>;
+  return <div className={styles.timer}>Time left: {remainingTime}</div>;
 }
