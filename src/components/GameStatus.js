@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
-import gameOverMessage from '../data/GameOver';
-import victoryMessage from '../data/Victory';
+import { gameOverMessage, victoryMessage } from '../data/messages';
 
 export default function GameStatus({ onRestart, onExit }) {
   const [showModal, setShowModal] = useState(false);
