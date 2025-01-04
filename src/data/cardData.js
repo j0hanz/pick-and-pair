@@ -8,6 +8,7 @@ import img07 from '../assets/img/07.webp';
 import img08 from '../assets/img/08.webp';
 import img09 from '../assets/img/09.webp';
 import img10 from '../assets/img/10.webp';
+import { getTotalPairs } from '../game/difficultyLogic';
 
 export const initialCards = [
   { id: 0, pairId: 0, name: 'Bacon', img: img01 },
@@ -33,7 +34,7 @@ export const initialCards = [
 ].map((card) => ({ ...card, status: '' }));
 
 export const generateCards = (difficulty) => {
-  const totalPairs = difficulty === 'hard' ? 10 : 6;
+  const totalPairs = getTotalPairs(difficulty);
   const images = [
     img01,
     img02,
