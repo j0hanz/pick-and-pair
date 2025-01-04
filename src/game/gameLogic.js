@@ -109,13 +109,20 @@ export default function GameLogic({ onRestart, difficulty }) {
     setShowModal
   );
 
+  const handleRestart = () => {
+    setIsGameOver(false);
+    setShowModal(false);
+    setModalMessage('');
+    onRestart();
+  };
+
   return (
     <div className={styles.container}>
       {isGameOver ? (
         <Modal
           show={showModal}
           onClose={() => setShowModal(false)}
-          onRestart={onRestart}
+          onRestart={handleRestart}
         >
           {modalMessage}
         </Modal>
@@ -138,7 +145,7 @@ export default function GameLogic({ onRestart, difficulty }) {
           <Modal
             show={showModal}
             onClose={() => setShowModal(false)}
-            onRestart={onRestart}
+            onRestart={handleRestart}
           >
             {modalMessage}
           </Modal>
