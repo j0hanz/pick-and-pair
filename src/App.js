@@ -3,25 +3,29 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Button } from 'react-bootstrap';
 import styles from './App.module.css';
 import GameLogic from './game/gameLogic';
+import { DifficultyButtons } from './game/difficultyLogic';
 
-function App() {
+// Main app component
+export default function App() {
   const [isGameActive, setIsGameActive] = useState(false);
   const [difficulty, setDifficulty] = useState(null);
   const [showDifficultyButtons, setShowDifficultyButtons] = useState(false);
 
-  const startGame = (selectedDifficulty) => {
+  // Start game with selected difficulty
+  const startGame = useCallback((selectedDifficulty) => {
     setDifficulty(selectedDifficulty);
     setIsGameActive(true);
-  };
+  }, []);
 
-  const showDifficultySelection = () => {
+  // Show difficulty options
+  const showDifficultySelection = useCallback(() => {
     setShowDifficultyButtons(true);
-  };
+  }, []);
 
-  const toggleGame = useCallback(() => {
+  // Restart game
+  const handleRestart = useCallback(() => {
     setIsGameActive(false);
-    setDifficulty(null);
-    setShowDifficultyButtons(false);
+    setShowDifficultyButtons(true);
   }, []);
 
   return (
@@ -29,22 +33,9 @@ function App() {
       <header className={styles.AppHeader}>
         <Container className={styles.container}>
           {isGameActive ? (
-            <GameLogic onRestart={toggleGame} difficulty={difficulty} />
+            <GameLogic onRestart={handleRestart} difficulty={difficulty} />
           ) : showDifficultyButtons ? (
-            <div>
-              <Button
-                onClick={() => startGame('easy')}
-                className={styles.button}
-              >
-                Easy
-              </Button>
-              <Button
-                onClick={() => startGame('hard')}
-                className={styles.button}
-              >
-                Hard
-              </Button>
-            </div>
+            <DifficultyButtons onSelectDifficulty={startGame} />
           ) : (
             <Button onClick={showDifficultySelection} className={styles.button}>
               Start Game
@@ -55,5 +46,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
