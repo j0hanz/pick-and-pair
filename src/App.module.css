@@ -70,6 +70,19 @@ button {
   transition: background-color 0.5s ease !important;
 }
 
+.difficultyButton {
+  background-color: var(--button-primary) !important;
+  color: var(--color-white) !important;
+  width: 5rem !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 1.5px !important;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.difficultyButton:hover {
+  background-color: var(--button-hover-color) !important;
+}
+
 .row {
   display: flex !important;
   justify-content: space-between !important;
