@@ -10,6 +10,8 @@ import { handleTimeUp } from './timerLogic';
 import styles from '../App.module.css';
 import { Row } from 'react-bootstrap';
 import { getTotalPairs } from './difficultyLogic';
+import victoryMessage from '../data/Victory';
+import gameOverMessage from '../data/GameOver';
 
 // Flip all cards face up initially, then face down after a delay
 function useInitialFlip(setCards, setIsInitialFlip) {
@@ -34,14 +36,16 @@ function useCheckAllMatched(
   matchedPairs,
   totalPairs,
   setModalMessage,
-  setShowModal
+  setShowModal,
+  setIsGameOver
 ) {
   useEffect(() => {
     if (matchedPairs === totalPairs) {
-      setModalMessage('Congratulations! You matched all cards!');
+      setModalMessage(victoryMessage);
       setShowModal(true);
+      setIsGameOver(true);
     }
-  }, [matchedPairs, totalPairs, setModalMessage, setShowModal]);
+  }, [matchedPairs, totalPairs, setModalMessage, setShowModal, setIsGameOver]);
 }
 
 export default function GameLogic({ onRestart, difficulty }) {
@@ -82,15 +86,21 @@ export default function GameLogic({ onRestart, difficulty }) {
   useInitialFlip(setCards, setIsInitialFlip);
 
   // Show modal once all pairs are matched
-  useCheckAllMatched(matchedPairs, totalPairs, setModalMessage, setShowModal);
+  useCheckAllMatched(
+    matchedPairs,
+    totalPairs,
+    setModalMessage,
+    setShowModal,
+    setIsGameOver
+  );
 
   // Handle game over when time runs out
   useEffect(() => {
-    if (isGameOver) {
-      setModalMessage('Game Over! Better luck next time.');
+    if (isGameOver && matchedPairs !== totalPairs) {
+      setModalMessage(gameOverMessage);
       setShowModal(true);
     }
-  }, [isGameOver]);
+  }, [isGameOver, matchedPairs, totalPairs]);
 
   return (
     <div className={styles.container}>
