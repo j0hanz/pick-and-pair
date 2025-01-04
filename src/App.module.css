@@ -16,15 +16,6 @@ body {
   min-height: 100vh !important;
 }
 
-.App {
-  max-width: 100% !important;
-  margin: 0 auto !important;
-}
-
-.AppHeader {
-  text-align: center !important;
-}
-
 .gameTitle {
   font-size: 4rem !important;
   color: var(--highlight-color) !important;
