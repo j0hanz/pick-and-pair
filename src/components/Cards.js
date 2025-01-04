@@ -2,11 +2,10 @@ import React, { useState, useRef, useTransition, useEffect } from 'react';
 import Card from './Card';
 import { initialCards } from '../data/cardData';
 import styles from '../App.module.css';
-// import Timer from './Timer'; // Removed Timer import
 import Score from './Score';
 import { shuffleCards } from '../utils/shuffleCards';
 import { useGameLogic } from '../hooks/useGameLogic';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Modal from './Modal';
 
 export default function Cards({ onRestart }) {
@@ -14,14 +13,12 @@ export default function Cards({ onRestart }) {
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [matchedPairs, setMatchedPairs] = useState(0);
   const previousIndex = useRef(null);
-  const [resetTrigger, setResetTrigger] = useState(false);
   const [, startTransition] = useTransition();
-  // const [timeLeft, setTimeLeft] = useState(60); // Removed timeLeft state
   const [isInitialFlip, setIsInitialFlip] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
 
-  const { resetGameWithTimer, handleCardSelection } = useGameLogic({
+  const { handleCardSelection } = useGameLogic({
     cards,
     setCards,
     selectedCardIndex,
@@ -29,8 +26,6 @@ export default function Cards({ onRestart }) {
     matchedPairs,
     setMatchedPairs,
     previousIndex,
-    resetTrigger,
-    setResetTrigger,
     startTransition,
   });
 
@@ -50,23 +45,19 @@ export default function Cards({ onRestart }) {
     );
 
     // Flip back after 2 seconds
-    const timer = setTimeout(() => {
+    const initialFlipTimer = setTimeout(() => {
       setCards((prevCards) =>
         prevCards.map((card) => ({ ...card, status: '' }))
       );
       setIsInitialFlip(false);
     }, 2000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(initialFlipTimer);
   }, []);
 
   return (
     <div className={styles.container}>
       <div className={`${styles.stats} mb-3`}>
-        {/* Removed Timer component */}
-        <Button onClick={resetGameWithTimer} className={styles.button}>
-          Reset Game
-        </Button>
         <Score matchedPairs={matchedPairs} />
       </div>
       <Row className={styles.row}>
