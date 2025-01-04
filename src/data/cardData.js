@@ -32,13 +32,25 @@ export const initialCards = [
   { id: 19, pairId: 9, name: 'Cookie', img: img10 },
 ].map((card) => ({ ...card, status: '' }));
 
-export const generateCards = () => {
-  const totalPairs = 8; // Default to 8 pairs
+export const generateCards = (difficulty) => {
+  const totalPairs = difficulty === 'hard' ? 10 : 6;
+  const images = [
+    img01,
+    img02,
+    img03,
+    img04,
+    img05,
+    img06,
+    img07,
+    img08,
+    img09,
+    img10,
+  ];
 
   const cards = Array.from({ length: totalPairs }, (_, i) => ({
     id: i * 2,
     pairId: i,
-    img: `/img/card${i + 1}.webp`,
+    img: images[i],
     name: `Card ${i + 1}`,
     status: '',
   }));
