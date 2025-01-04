@@ -1,15 +1,5 @@
 import { handleRightAnswer, handleWrongAnswer } from './feedbackHandler';
 
-/* Helper function to apply a given status to all specified card indices.*/
-function applyCardStatus(cards, indices, status) {
-  indices.forEach((index) => {
-    if (cards[index]) {
-      cards[index].status = status;
-    }
-  });
-}
-
-/* Updates the cards after a match or mismatch (with a brief delay).*/
 function updateCardStatus({
   cards,
   setCards,
@@ -19,6 +9,15 @@ function updateCardStatus({
   onMatch,
   onMismatch,
 }) {
+  // Function to apply status to specified cards
+  function applyCardStatus(cards, indices, status) {
+    indices.forEach((index) => {
+      if (cards[index]) {
+        cards[index].status = status;
+      }
+    });
+  }
+
   setTimeout(() => {
     const currentCard = cards[currentCardIndex];
     const selectedCard = cards[selectedCardIndex];
@@ -38,7 +37,6 @@ function updateCardStatus({
   }, 500);
 }
 
-/* Checks if two cards match, updates their status,and triggers feedback via updateCardStatus. */
 export function matchCheck(
   currentCardIndex,
   cards,
@@ -48,6 +46,15 @@ export function matchCheck(
   onMatch,
   onMismatch
 ) {
+  // Function to apply status to specified cards
+  function applyCardStatus(cards, indices, status) {
+    indices.forEach((index) => {
+      if (cards[index]) {
+        cards[index].status = status;
+      }
+    });
+  }
+
   if (
     currentCardIndex === selectedCardIndex ||
     !cards[currentCardIndex] ||
