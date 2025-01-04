@@ -2,6 +2,27 @@ import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import styles from './styles/Modal.module.css';
 
+// Header with title and close button
+function CustomModalHeader({ title, onClose }) {
+  return (
+    <Modal.Header closeButton closeVariant="white" className="border-0">
+      <Modal.Title>{title}</Modal.Title>
+    </Modal.Header>
+  );
+}
+
+// Footer with close and restart buttons
+function CustomModalFooter({ onClose, onRestart }) {
+  return (
+    <Modal.Footer className="border-0">
+      <Button variant="primary" onClick={onRestart}>
+        Restart
+      </Button>
+    </Modal.Footer>
+  );
+}
+
+// Main modal component
 export default function CustomModal({
   show,
   onClose,
@@ -11,18 +32,9 @@ export default function CustomModal({
 }) {
   return (
     <Modal show={show} onHide={onClose} centered className={styles.modal}>
-      <Modal.Header closeButton closeVariant="white" className="border-0">
-        <Modal.Title>{title}</Modal.Title>
-      </Modal.Header>
+      <CustomModalHeader title={title} onClose={onClose} />
       <Modal.Body>{children}</Modal.Body>
-      <Modal.Footer className="border-0">
-        <Button variant="secondary" onClick={onClose}>
-          Close
-        </Button>
-        <Button variant="primary" onClick={onRestart}>
-          Restart
-        </Button>
-      </Modal.Footer>
+      <CustomModalFooter onClose={onClose} onRestart={onRestart} />
     </Modal>
   );
 }
