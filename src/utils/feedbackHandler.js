@@ -1,41 +1,32 @@
 import '../feedback.css';
 
-// Removes all feedback toasts
-function clearExistingToasts() {
-  console.log('Clearing existing toasts');
-  document
-    .querySelectorAll('.feedback-toast')
-    .forEach((toast) => toast.remove());
-}
+function showFeedback(type, message, duration = 3000, callback) {
+  // Function to clear existing toasts
+  function clearExistingToasts() {
+    document
+      .querySelectorAll('.feedback-toast')
+      .forEach((toast) => toast.remove());
+  }
 
-// Creates and appends a new toast
-function createToastElement(type, message) {
-  console.log(`Creating toast of type: ${type} with message: ${message}`);
-  const feedback = document.createElement('div');
-  feedback.className = `feedback-toast ${type}`;
-  feedback.textContent = message;
-  document.body.appendChild(feedback);
-  return feedback;
-}
-
-// Displays a feedback toast
-export function showFeedback(type, message, duration = 3000, callback) {
-  console.log(
-    `Showing feedback of type: ${type} with message: ${message} for duration: ${duration}`
-  );
   clearExistingToasts();
 
-  const toast = createToastElement(type, message);
+  // Create a new toast element
+  const toast = document.createElement('div');
+  toast.className = `feedback-toast ${type}`;
+  toast.textContent = message;
+  document.body.appendChild(toast);
 
+  // Remove the toast after the specified duration
   setTimeout(() => {
-    console.log('Removing toast');
     toast.remove();
     if (callback) callback();
   }, duration);
 }
 
+// Handle correct answer feedback
 export const handleRightAnswer = (callback) =>
   showFeedback('correct', 'Correct Match!', 3000, callback);
 
+// Handle wrong answer feedback
 export const handleWrongAnswer = (callback) =>
   showFeedback('wrong', 'Wrong Match!', 3000, callback);
