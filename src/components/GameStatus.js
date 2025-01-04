@@ -3,7 +3,7 @@ import Modal from './Modal';
 import gameOverMessage from '../data/GameOver';
 import victoryMessage from '../data/Victory';
 
-export default function GameStatus({ onRestart }) {
+export default function GameStatus({ onRestart, onExit }) {
   const [showModal, setShowModal] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
   const [modalMessage, setModalMessage] = useState('');
@@ -34,6 +34,7 @@ export default function GameStatus({ onRestart }) {
         show={showModal}
         onClose={handleClose}
         onRestart={handleRestart}
+        onExit={onExit}
         title={modalTitle}
         backdrop="static"
       >
