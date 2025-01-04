@@ -1,5 +1,5 @@
 import React, { useState, useRef, useTransition, useEffect } from 'react';
-import { initialCards } from '../data/cardData';
+import { generateCards } from '../data/cardData';
 import { shuffleCards } from '../utils/shuffleCards';
 import { useGameLogic } from '../hooks/useGameLogic';
 import Cards from '../components/Cards';
@@ -8,8 +8,10 @@ import Modal from '../components/Modal';
 import styles from '../App.module.css';
 import { Row } from 'react-bootstrap';
 
-export default function GameLogic({ onRestart }) {
-  const [cards, setCards] = useState(() => shuffleCards(initialCards));
+export default function GameLogic({ onRestart, difficulty }) {
+  const [cards, setCards] = useState(() =>
+    shuffleCards(generateCards(difficulty))
+  );
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [matchedPairs, setMatchedPairs] = useState(0);
   const previousIndex = useRef(null);
@@ -27,14 +29,15 @@ export default function GameLogic({ onRestart }) {
     setMatchedPairs,
     previousIndex,
     startTransition,
+    difficulty,
   });
 
   useEffect(() => {
-    if (matchedPairs === initialCards.length / 2) {
+    if (matchedPairs === (difficulty === 'hard' ? 10 : 6)) {
       setModalMessage('Congratulations! You matched all cards!');
       setShowModal(true);
     }
-  }, [matchedPairs]);
+  }, [matchedPairs, difficulty]);
 
   useEffect(() => {
     setCards((prevCards) =>
