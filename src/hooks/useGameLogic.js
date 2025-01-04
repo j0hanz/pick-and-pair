@@ -1,17 +1,6 @@
 import { useCallback, useEffect } from 'react';
 import { clickHandler } from '../utils/clickHandler';
-import { shuffleCards } from '../utils/shuffleCards';
 import { initialCards } from '../data/cardData';
-
-// Returns shuffled cards with a status
-function getShuffledCardsWithStatus(status) {
-  return shuffleCards(initialCards.map((card) => ({ ...card, status })));
-}
-
-// Updates card status
-function flipCardsStatus(cards, status) {
-  return cards.map((card) => ({ ...card, status }));
-}
 
 export function useGameLogic({
   cards,
@@ -21,44 +10,9 @@ export function useGameLogic({
   matchedPairs,
   setMatchedPairs,
   previousIndex,
-  resetTrigger,
-  setResetTrigger,
-  startTransition,
   setIsGameOver,
 }) {
   const totalPairs = initialCards.length / 2;
-
-  // Resets the game
-  const resetGame = useCallback(() => {
-    console.log('Resetting game');
-    startTransition(() => {
-      setCards(getShuffledCardsWithStatus(''));
-      setSelectedCardIndex(null);
-      setMatchedPairs(0);
-      previousIndex.current = null;
-      setResetTrigger((prev) => !prev);
-    });
-  }, [
-    setCards,
-    setSelectedCardIndex,
-    setMatchedPairs,
-    previousIndex,
-    setResetTrigger,
-    startTransition,
-  ]);
-
-  // Resets the game with a timer
-  const resetGameWithTimer = useCallback(() => {
-    console.log('Resetting game with timer');
-    setIsGameOver(false);
-    setCards(getShuffledCardsWithStatus('active'));
-    const timer = setTimeout(() => {
-      console.log('Flipping cards status after timer');
-      setCards((prevCards) => flipCardsStatus(prevCards, ''));
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, [setIsGameOver, setCards]);
 
   // Handles card selection
   const handleCardSelection = useCallback(
@@ -92,17 +46,7 @@ export function useGameLogic({
     }
   }, [matchedPairs, totalPairs, setIsGameOver]);
 
-  // Resets the game on trigger
-  useEffect(() => {
-    if (resetTrigger) {
-      console.log('Reset trigger activated');
-      resetGame();
-    }
-  }, [resetTrigger, resetGame]);
-
   return {
-    resetGame,
-    resetGameWithTimer,
     handleCardSelection,
   };
 }
