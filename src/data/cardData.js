@@ -32,15 +32,8 @@ export const initialCards = [
   { id: 19, pairId: 9, name: 'Cookie', img: img10 },
 ].map((card) => ({ ...card, status: '' }));
 
-export const generateCards = (difficulty = 'medium') => {
-  const difficulties = {
-    easy: 6,
-    medium: 8,
-    hard: 12,
-  };
-
-  const totalPairs = difficulties[difficulty];
-  if (!totalPairs) return [];
+export const generateCards = () => {
+  const totalPairs = 8; // Default to 8 pairs
 
   const cards = Array.from({ length: totalPairs }, (_, i) => ({
     id: i * 2,
