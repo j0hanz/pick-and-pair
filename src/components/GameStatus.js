@@ -35,6 +35,7 @@ export default function GameStatus({ onRestart }) {
         onClose={handleClose}
         onRestart={handleRestart}
         title={modalTitle}
+        backdrop="static"
       >
         {modalMessage}
       </Modal>
