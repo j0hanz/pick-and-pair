@@ -7,7 +7,6 @@ import Score from '../components/Score';
 import Modal from '../components/Modal';
 import Timer from '../components/Timer';
 import styles from '../App.module.css';
-import { Row } from 'react-bootstrap';
 import { getTotalPairs } from './difficultyLogic';
 import { gameOverMessage, victoryMessage } from '../data/messages';
 
@@ -80,7 +79,7 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
   };
 
   return (
-    <div className={styles.container}>
+    <>
       {isGameOver ? (
         <Modal
           show={showModal}
@@ -97,13 +96,11 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
             <Score matchedPairs={matchedPairs} />
             <Timer initialTime={60} onTimeUp={() => setIsGameOver(true)} />
           </div>
-          <Row className={styles.row}>
-            <Cards
-              cards={cards}
-              isInitialFlip={isInitialFlip}
-              handleCardSelection={handleCardSelection}
-            />
-          </Row>
+          <Cards
+            cards={cards}
+            isInitialFlip={isInitialFlip}
+            handleCardSelection={handleCardSelection}
+          />
           <Modal
             show={showModal}
             onClose={() => setShowModal(false)}
@@ -115,6 +112,6 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
           </Modal>
         </>
       )}
-    </div>
+    </>
   );
 }
