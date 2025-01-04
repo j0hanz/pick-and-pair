@@ -1,5 +1,6 @@
 import React, { memo, useState } from 'react';
 import { Image } from 'react-bootstrap';
+import { HiOutlineQuestionMarkCircle } from 'react-icons/hi';
 import styles from './styles/Card.module.css';
 
 const Card = memo(({ card, index, clickHandler }) => {
@@ -29,6 +30,9 @@ const Card = memo(({ card, index, clickHandler }) => {
       role="button"
       aria-label={`Card ${card.name}`}
     >
+      <div className={styles.back}>
+        <HiOutlineQuestionMarkCircle />
+      </div>
       <Image
         src={card.img}
         alt={card.name}
