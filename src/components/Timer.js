@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import styles from './styles/Timer.module.css';
 
 // Custom hook for countdown
 function useCountdown(initialTime, onTimeUp) {
@@ -28,5 +27,5 @@ export default function Timer({ initialTime, onTimeUp }) {
   // Use the custom countdown hook
   const remainingTime = useCountdown(initialTime, onTimeUp);
 
-  return <div className={styles.timer}>Time left: {remainingTime}</div>;
+  return <div>Time left: {remainingTime}</div>;
 }
