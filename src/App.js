@@ -36,7 +36,7 @@ export default function App() {
   return (
     <div className={styles.App}>
       <header className={styles.AppHeader}>
-        <Container className={styles.container}>
+        <Container>
           {isGameActive ? (
             <GameLogic
               onRestart={handleRestart}
