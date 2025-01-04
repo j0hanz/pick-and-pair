@@ -1,14 +1,24 @@
 import { handleRightAnswer, handleWrongAnswer } from './feedbackHandler';
 
-const updateCardStatus = (
+/* Helper function to apply a given status to all specified card indices.*/
+function applyCardStatus(cards, indices, status) {
+  indices.forEach((index) => {
+    if (cards[index]) {
+      cards[index].status = status;
+    }
+  });
+}
+
+/* Updates the cards after a match or mismatch (with a brief delay).*/
+function updateCardStatus({
   cards,
   setCards,
   currentCardIndex,
   selectedCardIndex,
   isMatch,
   onMatch,
-  onMismatch
-) => {
+  onMismatch,
+}) {
   setTimeout(() => {
     const currentCard = cards[currentCardIndex];
     const selectedCard = cards[selectedCardIndex];
@@ -18,17 +28,18 @@ const updateCardStatus = (
       return;
     }
 
-    if (!isMatch) {
-      currentCard.status = selectedCard.status = '';
+    if (isMatch) {
+      handleRightAnswer(onMatch);
+    } else {
+      applyCardStatus(cards, [currentCardIndex, selectedCardIndex], '');
       setCards([...cards]);
       handleWrongAnswer(onMismatch);
-    } else {
-      handleRightAnswer(onMatch);
     }
   }, 500);
-};
+}
 
-export const matchCheck = (
+/* Checks if two cards match, updates their status,and triggers feedback via updateCardStatus. */
+export function matchCheck(
   currentCardIndex,
   cards,
   setCards,
@@ -36,7 +47,7 @@ export const matchCheck = (
   setSelectedCardIndex,
   onMatch,
   onMismatch
-) => {
+) {
   if (
     currentCardIndex === selectedCardIndex ||
     !cards[currentCardIndex] ||
@@ -45,28 +56,27 @@ export const matchCheck = (
     console.error('Invalid card indices or card data');
     return false;
   }
-
   const updatedCards = [...cards];
+
   const currentCard = updatedCards[currentCardIndex];
   const selectedCard = updatedCards[selectedCardIndex];
-
   const isMatch = currentCard.pairId === selectedCard.pairId;
-
-  currentCard.status = selectedCard.status = isMatch
-    ? 'active matched'
-    : 'active';
-
-  setCards(updatedCards);
-  updateCardStatus(
+  applyCardStatus(
     updatedCards,
+    [currentCardIndex, selectedCardIndex],
+    isMatch ? 'active matched' : 'active'
+  );
+  setCards(updatedCards);
+  updateCardStatus({
+    cards: updatedCards,
     setCards,
     currentCardIndex,
     selectedCardIndex,
     isMatch,
     onMatch,
-    onMismatch
-  );
+    onMismatch,
+  });
   setSelectedCardIndex(null);
 
   return isMatch;
-};
+}
