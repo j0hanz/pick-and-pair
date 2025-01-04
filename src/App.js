@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Button } from 'react-bootstrap';
 import styles from './App.module.css';
@@ -18,11 +18,11 @@ function App() {
     setShowDifficultyButtons(true);
   };
 
-  const toggleGame = () => {
+  const toggleGame = useCallback(() => {
     setIsGameActive(false);
     setDifficulty(null);
     setShowDifficultyButtons(false);
-  };
+  }, []);
 
   return (
     <div className={styles.App}>
