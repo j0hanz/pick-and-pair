@@ -7,6 +7,7 @@ import Score from '../components/Score';
 import Modal from '../components/Modal';
 import styles from '../App.module.css';
 import { Row } from 'react-bootstrap';
+import { getTotalPairs } from './difficultyLogic';
 
 export default function GameLogic({ onRestart, difficulty }) {
   const [cards, setCards] = useState(() =>
@@ -19,6 +20,7 @@ export default function GameLogic({ onRestart, difficulty }) {
   const [isInitialFlip, setIsInitialFlip] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
+  const totalPairs = getTotalPairs(difficulty);
 
   const { handleCardSelection } = useGameLogic({
     cards,
@@ -33,11 +35,11 @@ export default function GameLogic({ onRestart, difficulty }) {
   });
 
   useEffect(() => {
-    if (matchedPairs === (difficulty === 'hard' ? 10 : 6)) {
+    if (matchedPairs === totalPairs) {
       setModalMessage('Congratulations! You matched all cards!');
       setShowModal(true);
     }
-  }, [matchedPairs, difficulty]);
+  }, [matchedPairs, totalPairs]);
 
   useEffect(() => {
     setCards((prevCards) =>
