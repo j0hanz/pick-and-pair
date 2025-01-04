@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Button } from 'react-bootstrap';
 import styles from './App.module.css';
-import Cards from './components/Cards';
+import GameLogic from './game/gameLogic';
 
 function App() {
   const [isGameActive, setIsGameActive] = useState(false);
@@ -14,7 +14,7 @@ function App() {
       <header className={styles.AppHeader}>
         <Container className={styles.container}>
           {isGameActive ? (
-            <Cards onRestart={toggleGame} />
+            <GameLogic onRestart={toggleGame} />
           ) : (
             <Button onClick={toggleGame} className={styles.button}>
               Start Game
