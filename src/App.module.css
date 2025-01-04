@@ -73,7 +73,7 @@ button {
 .row {
   display: flex !important;
   justify-content: space-between !important;
-  gap: 1.75rem !important;
+  gap: 2rem !important;
 }
 
 @keyframes shake {
@@ -98,45 +98,5 @@ button {
   to {
     transform: translateX(0) !important;
     opacity: 1 !important;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 64rem) {
-  .row {
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 1.25rem !important;
-  }
-
-  .card {
-    flex: 1 0 23% !important;
-    max-width: 23% !important;
-  }
-}
-
-@media (max-width: 48rem) {
-  .App {
-    padding: 1.5rem !important;
-  }
-
-  .gameTitle {
-    font-size: 1.5rem !important;
-  }
-
-  .row {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.5rem !important;
-  }
-}
-
-@media (max-width: 30rem) {
-  .row {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.75rem !important;
-  }
-
-  .card {
-    min-width: 6.25rem !important;
-    min-height: 6.25rem !important;
   }
 }
