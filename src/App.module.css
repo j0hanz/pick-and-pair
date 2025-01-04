@@ -14,7 +14,6 @@ body {
   justify-content: center !important;
   align-items: center !important;
   min-height: 100vh !important;
-  letter-spacing: 3px !important;
 }
 
 .App {
@@ -42,7 +41,8 @@ body {
 
 .stats div,
 .stats button,
-.button {
+.button,
+.difficultyButton {
   text-align: center !important;
   display: flex !important;
   justify-content: center !important;
@@ -50,7 +50,7 @@ body {
   flex: 1 !important;
   height: 3.5rem !important;
   border-radius: 10px !important;
-  background-color: var(--stats-background-color) !important;
+  background-color: var(--button-primary) !important;
   color: var(--stats-text-color) !important;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2) !important;
   letter-spacing: 1.5px !important;
@@ -58,8 +58,9 @@ body {
 }
 
 .stats button:hover,
-.button:hover {
-  background-color: var(--button-hover-color) !important;
+.button:hover,
+.difficultyButton:hover {
+  background-color: var(--button-primary-hover) !important;
 }
 
 /* Buttons */
@@ -68,19 +69,6 @@ button {
   cursor: pointer !important;
   color: var(--color-white) !important;
   transition: background-color 0.5s ease !important;
-}
-
-.difficultyButton {
-  background-color: var(--button-primary) !important;
-  color: var(--color-white) !important;
-  width: 5rem !important;
-  font-size: 1.1rem !important;
-  letter-spacing: 1.5px !important;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2) !important;
-}
-
-.difficultyButton:hover {
-  background-color: var(--button-hover-color) !important;
 }
 
 .row {
