@@ -36,28 +36,26 @@ body {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  gap: 2rem !important;
+  font-size: 1.2rem !important;
+  color: var(--text-color) !important;
+  margin: 0.5rem 0 !important;
 }
 
-.stats div,
-.stats button,
 .button,
 .difficultyButton {
-  text-align: center !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   flex: 1 !important;
-  height: 3.5rem !important;
+  height: 3rem !important;
   border-radius: 10px !important;
   background-color: var(--button-primary) !important;
-  color: var(--stats-text-color) !important;
+  color: var(--text-color) !important;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2) !important;
   letter-spacing: 1.5px !important;
   font-size: 1.1rem !important;
 }
 
-.stats button:hover,
 .button:hover,
 .difficultyButton:hover {
   background-color: var(--button-primary-hover) !important;
@@ -69,12 +67,6 @@ button {
   cursor: pointer !important;
   color: var(--color-white) !important;
   transition: background-color 0.5s ease !important;
-}
-
-.row {
-  display: flex !important;
-  justify-content: space-between !important;
-  gap: 2rem !important;
 }
 
 @keyframes shake {
