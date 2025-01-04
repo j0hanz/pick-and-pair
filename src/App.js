@@ -6,17 +6,47 @@ import GameLogic from './game/gameLogic';
 
 function App() {
   const [isGameActive, setIsGameActive] = useState(false);
+  const [difficulty, setDifficulty] = useState(null);
+  const [showDifficultyButtons, setShowDifficultyButtons] = useState(false);
 
-  const toggleGame = () => setIsGameActive((prev) => !prev);
+  const startGame = (selectedDifficulty) => {
+    setDifficulty(selectedDifficulty);
+    setIsGameActive(true);
+  };
+
+  const showDifficultySelection = () => {
+    setShowDifficultyButtons(true);
+  };
+
+  const toggleGame = () => {
+    setIsGameActive(false);
+    setDifficulty(null);
+    setShowDifficultyButtons(false);
+  };
 
   return (
     <div className={styles.App}>
       <header className={styles.AppHeader}>
         <Container className={styles.container}>
           {isGameActive ? (
-            <GameLogic onRestart={toggleGame} />
+            <GameLogic onRestart={toggleGame} difficulty={difficulty} />
+          ) : showDifficultyButtons ? (
+            <div>
+              <Button
+                onClick={() => startGame('easy')}
+                className={styles.button}
+              >
+                Easy
+              </Button>
+              <Button
+                onClick={() => startGame('hard')}
+                className={styles.button}
+              >
+                Hard
+              </Button>
+            </div>
           ) : (
-            <Button onClick={toggleGame} className={styles.button}>
+            <Button onClick={showDifficultySelection} className={styles.button}>
               Start Game
             </Button>
           )}
