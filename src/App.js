@@ -28,12 +28,21 @@ export default function App() {
     setShowDifficultyButtons(true);
   }, []);
 
+  const handleExit = useCallback(() => {
+    setIsGameActive(false);
+    setShowDifficultyButtons(false);
+  }, []);
+
   return (
     <div className={styles.App}>
       <header className={styles.AppHeader}>
         <Container className={styles.container}>
           {isGameActive ? (
-            <GameLogic onRestart={handleRestart} difficulty={difficulty} />
+            <GameLogic
+              onRestart={handleRestart}
+              onExit={handleExit}
+              difficulty={difficulty}
+            />
           ) : showDifficultyButtons ? (
             <DifficultyButtons onSelectDifficulty={startGame} />
           ) : (
