@@ -10,51 +10,60 @@ import img09 from '../assets/img/09.webp';
 import img10 from '../assets/img/10.webp';
 import { getTotalPairs } from '../game/difficultyLogic';
 
-export const initialCards = [
-  { id: 0, pairId: 0, name: 'Bacon', img: img01 },
-  { id: 1, pairId: 0, name: 'Bacon', img: img01 },
-  { id: 2, pairId: 1, name: 'Popcorn', img: img02 },
-  { id: 3, pairId: 1, name: 'Popcorn', img: img02 },
-  { id: 4, pairId: 2, name: 'Dragon', img: img03 },
-  { id: 5, pairId: 2, name: 'Dragon', img: img03 },
-  { id: 6, pairId: 3, name: 'Toy', img: img04 },
-  { id: 7, pairId: 3, name: 'Toy', img: img04 },
-  { id: 8, pairId: 4, name: 'Tea', img: img05 },
-  { id: 9, pairId: 4, name: 'Tea', img: img05 },
-  { id: 10, pairId: 5, name: 'Monkey', img: img06 },
-  { id: 11, pairId: 5, name: 'Monkey', img: img06 },
-  { id: 12, pairId: 6, name: 'Coffee', img: img07 },
-  { id: 13, pairId: 6, name: 'Coffee', img: img07 },
-  { id: 14, pairId: 7, name: 'Cake', img: img08 },
-  { id: 15, pairId: 7, name: 'Cake', img: img08 },
-  { id: 16, pairId: 8, name: 'Candy', img: img09 },
-  { id: 17, pairId: 8, name: 'Candy', img: img09 },
-  { id: 18, pairId: 9, name: 'Cookie', img: img10 },
-  { id: 19, pairId: 9, name: 'Cookie', img: img10 },
-].map((card) => ({ ...card, status: '' }));
+// List of all images
+const imageAssets = [
+  img01,
+  img02,
+  img03,
+  img04,
+  img05,
+  img06,
+  img07,
+  img08,
+  img09,
+  img10,
+];
 
-export const generateCards = (difficulty) => {
+// Create pairs of cards
+function createPairedCards(defs) {
+  return defs.flatMap((def, index) => [
+    { ...def, id: index * 2 },
+    { ...def, id: index * 2 + 1 },
+  ]);
+}
+
+// Default set of 20 cards (10 pairs)
+export const initialCards = createPairedCards([
+  { pairId: 0, name: 'Bacon', img: img01, status: '' },
+  { pairId: 1, name: 'Popcorn', img: img02, status: '' },
+  { pairId: 2, name: 'Dragon', img: img03, status: '' },
+  { pairId: 3, name: 'Toy', img: img04, status: '' },
+  { pairId: 4, name: 'Tea', img: img05, status: '' },
+  { pairId: 5, name: 'Monkey', img: img06, status: '' },
+  { pairId: 6, name: 'Coffee', img: img07, status: '' },
+  { pairId: 7, name: 'Cake', img: img08, status: '' },
+  { pairId: 8, name: 'Candy', img: img09, status: '' },
+  { pairId: 9, name: 'Cookie', img: img10, status: '' },
+]);
+
+// Generate cards based on difficulty
+export function generateCards(difficulty) {
   const totalPairs = getTotalPairs(difficulty);
-  const images = [
-    img01,
-    img02,
-    img03,
-    img04,
-    img05,
-    img06,
-    img07,
-    img08,
-    img09,
-    img10,
-  ];
+  if (!totalPairs) return [];
 
-  const cards = Array.from({ length: totalPairs }, (_, i) => ({
-    id: i * 2,
+  // Create base cards
+  const baseCards = Array.from({ length: totalPairs }, (_, i) => ({
     pairId: i,
-    img: images[i],
     name: `Card ${i + 1}`,
+    img: imageAssets[i],
     status: '',
   }));
 
-  return [...cards, ...cards.map((card) => ({ ...card, id: card.id + 1 }))];
-};
+  // Duplicate cards to form pairs
+  const pairedCards = baseCards.flatMap((card, idx) => [
+    { ...card, id: idx * 2 },
+    { ...card, id: idx * 2 + 1 },
+  ]);
+
+  return pairedCards;
+}
