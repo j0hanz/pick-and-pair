@@ -12,8 +12,9 @@
   --color-card-bg: #3a3a3a;
   --color-shadow: rgba(0, 0, 0, 0.3);
   --color-card-shadow: rgba(0, 0, 0, 0.5);
-  --color-card-shadow-hover: rgba(0, 0, 0, 0.6);
-  --color-card-shadow-active: rgba(0, 0, 0, 0.7);
+  --color-card-shadow-hover: rgba(0, 0, 0, 0.2);
+  --color-card-shadow-active: rgba(255, 165, 0, 0.8);
+  --color-card-shadow-matched: rgba(0, 128, 0, 0.8);
   --background-color: #1a1a1a;
   --text-color: #c0c0c0;
   --highlight-color: #e67c55;
