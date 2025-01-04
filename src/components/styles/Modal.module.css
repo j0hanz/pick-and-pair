@@ -1,7 +1,7 @@
 .modal :global(.modal-content) {
   background: var(--modal-background);
   color: var(--color-white);
-  box-shadow: var(--modal-box-shadow);
+  box-shadow: var(--box-shadow);
 }
 
 .modal :global(.modal-header),
@@ -11,23 +11,23 @@
 }
 
 .modal :global(.btn-primary) {
-  background-color: var(--modal-button-primary);
-  border-color: var(--modal-button-primary);
+  background-color: var(--button-primary);
+  border-color: var(--button-primary);
 }
 
 .modal :global(.btn-primary:hover) {
-  background-color: var(--modal-button-primary-hover);
-  border-color: var(--modal-button-primary-hover);
+  background-color: var(--button-primary-hover);
+  border-color: var(--button-primary-hover);
 }
 
 .modal :global(.btn-secondary) {
-  background-color: var(--modal-button-secondary);
-  border-color: var(--modal-button-secondary);
+  background-color: var(--button-secondary);
+  border-color: var(--button-secondary);
 }
 
 .modal :global(.btn-secondary:hover) {
-  background-color: var(--modal-button-secondary-hover);
-  border-color: var(--modal-button-secondary-hover);
+  background-color: var(--button-secondary-hover);
+  border-color: var(--button-secondary-hover);
 }
 
 .modal :global(.close) {
