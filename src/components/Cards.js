@@ -5,9 +5,9 @@ import styles from '../App.module.css';
 
 export default function Cards({ cards, isInitialFlip, handleCardSelection }) {
   return (
-    <Row className={styles.row}>
+    <Row className={styles.row} noGutters>
       {cards.map((card, index) => (
-        <Col xs={2} key={index}>
+        <Col xs={3} sm={3} md={3} lg={2} xl={2} key={index}>
           <Card
             card={card}
             index={index}
