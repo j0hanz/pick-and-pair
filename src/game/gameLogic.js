@@ -15,6 +15,7 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [matchedPairs, setMatchedPairs] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [attempts, setAttempts] = useState(0);
 
   const previousIndex = useRef(null);
   const [isInitialFlip, setIsInitialFlip] = useState(true);
@@ -34,6 +35,7 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
     previousIndex,
     setIsGameOver,
     difficulty,
+    setAttempts,
   });
 
   // Initial card flip effect
@@ -67,7 +69,15 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
     }
   }, [isGameOver, matchedPairs, totalPairs, setModalMessage, setShowModal]);
 
-  // Handle game restart
+  // Check for game over condition based on attempts
+  useEffect(() => {
+    if (attempts >= 5) {
+      setIsGameOver(true);
+      setModalMessage(gameOverMessage);
+      setShowModal(true);
+    }
+  }, [attempts]);
+
   const handleRestart = () => {
     setIsGameOver(false);
     setShowModal(false);
@@ -96,6 +106,7 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
             matchedPairs={matchedPairs}
             initialTime={60}
             onTimeUp={() => setIsGameOver(true)}
+            attempts={attempts}
           />
           <Modal
             show={showModal}
