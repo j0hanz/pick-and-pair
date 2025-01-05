@@ -16,7 +16,7 @@ export default function Cards({
   attempts,
 }) {
   return (
-    <Row className={styles.row}>
+    <Row className={`${styles.row} g-4`}>
       <div className={styles.stats}>
         <Score matchedPairs={matchedPairs} />
         <Timer initialTime={initialTime} onTimeUp={onTimeUp} />
