@@ -16,6 +16,8 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
   const [matchedPairs, setMatchedPairs] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
   const [attempts, setAttempts] = useState(0);
+  const [completedTime, setCompletedTime] = useState(0);
+  const [startTime, setStartTime] = useState(Date.now());
 
   const previousIndex = useRef(null);
   const [showModal, setShowModal] = useState(false);
@@ -53,34 +55,61 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
   // Check for victory condition
   useEffect(() => {
     if (matchedPairs === totalPairs) {
+      setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
       setModalMessage(victoryMessage);
       setShowModal(true);
       setIsGameOver(true);
     }
-  }, [matchedPairs, totalPairs, setModalMessage, setShowModal, setIsGameOver]);
+  }, [
+    matchedPairs,
+    totalPairs,
+    setModalMessage,
+    setShowModal,
+    setIsGameOver,
+    startTime,
+  ]);
 
   // Check for game over condition
   useEffect(() => {
     if (isGameOver && matchedPairs !== totalPairs) {
+      setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
       setModalMessage(gameOverMessage);
       setShowModal(true);
     }
-  }, [isGameOver, matchedPairs, totalPairs, setModalMessage, setShowModal]);
+  }, [
+    isGameOver,
+    matchedPairs,
+    totalPairs,
+    setModalMessage,
+    setShowModal,
+    startTime,
+  ]);
 
-  // Check for game over condition based on attempts
+  // Check for maximum attempts
   useEffect(() => {
     if (attempts >= 5) {
       setIsGameOver(true);
+      setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
       setModalMessage(gameOverMessage);
       setShowModal(true);
     }
-  }, [attempts]);
+  }, [attempts, startTime]);
 
+  // Handle game restart
   const handleRestart = () => {
     setIsGameOver(false);
     setShowModal(false);
     setModalMessage('');
+    setStartTime(Date.now());
     onRestart();
+  };
+
+  // Handle time up condition
+  const handleTimeUp = () => {
+    setIsGameOver(true);
+    setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
+    setModalMessage(gameOverMessage);
+    setShowModal(true);
   };
 
   return (
@@ -92,6 +121,9 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
           onRestart={handleRestart}
           onExit={onExit}
           backdrop="static"
+          completedTime={completedTime}
+          score={matchedPairs}
+          attemptsLeft={5 - attempts}
         >
           {modalMessage}
         </Modal>
@@ -102,7 +134,7 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
             handleCardSelection={handleCardSelection}
             matchedPairs={matchedPairs}
             initialTime={60}
-            onTimeUp={() => setIsGameOver(true)}
+            onTimeUp={handleTimeUp}
             attempts={attempts}
           />
           <Modal
@@ -111,6 +143,9 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
             onRestart={handleRestart}
             onExit={onExit}
             backdrop="static"
+            completedTime={completedTime}
+            score={matchedPairs}
+            attemptsLeft={5 - attempts}
           >
             {modalMessage}
           </Modal>
