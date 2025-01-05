@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import styles from './styles/global/App.module.css';
 import GameLogic from './game/GameLogic';
 import { DifficultyButtons } from './game/DifficultyLogic';
@@ -36,7 +36,7 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <Container>
       {isGameActive ? (
         <GameLogic
           onRestart={handleRestart}
@@ -53,6 +53,6 @@ export default function App() {
           Start Game
         </Button>
       )}
-    </>
+    </Container>
   );
 }
