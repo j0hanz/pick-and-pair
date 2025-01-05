@@ -8,7 +8,8 @@ export function clickHandler(
   selectedCardIndex,
   setSelectedCardIndex,
   previousIndex,
-  handleMatchUpdate
+  handleMatchUpdate,
+  handleMismatchUpdate
 ) {
   // Checks if a card can be clicked
   function canClickCard(index, cards, selectedCardIndex, previousIndex) {
@@ -38,7 +39,8 @@ export function clickHandler(
     setCards,
     selectedCardIndex,
     setSelectedCardIndex,
-    handleMatchUpdate
+    handleMatchUpdate,
+    handleMismatchUpdate
   );
   previousIndex.current = null;
 }
