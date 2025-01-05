@@ -28,6 +28,7 @@ export default function App() {
     setShowDifficultyButtons(true);
   }, []);
 
+  // Exit game
   const handleExit = useCallback(() => {
     setIsGameActive(false);
     setShowDifficultyButtons(false);
