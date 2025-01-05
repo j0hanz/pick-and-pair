@@ -33,3 +33,13 @@
 .modal :global(.close) {
   color: var(--color-white);
 }
+
+.scoreboard {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.scoreboard p {
+  margin: 0.5rem 0;
+}
