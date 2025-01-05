@@ -7,7 +7,7 @@ import img06 from '../assets/img/06.webp';
 import img07 from '../assets/img/07.webp';
 import img08 from '../assets/img/08.webp';
 import img09 from '../assets/img/09.webp';
-import { getTotalPairs } from '../game/difficultyLogic';
+import { getTotalPairs } from '../game/DifficultyLogic';
 
 // List of all images
 const imageAssets = [
