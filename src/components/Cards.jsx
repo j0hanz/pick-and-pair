@@ -23,7 +23,7 @@ export default function Cards({
         <Attempts attempts={attempts} />
       </div>
       {cards.map((card, index) => (
-        <Col xs={4} sm={4} md={3} lg={2} xl={2} key={index}>
+        <Col xs={4} sm={3} md={3} lg={3} xl={2} key={index}>
           <Card
             card={card}
             index={index}
