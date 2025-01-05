@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import styles from '../App.module.css';
 
 export const getTotalPairs = (difficulty) => {
-  return difficulty === 'hard' ? 10 : 6;
+  return difficulty === 'hard' ? 9 : 6;
 };
 
 // Renders difficulty buttons

@@ -7,7 +7,6 @@ import img06 from '../assets/img/06.webp';
 import img07 from '../assets/img/07.webp';
 import img08 from '../assets/img/08.webp';
 import img09 from '../assets/img/09.webp';
-import img10 from '../assets/img/10.webp';
 import { getTotalPairs } from '../game/difficultyLogic';
 
 // List of all images
@@ -21,7 +20,6 @@ const imageAssets = [
   img07,
   img08,
   img09,
-  img10,
 ];
 
 // Create pairs of cards
@@ -32,7 +30,7 @@ function createPairedCards(defs) {
   ]);
 }
 
-// Default set of 20 cards (10 pairs)
+// Default set of 18 cards (9 pairs)
 export const initialCards = createPairedCards([
   { pairId: 0, name: 'Bacon', img: img01, status: '' },
   { pairId: 1, name: 'Popcorn', img: img02, status: '' },
@@ -43,7 +41,6 @@ export const initialCards = createPairedCards([
   { pairId: 6, name: 'Coffee', img: img07, status: '' },
   { pairId: 7, name: 'Cake', img: img08, status: '' },
   { pairId: 8, name: 'Candy', img: img09, status: '' },
-  { pairId: 9, name: 'Cookie', img: img10, status: '' },
 ]);
 
 // Generate cards based on difficulty
