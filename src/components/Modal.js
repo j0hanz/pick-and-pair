@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import styles from './styles/Modal.module.css';
 
 // Header with title and close button
-function CustomModalHeader({ title }) {
+function ModalHeader({ title }) {
   return (
     <Modal.Header closeVariant="white" className="border-0">
       <Modal.Title>{title}</Modal.Title>
@@ -12,7 +12,7 @@ function CustomModalHeader({ title }) {
 }
 
 // Footer with close and restart buttons
-function CustomModalFooter({ onRestart, onExit }) {
+function ModalFooter({ onRestart, onExit }) {
   return (
     <Modal.Footer className="border-0">
       <Button variant="primary" onClick={onRestart}>
@@ -42,9 +42,9 @@ export default function CustomModal({
       className={styles.modal}
       backdrop="static"
     >
-      <CustomModalHeader title={title} onClose={onClose} />
+      <ModalHeader title={title} onClose={onClose} />
       <Modal.Body>{children}</Modal.Body>
-      <CustomModalFooter onRestart={onRestart} onExit={onExit} />
+      <ModalFooter onRestart={onRestart} onExit={onExit} />
     </Modal>
   );
 }
