@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap';
 import Score from './Score';
 import Timer from './Timer';
 import Attempts from './Attempts';
-import styles from '../App.module.css';
+import styles from './styles/Cards.module.css';
 
 export default function Cards({
   cards,

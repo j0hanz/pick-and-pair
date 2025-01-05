@@ -14,26 +14,10 @@ body {
   min-height: 100vh !important;
 }
 
-.row {
-  max-width: 62.5rem !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-}
-
 .gameTitle {
   font-size: 4.5rem !important;
   color: var(--highlight-color) !important;
   text-shadow: 0 0 15px rgba(255, 111, 97, 0.5) !important;
-}
-
-/* Stats section */
-.stats {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  font-size: 1.2rem !important;
-  color: var(--text-color) !important;
-  margin: 0.5rem 0 !important;
 }
 
 /* Buttons */

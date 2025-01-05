@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
-import styles from './App.module.css';
+import styles from './styles/global/App.module.css';
 import GameLogic from './game/gameLogic';
 import { DifficultyButtons } from './game/difficultyLogic';
 

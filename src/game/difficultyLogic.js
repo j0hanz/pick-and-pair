@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import styles from '../App.module.css';
+import styles from '../styles/global/App.module.css';
 
 export const getTotalPairs = (difficulty) => {
   return difficulty === 'hard' ? 9 : 6;
