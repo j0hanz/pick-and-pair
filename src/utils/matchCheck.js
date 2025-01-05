@@ -1,4 +1,5 @@
 import { handleRightAnswer, handleWrongAnswer } from './feedbackHandler';
+import { playSound } from './soundManager';
 
 function updateCardStatus({
   cards,
@@ -29,10 +30,12 @@ function updateCardStatus({
 
     if (isMatch) {
       handleRightAnswer(onMatch);
+      playSound('correct');
     } else {
       applyCardStatus(cards, [currentCardIndex, selectedCardIndex], '');
       setCards([...cards]);
       handleWrongAnswer(onMismatch);
+      playSound('wrong');
     }
   }, 500);
 }

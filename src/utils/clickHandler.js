@@ -1,4 +1,5 @@
 import { matchCheck } from './matchCheck';
+import { playSound } from './soundManager';
 
 // Handles card click
 export function clickHandler(
@@ -31,9 +32,10 @@ export function clickHandler(
     newCards[index].status = 'active';
     setCards(newCards);
     setSelectedCardIndex(index);
+    playSound('click');
     return;
   }
-  matchCheck(
+  const isMatch = matchCheck(
     index,
     newCards,
     setCards,
@@ -42,5 +44,6 @@ export function clickHandler(
     handleMatchUpdate,
     handleMismatchUpdate
   );
+  playSound(isMatch ? 'correct' : 'wrong');
   previousIndex.current = null;
 }
