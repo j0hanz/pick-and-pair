@@ -2,6 +2,7 @@ import { Howl } from 'howler';
 import correctSound from '../assets/sounds/correct.mp3';
 import wrongSound from '../assets/sounds/wrong.mp3';
 import clickSound from '../assets/sounds/click.mp3';
+import buttonSound from '../assets/sounds/button.mp3';
 
 // Helper function to create a Howl instance
 const createSound = (src) => new Howl({ src: [src] });
@@ -11,6 +12,7 @@ const sounds = {
   correct: createSound(correctSound),
   wrong: createSound(wrongSound),
   click: createSound(clickSound),
+  button: createSound(buttonSound),
 };
 
 // Function to play a sound by key
@@ -21,4 +23,14 @@ export const playSound = (soundName) => {
     return;
   }
   sound.play();
+};
+
+// Function to handle button clicks and play button sound
+export const handleButtonClick = (callback) => {
+  return (event) => {
+    playSound('button');
+    if (callback) {
+      callback(event);
+    }
+  };
 };
