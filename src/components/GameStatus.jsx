@@ -41,7 +41,6 @@ export default function GameStatus({ onRestart, onExit }) {
         onRestart={handleRestart}
         onExit={onExit}
         title={modalTitle}
-        backdrop="static"
       >
         {modalMessage}
       </Modal>
