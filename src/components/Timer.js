@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { TbClock } from 'react-icons/tb';
 
 // Custom hook for countdown
 function useCountdown(initialTime, onTimeUp) {
@@ -6,7 +7,7 @@ function useCountdown(initialTime, onTimeUp) {
 
   useEffect(() => {
     // If time is up, call the onTimeUp callback
-    if (remainingTime === 0) {
+    if (remainingTime <= 0) {
       onTimeUp();
       return;
     }
@@ -27,5 +28,9 @@ export default function Timer({ initialTime, onTimeUp }) {
   // Use the custom countdown hook
   const remainingTime = useCountdown(initialTime, onTimeUp);
 
-  return <div>Time left: {remainingTime}</div>;
+  return (
+    <div>
+      <TbClock /> {remainingTime}
+    </div>
+  );
 }
