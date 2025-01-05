@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 import { clickHandler } from '../utils/clickHandler';
-import { getTotalPairs } from '../game/difficultyLogic';
+import { getTotalPairs } from '../game/DifficultyLogic';
 
 export function useGameLogic({
   cards,
