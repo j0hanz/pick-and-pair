@@ -4,8 +4,6 @@
 
 /* General styles */
 body {
-  margin: 0 !important;
-  padding: 0 !important;
   font-family: 'Roboto', sans-serif !important;
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
