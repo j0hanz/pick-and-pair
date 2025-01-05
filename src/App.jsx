@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import styles from './styles/global/App.module.css';
 import GameLogic from './game/GameLogic';
 import { DifficultyButtons } from './game/DifficultyLogic';
+import { handleButtonClick } from './utils/soundManager';
 
 // Main app component
 export default function App() {
@@ -45,7 +46,10 @@ export default function App() {
       ) : showDifficultyButtons ? (
         <DifficultyButtons onSelectDifficulty={startGame} />
       ) : (
-        <Button onClick={showDifficultySelection} className={styles.button}>
+        <Button
+          onClick={handleButtonClick(showDifficultySelection)}
+          className={styles.button}
+        >
           Start Game
         </Button>
       )}
