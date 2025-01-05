@@ -63,7 +63,6 @@
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px var(--color-card-shadow-hover);
 }
 
 .card.active {
