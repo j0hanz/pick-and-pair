@@ -18,7 +18,6 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
   const [attempts, setAttempts] = useState(0);
 
   const previousIndex = useRef(null);
-  const [isInitialFlip, setIsInitialFlip] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
 
@@ -47,10 +46,9 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
       setCards((prevCards) =>
         prevCards.map((card) => ({ ...card, status: '' }))
       );
-      setIsInitialFlip(false);
     }, 2000);
     return () => clearTimeout(initialFlipTimer);
-  }, [setCards, setIsInitialFlip]);
+  }, [setCards]);
 
   // Check for victory condition
   useEffect(() => {
@@ -101,7 +99,6 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
         <>
           <Cards
             cards={cards}
-            isInitialFlip={isInitialFlip}
             handleCardSelection={handleCardSelection}
             matchedPairs={matchedPairs}
             initialTime={60}
