@@ -1,5 +1,13 @@
 import { handleRightAnswer, handleWrongAnswer } from './feedbackHandler';
-import { playSound } from './soundManager';
+
+// Function to apply status to specified cards
+function applyCardStatus(cards, indices, status) {
+  indices.forEach((index) => {
+    if (cards[index]) {
+      cards[index].status = status;
+    }
+  });
+}
 
 function updateCardStatus({
   cards,
@@ -10,32 +18,13 @@ function updateCardStatus({
   onMatch,
   onMismatch,
 }) {
-  // Function to apply status to specified cards
-  function applyCardStatus(cards, indices, status) {
-    indices.forEach((index) => {
-      if (cards[index]) {
-        cards[index].status = status;
-      }
-    });
-  }
-
   setTimeout(() => {
-    const currentCard = cards[currentCardIndex];
-    const selectedCard = cards[selectedCardIndex];
-
-    if (!currentCard || !selectedCard) {
-      console.error('Card data missing after timeout');
-      return;
-    }
-
     if (isMatch) {
       handleRightAnswer(onMatch);
-      playSound('correct');
     } else {
       applyCardStatus(cards, [currentCardIndex, selectedCardIndex], '');
       setCards([...cards]);
       handleWrongAnswer(onMismatch);
-      playSound('wrong');
     }
   }, 500);
 }
@@ -49,15 +38,6 @@ export function matchCheck(
   onMatch,
   onMismatch
 ) {
-  // Function to apply status to specified cards
-  function applyCardStatus(cards, indices, status) {
-    indices.forEach((index) => {
-      if (cards[index]) {
-        cards[index].status = status;
-      }
-    });
-  }
-
   if (
     currentCardIndex === selectedCardIndex ||
     !cards[currentCardIndex] ||
@@ -66,16 +46,19 @@ export function matchCheck(
     console.error('Invalid card indices or card data');
     return false;
   }
-  const updatedCards = [...cards];
 
+  const updatedCards = [...cards];
   const currentCard = updatedCards[currentCardIndex];
   const selectedCard = updatedCards[selectedCardIndex];
+
   const isMatch = currentCard.pairId === selectedCard.pairId;
+
   applyCardStatus(
     updatedCards,
     [currentCardIndex, selectedCardIndex],
     isMatch ? 'active matched' : 'active'
   );
+
   setCards(updatedCards);
   updateCardStatus({
     cards: updatedCards,
@@ -86,7 +69,7 @@ export function matchCheck(
     onMatch,
     onMismatch,
   });
-  setSelectedCardIndex(null);
 
+  setSelectedCardIndex(null);
   return isMatch;
 }
