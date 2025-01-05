@@ -3,10 +3,7 @@ import { generateCards } from '../data/cardData';
 import { shuffleCards } from '../utils/shuffleCards';
 import { useGameLogic } from '../hooks/useGameLogic';
 import Cards from '../components/Cards';
-import Score from '../components/Score';
 import Modal from '../components/Modal';
-import Timer from '../components/Timer';
-import styles from '../App.module.css';
 import { getTotalPairs } from './difficultyLogic';
 import { gameOverMessage, victoryMessage } from '../data/messages';
 
