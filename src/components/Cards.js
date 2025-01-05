@@ -14,7 +14,7 @@ export default function Cards({
   onTimeUp,
 }) {
   return (
-    <Row className="d-flex justify-content-between" noGutters={true}>
+    <Row className={styles.row}>
       <div className={styles.stats}>
         <Score matchedPairs={matchedPairs} />
         <Timer initialTime={initialTime} onTimeUp={onTimeUp} />
