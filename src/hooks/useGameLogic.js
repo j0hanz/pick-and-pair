@@ -14,12 +14,12 @@ export function useGameLogic({
   difficulty,
   setAttempts,
 }) {
+  // Get the total number of pairs based on difficulty
   const totalPairs = getTotalPairs(difficulty);
 
-  // Handles card selection
+  // Handle card selection logic
   const handleCardSelection = useCallback(
     (index) => {
-      console.log('Handling card selection at index:', index);
       clickHandler(
         index,
         cards,
@@ -42,10 +42,9 @@ export function useGameLogic({
     ]
   );
 
-  // Checks if the game is won
+  // Check if the game is over
   useEffect(() => {
     if (matchedPairs === totalPairs) {
-      console.log('Game won');
       setIsGameOver(true);
     }
   }, [matchedPairs, totalPairs, setIsGameOver]);
