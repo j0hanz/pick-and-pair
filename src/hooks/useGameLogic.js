@@ -12,6 +12,7 @@ export function useGameLogic({
   previousIndex,
   setIsGameOver,
   difficulty,
+  setAttempts,
 }) {
   const totalPairs = getTotalPairs(difficulty);
 
@@ -26,7 +27,8 @@ export function useGameLogic({
         selectedCardIndex,
         setSelectedCardIndex,
         previousIndex,
-        () => setMatchedPairs((prev) => prev + 1)
+        () => setMatchedPairs((prev) => prev + 1),
+        () => setAttempts((prev) => prev + 1)
       );
     },
     [
@@ -36,6 +38,7 @@ export function useGameLogic({
       setSelectedCardIndex,
       previousIndex,
       setMatchedPairs,
+      setAttempts,
     ]
   );
 
