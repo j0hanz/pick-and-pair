@@ -27,7 +27,9 @@ export function clickHandler(
   }
 
   const newCards = [...cards];
+
   if (selectedCardIndex === null) {
+    // First card selected
     previousIndex.current = index;
     newCards[index].status = 'active';
     setCards(newCards);
@@ -35,6 +37,8 @@ export function clickHandler(
     playSound('click');
     return;
   }
+
+  // Check match
   const isMatch = matchCheck(
     index,
     newCards,
@@ -44,6 +48,7 @@ export function clickHandler(
     handleMatchUpdate,
     handleMismatchUpdate
   );
+
   playSound(isMatch ? 'correct' : 'wrong');
   previousIndex.current = null;
 }
