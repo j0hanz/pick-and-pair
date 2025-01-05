@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import Modal from '../Modal/Modal';
-import { gameOverMessage, victoryMessage } from '../../data/messages';
-import styles from './GameStatus.module.css';
+import Modal from './Modal';
+import { gameOverMessage, victoryMessage } from '../data/messages';
+import styles from './styles/GameStatus.module.css';
 
 export default function GameStatus({ onRestart, onExit }) {
-  // State to control the modal visibility
   const [showModal, setShowModal] = useState(false);
-  // State to store the modal title
   const [modalTitle, setModalTitle] = useState('');
-  // State to store the modal message
   const [modalMessage, setModalMessage] = useState('');
 
   // Handle game over scenario
@@ -28,7 +25,7 @@ export default function GameStatus({ onRestart, onExit }) {
   // Close the modal
   const handleClose = () => setShowModal(false);
 
-  // Restart the game and close the modal
+  // Restart the game
   const handleRestart = () => {
     onRestart();
     setShowModal(false);
