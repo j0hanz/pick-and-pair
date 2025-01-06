@@ -1,14 +1,14 @@
 .row {
-  max-width: 62.5rem !important;
-  width: 100% !important;
-  margin: 0 auto !important;
+  max-width: 62.5rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 /* Stats section */
 .stats {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  font-size: 1.2rem !important;
-  color: var(--text-color) !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--text-color);
 }

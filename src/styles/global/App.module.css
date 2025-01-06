@@ -4,72 +4,72 @@
 
 /* General styles */
 body {
-  font-family: 'Roboto', sans-serif !important;
-  background-color: var(--background-color) !important;
-  color: var(--text-color) !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  min-height: 100vh !important;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .gameTitle {
-  font-size: 4.5rem !important;
-  color: var(--highlight-color) !important;
-  text-shadow: 0 0 15px rgba(255, 111, 97, 0.5) !important;
+  font-size: 4.5rem;
+  color: var(--highlight-color);
+  text-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
 }
 
 /* Buttons */
 .button,
 .difficultyButton {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  flex: 1 !important;
-  height: 3rem !important;
-  border-radius: 10px !important;
-  background-color: var(--button-primary) !important;
-  color: var(--text-color) !important;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2) !important;
-  letter-spacing: 1.5px !important;
-  font-size: 1.1rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 3rem;
+  border-radius: 10px;
+  background-color: var(--button-primary);
+  color: var(--text-color);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1.5px;
+  font-size: 1.1rem;
 }
 
 .button:hover,
 .difficultyButton:hover {
-  background-color: var(--button-primary-hover) !important;
+  background-color: var(--button-primary-hover);
 }
 
 button {
   border: none !important;
-  cursor: pointer !important;
-  color: var(--color-white) !important;
-  transition: background-color 0.5s ease !important;
+  cursor: pointer;
+  color: var(--color-white);
+  transition: background-color 0.5s ease;
 }
 
 /* Animations */
 @keyframes shake {
   0%,
   100% {
-    transform: translateX(0) !important;
+    transform: translateX(0);
   }
   25%,
   75% {
-    transform: translateX(-10px) !important;
+    transform: translateX(-10px);
   }
   50% {
-    transform: translateX(10px) !important;
+    transform: translateX(10px);
   }
 }
 
 @keyframes slideIn {
   from {
-    transform: translateX(100%) !important;
-    opacity: 0 !important;
+    transform: translateX(100%);
+    opacity: 0;
   }
   to {
-    transform: translateX(0) !important;
-    opacity: 1 !important;
+    transform: translateX(0);
+    opacity: 1;
   }
 }

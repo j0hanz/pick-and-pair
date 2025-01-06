@@ -3,7 +3,8 @@
   position: relative;
   min-height: 10rem;
   min-width: 3rem;
-  perspective: 1200px;
+  perspective: 1000px;
+  padding: 0 !important;
   background-color: var(--color-card-bg);
   border-radius: 12px;
   box-shadow: 0 4px 8px var(--color-card-shadow);
