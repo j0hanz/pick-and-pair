@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { shuffleCards } from '../utils/shuffleCards';
 import { generateCards } from '../data/cardData';
-import { getTotalPairs } from '../game/DifficultyLogic';
 import { gameOverMessage, victoryMessage } from '../data/messages';
 
 export function useGameState(difficulty, onRestart) {
@@ -18,7 +17,7 @@ export function useGameState(difficulty, onRestart) {
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
 
-  const totalPairs = getTotalPairs(difficulty);
+  const totalPairs = 6;
 
   // Initial card flip effect
   useEffect(() => {
