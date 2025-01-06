@@ -1,12 +1,12 @@
-import img01 from '../assets/img/01.webp';
-import img02 from '../assets/img/02.webp';
-import img03 from '../assets/img/03.webp';
-import img04 from '../assets/img/04.webp';
-import img05 from '../assets/img/05.webp';
-import img06 from '../assets/img/06.webp';
-import img07 from '../assets/img/07.webp';
-import img08 from '../assets/img/08.webp';
-import img09 from '../assets/img/09.webp';
+import img01 from '../assets/img/01.gif';
+import img02 from '../assets/img/02.gif';
+import img03 from '../assets/img/03.gif';
+import img04 from '../assets/img/04.gif';
+import img05 from '../assets/img/05.gif';
+import img06 from '../assets/img/06.gif';
+import img07 from '../assets/img/07.gif';
+import img08 from '../assets/img/08.gif';
+import img09 from '../assets/img/09.gif';
 import { getTotalPairs } from '../game/DifficultyLogic';
 
 // List of all images
