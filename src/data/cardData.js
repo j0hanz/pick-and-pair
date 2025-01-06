@@ -4,23 +4,9 @@ import img03 from '../assets/img/03.gif';
 import img04 from '../assets/img/04.gif';
 import img05 from '../assets/img/05.gif';
 import img06 from '../assets/img/06.gif';
-import img07 from '../assets/img/07.gif';
-import img08 from '../assets/img/08.gif';
-import img09 from '../assets/img/09.gif';
-import { getTotalPairs } from '../game/DifficultyLogic';
 
 // List of all images
-const imageAssets = [
-  img01,
-  img02,
-  img03,
-  img04,
-  img05,
-  img06,
-  img07,
-  img08,
-  img09,
-];
+const imageAssets = [img01, img02, img03, img04, img05, img06];
 
 // Create pairs of cards
 function createPairedCards(defs) {
@@ -30,28 +16,24 @@ function createPairedCards(defs) {
   ]);
 }
 
-// Default set of 18 cards (9 pairs)
+// Default set of 12 cards (6 pairs)
 export const initialCards = createPairedCards([
-  { pairId: 0, name: 'Bacon', img: img01, status: '' },
-  { pairId: 1, name: 'Popcorn', img: img02, status: '' },
-  { pairId: 2, name: 'Dragon', img: img03, status: '' },
-  { pairId: 3, name: 'Toy', img: img04, status: '' },
-  { pairId: 4, name: 'Tea', img: img05, status: '' },
-  { pairId: 5, name: 'Monkey', img: img06, status: '' },
-  { pairId: 6, name: 'Coffee', img: img07, status: '' },
-  { pairId: 7, name: 'Cake', img: img08, status: '' },
-  { pairId: 8, name: 'Candy', img: img09, status: '' },
+  { pairId: 0, img: img01, status: '' },
+  { pairId: 1, img: img02, status: '' },
+  { pairId: 2, img: img03, status: '' },
+  { pairId: 3, img: img04, status: '' },
+  { pairId: 4, img: img05, status: '' },
+  { pairId: 5, img: img06, status: '' },
 ]);
 
-// Generate cards based on difficulty
-export function generateCards(difficulty) {
-  const totalPairs = getTotalPairs(difficulty);
+// Generate cards
+export function generateCards() {
+  const totalPairs = 6;
   if (!totalPairs) return [];
 
   // Create base cards
   const baseCards = Array.from({ length: totalPairs }, (_, i) => ({
     pairId: i,
-    name: `Card ${i + 1}`,
     img: imageAssets[i],
     status: '',
   }));
