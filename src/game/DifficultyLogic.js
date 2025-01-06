@@ -3,10 +3,6 @@ import { Button } from 'react-bootstrap';
 import styles from '../styles/global/App.module.css';
 import { handleButtonClick } from '../utils/soundManager';
 
-export const getTotalPairs = (difficulty) => {
-  return difficulty === 'hard' ? 9 : 6;
-};
-
 // Renders difficulty buttons
 export function DifficultyButtons({ onSelectDifficulty }) {
   return (
