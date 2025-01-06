@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
 import { Image } from 'react-bootstrap';
-import { LuBrain } from 'react-icons/lu';
 import styles from './styles/Card.module.css';
+import cardBack from '../assets/img/card-back.gif';
 
 const Card = memo(({ card, index, clickHandler }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -21,7 +21,7 @@ const Card = memo(({ card, index, clickHandler }) => {
       aria-label={`Card ${card.name}`}
     >
       <div className={styles.back}>
-        <LuBrain />
+        <Image src={cardBack} alt="Card Back" className={styles.img} />
       </div>
       <Image
         src={card.img}
