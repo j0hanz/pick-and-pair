@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import styles from './styles/global/App.module.css';
 import GameLogic from './game/GameLogic';
 import { DifficultyButtons } from './game/DifficultyLogic';
@@ -36,7 +36,7 @@ export default function App() {
   }, []);
 
   return (
-    <Container>
+    <>
       {isGameActive ? (
         <GameLogic
           onRestart={handleRestart}
@@ -46,13 +46,15 @@ export default function App() {
       ) : showDifficultyButtons ? (
         <DifficultyButtons onSelectDifficulty={startGame} />
       ) : (
-        <Button
-          onClick={handleButtonClick(showDifficultySelection)}
-          className={styles.button}
-        >
-          Start Game
-        </Button>
+        <div className="d-flex justify-content-center">
+          <Button
+            onClick={handleButtonClick(showDifficultySelection)}
+            className={styles.button}
+          >
+            Start Game
+          </Button>
+        </div>
       )}
-    </Container>
+    </>
   );
 }
