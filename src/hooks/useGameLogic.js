@@ -1,6 +1,5 @@
 import { useCallback, useEffect } from 'react';
 import { clickHandler } from '../utils/clickHandler';
-import { getTotalPairs } from '../game/DifficultyLogic';
 
 export function useGameLogic({
   cards,
@@ -11,11 +10,10 @@ export function useGameLogic({
   setMatchedPairs,
   previousIndex,
   setIsGameOver,
-  difficulty,
   setAttempts,
 }) {
-  // Get the total number of pairs based on difficulty
-  const totalPairs = getTotalPairs(difficulty);
+  // Use 6 pairs for both difficulty levels
+  const totalPairs = 6;
 
   // Handle card selection logic
   const handleCardSelection = useCallback(
