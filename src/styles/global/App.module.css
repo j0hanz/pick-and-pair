@@ -5,7 +5,7 @@
 /* General styles */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--background-color);
+  background: var(--background-color);
   color: var(--text-color);
   display: flex;
   flex-direction: column;
