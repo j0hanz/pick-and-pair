@@ -4,7 +4,7 @@ import { useGameLogic } from '../hooks/useGameLogic';
 import Cards from '../components/Cards';
 import Modal from '../components/Modal';
 
-export default function GameLogic({ onRestart, onExit, difficulty }) {
+export default function GameLogic({ onRestart, onExit }) {
   const {
     cards,
     setCards,
@@ -23,7 +23,7 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
     modalMessage,
     handleRestart,
     handleTimeUp,
-  } = useGameState(difficulty, onRestart);
+  } = useGameState(onRestart);
 
   // Custom hook for game logic
   const { handleCardSelection } = useGameLogic({
