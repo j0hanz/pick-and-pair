@@ -17,6 +17,14 @@ body {
   font-size: 4.5rem;
   color: var(--highlight-color);
   text-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.gameTitle:hover {
+  color: #ff6347;
+  text-shadow: 0 0 20px rgba(255, 99, 71, 0.7);
 }
 
 /* Buttons */
@@ -29,21 +37,31 @@ body {
   border-radius: 10px;
   background-color: var(--button-primary);
   color: var(--text-color);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   letter-spacing: 1.5px;
   font-size: 1.1rem;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .button:hover,
 .difficultyButton:hover {
   background-color: var(--button-primary-hover);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 button {
   border: none !important;
   cursor: pointer;
   color: var(--color-white);
-  transition: background-color 0.5s ease;
+  transition:
+    background-color 0.5s ease,
+    transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
 }
 
 /* Animations */
