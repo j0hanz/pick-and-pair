@@ -1,19 +1,34 @@
 .stats {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   font-size: 1.5rem;
   color: var(--text-color);
 }
 
+.resetIcon {
+  font-size: 1.5rem;
+  color: #00ffc8;
+}
+
+.resetButton {
+  --bs-btn-bg: none !important;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.resetButton:hover {
+  opacity: 0.6;
+  --bs-btn-hover-bg: none !important;
+}
+
 .row {
-  gap: 1rem 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-bottom: 1rem;
+  gap: 1rem 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1rem;
   border: 1px solid var(--color-row-border);
   background: var(--color-row-bg);
-  box-shadow: 0 7px 20px 0 var(--color-row-box-shadow);
   border-radius: 0.7rem;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

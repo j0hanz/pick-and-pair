@@ -1,0 +1,9 @@
+.moves {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.statsIcon {
+  font-size: 1.75rem;
+}

@@ -4,8 +4,9 @@
   height: 13rem;
   perspective: 1200px;
   background: var(--color-card-bg);
+  border: 3px solid var(--color-row-border);
   border-radius: 12px;
-  box-shadow: 0 4px 8px var(--color-card-shadow);
+  box-shadow: 0 2px 6px var(--color-card-shadow);
   margin-bottom: 1rem;
   cursor: pointer;
   transition:
@@ -36,33 +37,26 @@
 
 /* Back face */
 .card .back {
-  opacity: 0.5;
+  opacity: 0.6;
   transition:
     opacity 0.6s ease,
     transform 0.6s ease;
   background-image: url('../../assets/img/card-back.gif');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.card .back:hover {
-  opacity: 0.7;
 }
 
 /* Card Hover */
 .card:hover {
   transform: scale(1.05);
-  box-shadow:
-    0 2px 4px var(--color-card-shadow),
-    0 0 5px var(--color-card-neon);
 }
 
 /* Active (flipped) card */
 .card.active {
   transform: rotateY(180deg) scale(1.1);
   box-shadow:
-    0 2px 4px var(--color-card-shadow-active),
+    0 0 2px 2px var(--color-card-shadow-active),
     0 0 5px var(--color-card-neon);
   transition:
     transform 0.6s ease,
@@ -84,7 +78,7 @@
 .card.matched {
   transform: rotateY(180deg) scale(0.9);
   box-shadow:
-    0 2px 4px var(--color-card-shadow-matched),
+    0 0 2px 2px var(--color-card-shadow-matched),
     0 0 5px var(--color-card-shadow-matched);
   transition:
     transform 0.6s ease,
