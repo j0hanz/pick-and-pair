@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { shuffleCards } from '../utils/shuffleCards';
 import { generateCards } from '../data/cardData';
 import { gameOverMessage, victoryMessage } from '../data/messages';
@@ -14,6 +14,7 @@ export function useGameState(onRestart) {
   const previousIndex = useRef(null);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
+  const [timerActive, setTimerActive] = useState(true);
 
   const totalPairs = 6;
 
@@ -33,6 +34,7 @@ export function useGameState(onRestart) {
   // Check for victory condition
   useEffect(() => {
     if (matchedPairs === totalPairs) {
+      setTimerActive(false);
       setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
       setModalMessage(victoryMessage);
       setShowModal(true);
@@ -50,6 +52,7 @@ export function useGameState(onRestart) {
   // Check for game over condition
   useEffect(() => {
     if (isGameOver && matchedPairs !== totalPairs) {
+      setTimerActive(false);
       setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
       setModalMessage(gameOverMessage);
       setShowModal(true);
@@ -64,22 +67,23 @@ export function useGameState(onRestart) {
   ]);
 
   // Handle game restart
-  const handleRestart = () => {
+  const handleRestart = useCallback(() => {
     setIsGameOver(false);
     setShowModal(false);
     setModalMessage('');
     setStartTime(Date.now());
     setMoves(0);
+    setTimerActive(true);
     onRestart();
-  };
+  }, [onRestart]);
 
   // Handle time up condition
-  const handleTimeUp = () => {
+  const handleTimeUp = useCallback(() => {
     setIsGameOver(true);
     setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
     setModalMessage(gameOverMessage);
     setShowModal(true);
-  };
+  }, [startTime]);
 
   return {
     cards,
@@ -98,6 +102,7 @@ export function useGameState(onRestart) {
     showModal,
     setShowModal,
     modalMessage,
+    timerActive,
     handleRestart,
     handleTimeUp,
   };
