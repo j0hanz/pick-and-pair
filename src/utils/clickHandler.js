@@ -49,6 +49,10 @@ export function clickHandler(
     handleMismatchUpdate
   );
 
+  if (!isMatch) {
+    handleMismatchUpdate();
+  }
+
   playSound(isMatch ? 'correct' : 'wrong');
   previousIndex.current = null;
 }
