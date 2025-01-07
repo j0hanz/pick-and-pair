@@ -10,6 +10,7 @@
   color: var(--color-white);
 }
 
+/* Button styles */
 .modal :global(.btn-primary) {
   background-color: var(--button-primary);
   border-color: var(--button-primary);
@@ -34,6 +35,7 @@
   color: var(--color-white);
 }
 
+/* Scoreboard styles */
 .scoreboard {
   margin-top: 1rem;
   font-size: 1.2rem;
