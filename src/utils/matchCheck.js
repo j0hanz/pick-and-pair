@@ -1,5 +1,3 @@
-import { handleRightAnswer, handleWrongAnswer } from './feedbackHandler';
-
 // Function to apply status to specified cards
 function applyCardStatus(cards, indices, status) {
   indices.forEach((index) => {
@@ -20,11 +18,11 @@ function updateCardStatus({
 }) {
   setTimeout(() => {
     if (isMatch) {
-      handleRightAnswer(onMatch);
+      onMatch();
     } else {
       applyCardStatus(cards, [currentCardIndex, selectedCardIndex], '');
       setCards([...cards]);
-      handleWrongAnswer(onMismatch);
+      onMismatch();
     }
   }, 500);
 }
