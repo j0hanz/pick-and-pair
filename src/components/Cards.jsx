@@ -3,7 +3,7 @@ import Card from './Card';
 import { Row, Col, Container } from 'react-bootstrap';
 import Score from './Score';
 import Timer from './Timer';
-import Attempts from './Attempts';
+import Moves from './Moves';
 import styles from './styles/Cards.module.css';
 
 export default function Cards({
@@ -13,14 +13,14 @@ export default function Cards({
   matchedPairs,
   initialTime,
   onTimeUp,
-  attempts,
+  moves,
 }) {
   return (
     <Container className={styles.container}>
       <div className={styles.stats}>
         <Score matchedPairs={matchedPairs} />
         <Timer initialTime={initialTime} onTimeUp={onTimeUp} />
-        <Attempts attempts={attempts} />
+        <Moves moves={moves} />
       </div>
       <Row className="g-4">
         {cards.map((card, index) => (
