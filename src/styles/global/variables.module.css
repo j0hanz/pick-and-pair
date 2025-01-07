@@ -1,22 +1,21 @@
 :root {
-  --background-color: #1a2b3c;
-
+  --background-color: linear-gradient(
+    53deg,
+    rgba(35, 53, 180, 1) 0%,
+    rgba(116, 32, 179, 1) 100%
+  );
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  --bs-modal-border-color: none !important;
-  --bs-modal-border-width: 0 !important;
-  --bs-modal-box-shadow: none !important;
-  --bs-modal-margin: 0 !important;
-  --bs-modal-padding: 0 !important;
+  --bs-modal-border-color: none;
+  --bs-modal-border-width: 0;
+  --bs-modal-box-shadow: none;
+  --bs-modal-margin: 0;
+  --bs-modal-padding: 0;
   --button-primary: #1c2d3e;
   --button-primary-hover: #008cff;
   --button-secondary: #1c2d3e;
   --button-secondary-hover: #7c868d;
-  --color-card-bg: linear-gradient(
-    0deg,
-    rgb(61, 23, 73) 0%,
-    rgba(25, 5, 45, 0.479) 50%
-  );
-  --color-row-bg: #1919194b;
+  --color-card-bg: #330e99;
+  --color-row-bg: #ffffff09;
   --color-card-shadow: rgba(0, 0, 0, 0.5);
   --color-card-shadow-active: rgba(255, 150, 0, 0.85);
   --color-card-shadow-hover: rgba(0, 0, 0, 0.25);
@@ -29,8 +28,10 @@
   --color-wrong-border: #c9302c;
   --highlight-color: #ff8c69;
   --modal-background: #1919194b;
-  --text-color: #d0d0d0;
-  --color-card-neon: rgba(255, 0, 135, 0.85);
+  --text-color: #00ffc8;
+  --color-card-neon: #ff008755;
   --color-row-border: #ffffff33;
   --color-row-box-shadow: #00000085;
+  --moves-color: #d34128;
+  --timer-color: #199e19;
 }

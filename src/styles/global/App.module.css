@@ -28,7 +28,16 @@ body {
 }
 
 /* Buttons */
-.button,
+button {
+  background-color: none !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
 .difficultyButton {
   display: flex;
   justify-content: center;
@@ -45,23 +54,9 @@ body {
     box-shadow 0.3s ease;
 }
 
-.button:hover,
 .difficultyButton:hover {
   background-color: var(--button-primary-hover);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-button {
-  border: none !important;
-  cursor: pointer;
-  color: var(--color-white);
-  transition:
-    background-color 0.5s ease,
-    transform 0.3s ease;
-}
-
-button:hover {
-  transform: scale(1.05);
 }
 
 /* Animations */
