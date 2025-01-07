@@ -10,7 +10,7 @@ export function useGameState(difficulty, onRestart) {
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [matchedPairs, setMatchedPairs] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
-  const [attempts, setAttempts] = useState(0);
+  const [moves, setMoves] = useState(0);
   const [completedTime, setCompletedTime] = useState(0);
   const [startTime, setStartTime] = useState(Date.now());
   const previousIndex = useRef(null);
@@ -65,22 +65,13 @@ export function useGameState(difficulty, onRestart) {
     startTime,
   ]);
 
-  // Check for maximum attempts
-  useEffect(() => {
-    if (attempts >= 5) {
-      setIsGameOver(true);
-      setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
-      setModalMessage(gameOverMessage);
-      setShowModal(true);
-    }
-  }, [attempts, startTime]);
-
   // Handle game restart
   const handleRestart = () => {
     setIsGameOver(false);
     setShowModal(false);
     setModalMessage('');
     setStartTime(Date.now());
+    setMoves(0);
     onRestart();
   };
 
@@ -101,8 +92,8 @@ export function useGameState(difficulty, onRestart) {
     setMatchedPairs,
     isGameOver,
     setIsGameOver,
-    attempts,
-    setAttempts,
+    moves,
+    setMoves,
     completedTime,
     startTime,
     previousIndex,

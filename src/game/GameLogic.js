@@ -14,8 +14,8 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
     setMatchedPairs,
     isGameOver,
     setIsGameOver,
-    attempts,
-    setAttempts,
+    moves,
+    setMoves,
     completedTime,
     previousIndex,
     showModal,
@@ -35,8 +35,7 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
     setMatchedPairs,
     previousIndex,
     setIsGameOver,
-    difficulty,
-    setAttempts,
+    setMoves,
   });
 
   return (
@@ -50,7 +49,7 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
           backdrop="static"
           completedTime={completedTime}
           score={matchedPairs}
-          attemptsLeft={5 - attempts}
+          moves={moves}
         >
           {modalMessage}
         </Modal>
@@ -62,7 +61,7 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
             matchedPairs={matchedPairs}
             initialTime={60}
             onTimeUp={handleTimeUp}
-            attempts={attempts}
+            moves={moves}
           />
           <Modal
             show={showModal}
@@ -72,7 +71,7 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
             backdrop="static"
             completedTime={completedTime}
             score={matchedPairs}
-            attemptsLeft={5 - attempts}
+            moves={moves}
           >
             {modalMessage}
           </Modal>

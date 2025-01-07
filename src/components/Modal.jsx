@@ -26,12 +26,12 @@ function ModalFooter({ onRestart, onExit }) {
 }
 
 // Scoreboard component displays the game statistics
-function Scoreboard({ completedTime, score, attemptsLeft }) {
+function Scoreboard({ completedTime, score, moves }) {
   return (
     <div className={styles.scoreboard}>
       <p>Completed Time: {completedTime} seconds</p>
       <p>Score: {score}</p>
-      <p>Attempts Left: {attemptsLeft}</p>
+      <p>Moves: {moves}</p>
     </div>
   );
 }
@@ -46,7 +46,7 @@ export default function CustomModal({
   children,
   completedTime,
   score,
-  attemptsLeft,
+  moves,
 }) {
   return (
     <Modal
@@ -59,11 +59,7 @@ export default function CustomModal({
       <ModalHeader title={title} onClose={onClose} />
       <Modal.Body>
         {children}
-        <Scoreboard
-          completedTime={completedTime}
-          score={score}
-          attemptsLeft={attemptsLeft}
-        />
+        <Scoreboard completedTime={completedTime} score={score} moves={moves} />
       </Modal.Body>
       <ModalFooter onRestart={onRestart} onExit={onExit} />
     </Modal>
