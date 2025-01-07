@@ -45,7 +45,16 @@ export default function GameLogic({ onRestart, onExit }) {
 
   return (
     <>
-      {isGameOver ? (
+      <Cards
+        cards={cards}
+        handleCardSelection={handleCardSelection}
+        matchedPairs={matchedPairs}
+        initialTime={60}
+        onTimeUp={handleTimeUp}
+        moves={moves}
+        onReset={handleReset}
+      />
+      {isGameOver && (
         <Modal
           show={showModal}
           onClose={() => setShowModal(false)}
@@ -58,18 +67,6 @@ export default function GameLogic({ onRestart, onExit }) {
         >
           {modalMessage}
         </Modal>
-      ) : (
-        <>
-          <Cards
-            cards={cards}
-            handleCardSelection={handleCardSelection}
-            matchedPairs={matchedPairs}
-            initialTime={60}
-            onTimeUp={handleTimeUp}
-            moves={moves}
-            onReset={handleReset}
-          />
-        </>
       )}
     </>
   );
