@@ -1,8 +1,8 @@
 :root {
   --background-color: linear-gradient(
-    53deg,
-    rgba(35, 53, 180, 1) 0%,
-    rgba(116, 32, 179, 1) 100%
+    130deg,
+    rgba(25, 42, 160, 1) 0%,
+    rgba(106, 22, 169, 1) 100%
   );
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   --bs-modal-border-color: none;
@@ -10,26 +10,26 @@
   --bs-modal-box-shadow: none;
   --bs-modal-margin: 0;
   --bs-modal-padding: 0;
-  --button-primary: #1c2d3e;
-  --button-primary-hover: #008cff;
-  --button-secondary: #1c2d3e;
-  --button-secondary-hover: #7c868d;
-  --color-card-bg: #330e99;
-  --color-row-bg: #ffffff09;
+  --button-primary: #1a2b3d;
+  --button-primary-hover: #007bff;
+  --button-secondary: #1a2b3d;
+  --button-secondary-hover: #6c757d;
+  --color-card-bg: #2a0d88;
+  --color-row-bg: #d1d1d10a;
   --color-card-shadow: rgba(0, 0, 0, 0.5);
-  --color-card-shadow-active: rgba(255, 150, 0, 0.85);
+  --color-card-shadow-active: rgba(255, 140, 0, 0.85);
   --color-card-shadow-hover: rgba(0, 0, 0, 0.25);
   --color-card-shadow-matched: rgba(0, 128, 0, 0.85);
-  --color-correct-bg: #2d3f5b;
-  --color-correct-border: #23344b;
+  --color-correct-bg: #263a52;
+  --color-correct-border: #1f2e45;
   --color-shadow: rgba(0, 0, 0, 0.35);
   --color-white: #e0e0e0;
   --color-wrong-bg: #d9534f;
   --color-wrong-border: #c9302c;
-  --highlight-color: #ff0087;
+  --highlight-color: #ff0077;
   --modal-background: #1919194b;
-  --text-color: #00ffc8;
-  --color-card-neon: #ff008755;
+  --text-color: #f5f5f5;
+  --color-card-neon: #ff007755;
   --color-row-border: #ffffff33;
   --color-row-box-shadow: #00000085;
   --moves-color: #d34128;
