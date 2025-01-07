@@ -2,7 +2,6 @@ import React from 'react';
 import Card from './Card';
 import { Row, Col, Container, Button } from 'react-bootstrap';
 import { HiArrowPath } from 'react-icons/hi2';
-import Score from './Score';
 import Timer from './Timer';
 import Moves from './Moves';
 import styles from './styles/Cards.module.css';
@@ -21,7 +20,6 @@ export default function Cards({
     <Container className={styles.container}>
       <Row className={styles.row}>
         <div className={`${styles.stats} px-2 py-1`}>
-          <Score matchedPairs={matchedPairs} />
           <Timer initialTime={initialTime} onTimeUp={onTimeUp} />
           <Moves moves={moves} />
           <Button className={styles.resetButton} onClick={onReset}>
