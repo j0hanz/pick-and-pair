@@ -1,5 +1,5 @@
 :root {
-  --background-color: #1a1a1a;
+  --background-color: #1b2028;
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   --bs-modal-border-color: none !important;
   --bs-modal-border-width: 0 !important;
@@ -10,7 +10,14 @@
   --button-primary-hover: #0056b3;
   --button-secondary: #2a2a2a;
   --button-secondary-hover: #5a6268;
-  --color-card-bg: #3a3a3a;
+  --color-card-bg: linear-gradient(
+    135deg,
+    #1b2838,
+    #16222e 15%,
+    #0f1a25 25%,
+    #1a2a3e 50%,
+    #24344e 100%
+  );
   --color-card-shadow: rgba(0, 0, 0, 0.5);
   --color-card-shadow-active: rgba(255, 165, 0, 0.8);
   --color-card-shadow-hover: rgba(0, 0, 0, 0.2);
