@@ -12,7 +12,7 @@ export function useGameLogic({
   setIsGameOver,
   setMoves,
 }) {
-  // Use 6 pairs for both difficulty levels
+  // Use 6 pairs
   const totalPairs = 6;
 
   // Handle card selection logic

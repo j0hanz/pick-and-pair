@@ -3,10 +3,8 @@ import { shuffleCards } from '../utils/shuffleCards';
 import { generateCards } from '../data/cardData';
 import { gameOverMessage, victoryMessage } from '../data/messages';
 
-export function useGameState(difficulty, onRestart) {
-  const [cards, setCards] = useState(() =>
-    shuffleCards(generateCards(difficulty))
-  );
+export function useGameState(onRestart) {
+  const [cards, setCards] = useState(() => shuffleCards(generateCards()));
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [matchedPairs, setMatchedPairs] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
