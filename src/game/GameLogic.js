@@ -38,6 +38,11 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
     setMoves,
   });
 
+  // Handle game reset
+  const handleReset = () => {
+    handleRestart();
+  };
+
   return (
     <>
       {isGameOver ? (
@@ -62,6 +67,7 @@ export default function GameLogic({ onRestart, onExit, difficulty }) {
             initialTime={60}
             onTimeUp={handleTimeUp}
             moves={moves}
+            onReset={handleReset}
           />
           <Modal
             show={showModal}
