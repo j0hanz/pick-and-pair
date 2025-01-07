@@ -69,18 +69,6 @@ export default function GameLogic({ onRestart, onExit }) {
             moves={moves}
             onReset={handleReset}
           />
-          <Modal
-            show={showModal}
-            onClose={() => setShowModal(false)}
-            onRestart={handleRestart}
-            onExit={onExit}
-            backdrop="static"
-            completedTime={completedTime}
-            score={matchedPairs}
-            moves={moves}
-          >
-            {modalMessage}
-          </Modal>
         </>
       )}
     </>
