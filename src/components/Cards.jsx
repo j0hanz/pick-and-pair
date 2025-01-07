@@ -17,12 +17,12 @@ export default function Cards({
 }) {
   return (
     <Container className={styles.container}>
-      <div className={styles.stats}>
-        <Score matchedPairs={matchedPairs} />
-        <Timer initialTime={initialTime} onTimeUp={onTimeUp} />
-        <Moves moves={moves} />
-      </div>
-      <Row className="g-4">
+      <Row className={styles.row}>
+        <div className={`${styles.stats} p-2`}>
+          <Score matchedPairs={matchedPairs} />
+          <Timer initialTime={initialTime} onTimeUp={onTimeUp} />
+          <Moves moves={moves} />
+        </div>
         {cards.map((card, index) => (
           <Col xs={4} sm={4} md={3} lg={3} xl={3} key={index}>
             <Card
