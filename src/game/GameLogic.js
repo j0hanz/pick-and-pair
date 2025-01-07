@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useGameState } from '../hooks/useGameState';
 import { useGameLogic } from '../hooks/useGameLogic';
 import Cards from '../components/Cards';
@@ -25,7 +25,6 @@ export default function GameLogic({ onRestart, onExit }) {
     handleTimeUp,
   } = useGameState(onRestart);
 
-  // Custom hook for game logic
   const { handleCardSelection } = useGameLogic({
     cards,
     setCards,
@@ -38,10 +37,9 @@ export default function GameLogic({ onRestart, onExit }) {
     setMoves,
   });
 
-  // Handle game reset
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     handleRestart();
-  };
+  }, [handleRestart]);
 
   return (
     <>
