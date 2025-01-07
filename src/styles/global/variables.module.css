@@ -26,7 +26,7 @@
   --color-white: #e0e0e0;
   --color-wrong-bg: #d9534f;
   --color-wrong-border: #c9302c;
-  --highlight-color: #ff8c69;
+  --highlight-color: #ff0087;
   --modal-background: #1919194b;
   --text-color: #00ffc8;
   --color-card-neon: #ff008755;
@@ -34,4 +34,5 @@
   --color-row-box-shadow: #00000085;
   --moves-color: #d34128;
   --timer-color: #199e19;
+  --secondary-color: #ff5722;
 }
