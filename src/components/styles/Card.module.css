@@ -38,11 +38,11 @@
 
 /* Back face */
 .card .back {
-  opacity: 0.6;
+  opacity: 1;
   transition:
     opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  background-image: url('../../assets/img/card-back.gif');
+  background-image: url('../../assets/img/card-back.webp');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
