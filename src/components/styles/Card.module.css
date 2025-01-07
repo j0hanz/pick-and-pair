@@ -3,7 +3,7 @@
   position: relative;
   height: 13rem;
   perspective: 1200px;
-  background-color: var(--color-card-bg);
+  background: var(--color-card-bg);
   border-radius: 12px;
   box-shadow: 0 4px 8px var(--color-card-shadow);
   margin-bottom: 1rem;
@@ -36,7 +36,7 @@
 
 /* Back face */
 .card .back {
-  opacity: 0.3;
+  opacity: 0.4;
   transition:
     opacity 0.6s ease,
     transform 0.6s ease;
