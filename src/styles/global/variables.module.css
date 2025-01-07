@@ -1,49 +1,36 @@
 :root {
-  --background-color: #0e1721;
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  --background-color: #1a2b3c;
+
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   --bs-modal-border-color: none !important;
   --bs-modal-border-width: 0 !important;
   --bs-modal-box-shadow: none !important;
   --bs-modal-margin: 0 !important;
   --bs-modal-padding: 0 !important;
-  --button-primary: #1b2a38;
-  --button-primary-hover: #007bff;
-  --button-secondary: #1b2a38;
-  --button-secondary-hover: #6c757d;
+  --button-primary: #1c2d3e;
+  --button-primary-hover: #008cff;
+  --button-secondary: #1c2d3e;
+  --button-secondary-hover: #7c868d;
   --color-card-bg: linear-gradient(
-    135deg,
-    #0e1721,
-    #1b2a38 15%,
-    #0e1721 25%,
-    #22334a 50%,
-    #2c3e5a 100%
+    0deg,
+    rgb(61, 23, 73) 0%,
+    rgba(25, 5, 45, 0.479) 50%
   );
-  --color-row-bg: rgba(255, 255, 255, 0.151);
-  --color-card-shadow: rgba(0, 0, 0, 0.6);
-  --color-card-shadow-active: rgba(255, 140, 0, 0.9);
-  --color-card-shadow-hover: rgba(0, 0, 0, 0.3);
-  --color-card-shadow-matched: rgba(0, 128, 0, 0.9);
-  --color-correct-bg: #2c3e5a;
-  --color-correct-border: #22334a;
-  --color-shadow: rgba(0, 0, 0, 0.4);
-  --color-white: #f0f0f0;
+  --color-row-bg: #1919194b;
+  --color-card-shadow: rgba(0, 0, 0, 0.5);
+  --color-card-shadow-active: rgba(255, 150, 0, 0.85);
+  --color-card-shadow-hover: rgba(0, 0, 0, 0.25);
+  --color-card-shadow-matched: rgba(0, 128, 0, 0.85);
+  --color-correct-bg: #2d3f5b;
+  --color-correct-border: #23344b;
+  --color-shadow: rgba(0, 0, 0, 0.35);
+  --color-white: #e0e0e0;
   --color-wrong-bg: #d9534f;
   --color-wrong-border: #c9302c;
   --highlight-color: #ff8c69;
-  --modal-background: #1c1c1c;
-  --modal-bg: linear-gradient(
-    180deg,
-    #1a1a1ad8 0%,
-    #2a2a2ac9 50%,
-    #1a1a1ad8 100%
-  );
+  --modal-background: #1919194b;
   --text-color: #d0d0d0;
   --color-card-neon: rgba(255, 0, 135, 0.85);
   --color-row-border: #ffffff33;
-  --color-row-bg-gradient: linear-gradient(
-    0deg,
-    rgb(50, 20, 60) 0%,
-    rgba(20, 0, 40, 0.8) 50%
-  );
-  --color-row-box-shadow: #00000099;
+  --color-row-box-shadow: #00000085;
 }
