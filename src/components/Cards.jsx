@@ -10,9 +10,6 @@ export default function Cards({
   cards,
   isInitialFlip,
   handleCardSelection,
-  matchedPairs,
-  initialTime,
-  onTimeUp,
   moves,
   onReset,
 }) {
@@ -20,7 +17,7 @@ export default function Cards({
     <Container className={styles.container}>
       <Row className={styles.row}>
         <div className={`${styles.stats} px-2 py-1`}>
-          <Timer initialTime={initialTime} onTimeUp={onTimeUp} />
+          <Timer />
           <Moves moves={moves} />
           <Button className={styles.resetButton} onClick={onReset}>
             <HiArrowPath className={styles.resetIcon} />
