@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import { useGameState } from '../hooks/useGameState';
 import { useGameLogic } from '../hooks/useGameLogic';
-import Cards from '../components/Cards';
-import Modal from '../components/Modal';
+import Cards from './Cards';
+import Modal from './Modal';
 
 export default function GameLogic({ onRestart, onExit }) {
   const {

@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import styles from './styles/global/App.module.css';
-import GameLogic from './game/GameLogic';
+import GameLogic from './components/GameLogic';
 import { handleButtonClick } from './utils/soundManager';
 
 // Main app component
