@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { shuffleCards } from '../utils/shuffleCards';
 import { generateCards } from '../data/cardData';
-import { victoryMessage } from '../data/messages';
+import { completionMessage } from '../data/messages';
 
 export function useGameState(onRestart) {
   const [cards, setCards] = useState(() => shuffleCards(generateCards()));
@@ -36,7 +36,7 @@ export function useGameState(onRestart) {
     if (matchedPairs === totalPairs) {
       setTimerActive(false);
       setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
-      setModalMessage(victoryMessage);
+      setModalMessage(completionMessage);
       setShowModal(true);
       setIsGameOver(true);
     }
