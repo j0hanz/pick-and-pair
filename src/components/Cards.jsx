@@ -3,7 +3,7 @@ import Card from './Card';
 import { Row, Col, Container, Button } from 'react-bootstrap';
 import { HiArrowPath } from 'react-icons/hi2';
 import Timer from './Timer';
-import Moves from './Moves';
+import WrongMoves from './WrongMoves';
 import styles from './styles/Cards.module.css';
 
 export default function Cards({
@@ -18,7 +18,7 @@ export default function Cards({
       <Row className={styles.row}>
         <div className={`${styles.stats} px-2 py-1`}>
           <Timer />
-          <Moves moves={moves} />
+          <WrongMoves moves={moves} />
           <Button className={styles.resetButton} onClick={onReset}>
             <HiArrowPath className={styles.resetIcon} />
           </Button>
