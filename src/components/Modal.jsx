@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { HiOutlineXMark, HiOutlineStar, HiOutlineClock } from 'react-icons/hi2';
 import styles from './styles/Modal.module.css';
 
 // Header with title and close button
@@ -29,9 +30,18 @@ function ModalFooter({ onRestart, onExit }) {
 function Scoreboard({ score, moves, completedTime }) {
   return (
     <div className={styles.scoreboard}>
-      <p>Moves: {moves}</p>
-      <p>Score: {score}</p>
-      <p>Time: {completedTime} seconds</p>
+      <div className={styles.scoreItem}>
+        <HiOutlineXMark className={styles.scoreIcon} />
+        {moves}
+      </div>
+      <div className={styles.scoreItem}>
+        <HiOutlineStar className={styles.scoreIcon} />
+        {score}
+      </div>
+      <div className={styles.scoreItem}>
+        <HiOutlineClock className={styles.scoreIcon} />
+        {completedTime}
+      </div>
     </div>
   );
 }
