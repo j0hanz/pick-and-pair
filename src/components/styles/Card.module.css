@@ -11,8 +11,7 @@
   cursor: pointer;
   transition:
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card img,
@@ -53,8 +52,8 @@
   transform: scale(1.05);
   box-shadow: 0 0 4px var(--secondary-color);
   transition:
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Active (flipped) card */
