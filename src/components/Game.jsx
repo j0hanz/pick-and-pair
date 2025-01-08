@@ -3,6 +3,7 @@ import { useGameState } from '../hooks/useGameState';
 import { useGameLogic } from '../hooks/useGameLogic';
 import Cards from './Cards';
 import Modal from './Modal';
+import Score from './Score';
 
 export default function GameLogic({ onRestart, onExit }) {
   const {
@@ -57,7 +58,7 @@ export default function GameLogic({ onRestart, onExit }) {
           onExit={onExit}
           backdrop="static"
           completedTime={completedTime}
-          score={matchedPairs}
+          score={<Score moves={moves} completedTime={completedTime} />}
           moves={moves}
         >
           {modalMessage}
