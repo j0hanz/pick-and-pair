@@ -5,8 +5,8 @@
 /* General styles */
 body {
   font-family: 'Poppins', sans-serif;
-  background: var(--background-color);
-  color: var(--text-color);
+  background: var(--bg-primary);
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +16,7 @@ body {
 /* Game title styles */
 .gameTitle {
   font-size: 4.5rem;
-  color: var(--highlight-color);
+  color: var(--color-highlight);
   text-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
   transition:
     color 0.3s ease,

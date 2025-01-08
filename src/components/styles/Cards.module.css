@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 1.5rem;
-  color: var(--text-color);
+  color: var(--color-text);
 }
 
 .resetIcon {
@@ -27,8 +27,8 @@
   margin-left: 0;
   margin-right: 0;
   padding: 0.5rem;
-  border: 1px solid var(--color-row-border);
-  background: var(--color-row-bg);
+  border: 1px solid var(--border-row);
+  background: var(--bg-row);
   border-radius: 0.7rem;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

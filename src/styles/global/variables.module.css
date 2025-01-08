@@ -1,38 +1,33 @@
 :root {
-  --background-color: linear-gradient(
+  --bg-primary: linear-gradient(
     130deg,
     rgba(25, 42, 160, 1) 0%,
     rgba(106, 22, 169, 1) 100%
   );
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  --bs-modal-border-color: none;
-  --bs-modal-border-width: 0;
-  --bs-modal-box-shadow: none;
-  --bs-modal-margin: 0;
-  --bs-modal-padding: 0;
-  --button-primary: #1a2b3d;
-  --button-primary-hover: #007bff;
-  --button-secondary: #1a2b3d;
-  --button-secondary-hover: #6c757d;
-  --color-card-bg: #2a0d88;
-  --color-row-bg: #d1d1d10a;
-  --color-card-shadow: rgba(0, 0, 0, 0.5);
-  --color-card-shadow-active: rgba(255, 140, 0, 0.85);
-  --color-card-shadow-hover: rgba(0, 0, 0, 0.25);
-  --color-card-shadow-matched: rgba(0, 128, 0, 0.85);
-  --color-correct-bg: #263a52;
-  --color-correct-border: #1f2e45;
-  --color-shadow: rgba(0, 0, 0, 0.35);
+  --shadow-primary: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --btn-bg-primary: #1a2b3d;
+  --btn-bg-primary-hover: #007bff;
+  --btn-bg-secondary: #1a2b3d;
+  --btn-bg-secondary-hover: #6c757d;
+  --bg-card: #2a0d88;
+  --bg-row: #d1d1d10a;
+  --shadow-card: rgba(0, 0, 0, 0.5);
+  --shadow-card-active: rgba(255, 140, 0, 0.85);
+  --shadow-card-hover: rgba(0, 0, 0, 0.25);
+  --shadow-card-matched: rgba(0, 128, 0, 0.85);
+  --bg-correct: #263a52;
+  --border-correct: #1f2e45;
+  --shadow-primary: rgba(0, 0, 0, 0.35);
   --color-white: #e0e0e0;
-  --color-wrong-bg: #d9534f;
-  --color-wrong-border: #c9302c;
-  --highlight-color: #ff0077;
-  --modal-background: #482f9b;
-  --text-color: #f5f5f5;
-  --color-card-neon: #ff007755;
-  --color-row-border: #ffffff33;
-  --color-row-box-shadow: #00000085;
-  --moves-color: #d34128;
-  --timer-color: #199e19;
-  --secondary-color: #ff5722;
+  --bg-wrong: #d9534f;
+  --border-wrong: #c9302c;
+  --color-highlight: #ff0077;
+  --bg-modal: #482f9b;
+  --color-text: #f5f5f5;
+  --shadow-card-neon: #ff007755;
+  --border-row: #ffffff33;
+  --shadow-row: #00000085;
+  --color-moves: #d34128;
+  --color-timer: #199e19;
+  --color-secondary: #ff5722;
 }

@@ -3,10 +3,10 @@
   position: relative;
   height: 13rem;
   perspective: 1200px;
-  background: var(--color-card-bg);
-  border: 3px solid var(--color-row-border);
+  background: var(--bg-card);
+  border: 3px solid var(--border-row);
   border-radius: 12px;
-  box-shadow: 0 2px 6px var(--color-card-shadow);
+  box-shadow: 0 2px 6px var(--shadow-card);
   margin-bottom: 1rem;
   cursor: pointer;
   transition:
@@ -50,7 +50,7 @@
 /* Card Hover */
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 4px var(--secondary-color);
+  box-shadow: 0 0 4px var(--color-secondary);
   transition:
     transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -60,8 +60,8 @@
 .card.active {
   transform: rotateY(180deg) scale(1.1);
   box-shadow:
-    0 0 2px 2px var(--color-card-shadow-active),
-    0 0 4px var(--color-card-neon);
+    0 0 2px 2px var(--shadow-card-active),
+    0 0 4px var(--shadow-card-neon);
   transition:
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,8 +82,8 @@
 .card.matched {
   transform: rotateY(180deg) scale(0.9);
   box-shadow:
-    0 0 2px 2px var(--color-card-shadow-matched),
-    0 0 4px var(--color-card-shadow-matched);
+    0 0 2px 2px var(--shadow-card-matched),
+    0 0 4px var(--shadow-card-matched);
   transition:
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);

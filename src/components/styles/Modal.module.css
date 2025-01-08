@@ -1,34 +1,34 @@
 .modal :global(.modal-content) {
-  background: var(--modal-background);
+  background: var(--bg-modal);
   color: var(--color-white);
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--shadow-primary);
 }
 
 .modal :global(.modal-header),
 .modal :global(.modal-footer) {
-  background: var(--modal-background);
+  background: var(--bg-modal);
   color: var(--color-white);
 }
 
 /* Button styles */
 .modal :global(.btn-primary) {
-  background-color: var(--button-primary);
-  border-color: var(--button-primary);
+  background-color: var(--btn-bg-primary);
+  border-color: var(--btn-bg-primary);
 }
 
 .modal :global(.btn-primary:hover) {
-  background-color: var(--button-primary-hover);
-  border-color: var(--button-primary-hover);
+  background-color: var(--btn-bg-primary-hover);
+  border-color: var(--btn-bg-primary-hover);
 }
 
 .modal :global(.btn-secondary) {
-  background-color: var(--button-secondary);
-  border-color: var(--button-secondary);
+  background-color: var(--btn-bg-secondary);
+  border-color: var(--btn-bg-secondary);
 }
 
 .modal :global(.btn-secondary:hover) {
-  background-color: var(--button-secondary-hover);
-  border-color: var(--button-secondary-hover);
+  background-color: var(--btn-bg-secondary-hover);
+  border-color: var(--btn-bg-secondary-hover);
 }
 
 .modal :global(.close) {
@@ -39,7 +39,7 @@
 .scoreboard {
   margin-top: 1rem;
   font-size: 1.2rem;
-  color: var(--text-color);
+  color: var(--color-text);
 }
 
 .scoreboard p {
