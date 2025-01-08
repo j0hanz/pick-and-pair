@@ -1,11 +1,27 @@
 import React from 'react';
-import { HiOutlineStar } from 'react-icons/hi2';
+import { HiStar } from 'react-icons/hi2';
+import style from './styles/Score.module.css';
 
-export default function Score({ matchedPairs }) {
-  const safePairs = Math.max(0, matchedPairs);
+export default function Score({ moves, completedTime }) {
+  let stars = 1;
+
+  if (completedTime <= 60) {
+    if (moves === 0) {
+      stars = 5;
+    } else if (moves === 1) {
+      stars = 4;
+    } else if (moves === 2) {
+      stars = 3;
+    } else if (moves === 3) {
+      stars = 2;
+    }
+  }
+
   return (
     <div>
-      <HiOutlineStar className="me-1" /> {safePairs}
+      {Array.from({ length: stars }, (_, index) => (
+        <HiStar key={index} className={style.scoreIcon} />
+      ))}
     </div>
   );
 }
