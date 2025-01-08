@@ -1,6 +1,7 @@
 import { useCallback, useEffect } from 'react';
-import { clickHandler } from '../utils/clickHandler';
+import { handleCardClick } from '../utils/cardUtils';
 
+// Custom hook to manage game logic
 export function useGameLogic({
   cards,
   setCards,
@@ -12,13 +13,12 @@ export function useGameLogic({
   setIsGameOver,
   setMoves,
 }) {
-  // Use 6 pairs
   const totalPairs = 6;
 
-  // Handle card selection logic
+  // Function to handle card selection
   const handleCardSelection = useCallback(
     (index) => {
-      clickHandler(
+      handleCardClick(
         index,
         cards,
         setCards,
@@ -40,7 +40,6 @@ export function useGameLogic({
     ]
   );
 
-  // Check if the game is over
   useEffect(() => {
     if (matchedPairs === totalPairs) {
       setIsGameOver(true);
