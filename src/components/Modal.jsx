@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { HiOutlineXMark, HiOutlineStar, HiOutlineClock } from 'react-icons/hi2';
+import { HiOutlineXMark, HiOutlineClock } from 'react-icons/hi2';
 import styles from './styles/Modal.module.css';
 
 // Header with title and close button
@@ -31,15 +31,12 @@ function Scoreboard({ score, moves, completedTime }) {
   return (
     <div className={styles.scoreboard}>
       <div className={styles.scoreItem}>
-        <HiOutlineXMark className={styles.scoreIcon} />
+        <HiOutlineXMark className={`me-1 ${styles.scoreIcon}`} />
         {moves}
       </div>
+      <div className={styles.scoreItem}>{score}</div>
       <div className={styles.scoreItem}>
-        <HiOutlineStar className={styles.scoreIcon} />
-        {score}
-      </div>
-      <div className={styles.scoreItem}>
-        <HiOutlineClock className={styles.scoreIcon} />
+        <HiOutlineClock className={`me-1 ${styles.scoreIcon}`} />
         {completedTime}
       </div>
     </div>
