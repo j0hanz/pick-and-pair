@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { shuffleCards } from '../utils/shuffleCards';
 import { generateCards } from '../data/cardData';
-import { gameOverMessage, victoryMessage } from '../data/messages';
+import { victoryMessage } from '../data/messages';
 
 export function useGameState(onRestart) {
   const [cards, setCards] = useState(() => shuffleCards(generateCards()));
@@ -49,23 +49,6 @@ export function useGameState(onRestart) {
     startTime,
   ]);
 
-  // Check for game over condition
-  useEffect(() => {
-    if (isGameOver && matchedPairs !== totalPairs) {
-      setTimerActive(false);
-      setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
-      setModalMessage(gameOverMessage);
-      setShowModal(true);
-    }
-  }, [
-    isGameOver,
-    matchedPairs,
-    totalPairs,
-    setModalMessage,
-    setShowModal,
-    startTime,
-  ]);
-
   // Handle game restart
   const handleRestart = useCallback(() => {
     setIsGameOver(false);
@@ -76,14 +59,6 @@ export function useGameState(onRestart) {
     setTimerActive(true);
     onRestart();
   }, [onRestart]);
-
-  // Handle time up condition
-  const handleTimeUp = useCallback(() => {
-    setIsGameOver(true);
-    setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
-    setModalMessage(gameOverMessage);
-    setShowModal(true);
-  }, [startTime]);
 
   return {
     cards,
@@ -104,6 +79,5 @@ export function useGameState(onRestart) {
     modalMessage,
     timerActive,
     handleRestart,
-    handleTimeUp,
   };
 }
