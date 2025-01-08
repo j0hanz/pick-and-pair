@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import styles from './styles/global/App.module.css';
-import GameLogic from './components/GameLogic';
+import Game from './components/Game';
 import { handleButtonClick } from './utils/soundManager';
 
 // Main app component
@@ -27,7 +27,7 @@ export default function App() {
   return (
     <>
       {isGameActive ? (
-        <GameLogic onRestart={handleRestart} onExit={handleExit} />
+        <Game onRestart={handleRestart} onExit={handleExit} />
       ) : (
         <div className="d-flex justify-content-center">
           <Button
