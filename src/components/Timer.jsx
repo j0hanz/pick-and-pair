@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { HiOutlineClock } from 'react-icons/hi2';
 import { useCountdown } from '../hooks/useCountdown';
 import styles from './styles/Timer.module.css';
 
-export default function Timer({ initialTime, onTimeUp }) {
-  // Use the useCountdown hook to get the remaining time
+const Timer = memo(({ initialTime, onTimeUp }) => {
   const remainingTime = useCountdown(initialTime, onTimeUp);
 
   return (
@@ -12,4 +11,7 @@ export default function Timer({ initialTime, onTimeUp }) {
       <HiOutlineClock className={`${styles.statsIcon} me-2`} /> {remainingTime}
     </div>
   );
-}
+});
+
+Timer.displayName = 'Timer';
+export default Timer;
