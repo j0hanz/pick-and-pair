@@ -1,11 +1,11 @@
 import React from 'react';
-import { TbStar } from 'react-icons/tb';
+import { HiOutlineStar } from 'react-icons/hi2';
 
 export default function Score({ matchedPairs }) {
   const safePairs = Math.max(0, matchedPairs);
   return (
     <div>
-      <TbStar /> {safePairs}
+      <HiOutlineStar className="me-1" /> {safePairs}
     </div>
   );
 }

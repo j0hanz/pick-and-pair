@@ -8,7 +8,7 @@ const Timer = memo(() => {
 
   return (
     <div className={styles.timer}>
-      <HiOutlineClock className={`${styles.statsIcon} me-2`} /> {elapsedTime}
+      <HiOutlineClock className="me-1" /> {elapsedTime}
     </div>
   );
 });

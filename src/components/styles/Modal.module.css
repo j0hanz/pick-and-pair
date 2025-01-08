@@ -37,11 +37,20 @@
 
 /* Scoreboard styles */
 .scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 1rem;
   font-size: 1.2rem;
   color: var(--color-text);
 }
 
-.scoreboard p {
-  margin: 0.5rem 0;
+.scoreItem {
+  display: flex;
+  align-items: center;
+}
+
+.scoreIcon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
 }
