@@ -6,7 +6,7 @@ import styles from './styles/Modal.module.css';
 // Header with title and close button
 function ModalHeader({ title }) {
   return (
-    <Modal.Header closeVariant="white" className="border-0">
+    <Modal.Header closeVariant="white" className="border-0 p-0">
       <Modal.Title>{title}</Modal.Title>
     </Modal.Header>
   );
@@ -15,11 +15,11 @@ function ModalHeader({ title }) {
 // Footer with close and restart buttons
 function ModalFooter({ onRestart, onExit }) {
   return (
-    <Modal.Footer className="border-0">
-      <Button variant="primary" onClick={onRestart}>
+    <Modal.Footer className="border-0 justify-content-between p-0">
+      <Button variant="primary w-25" onClick={onRestart}>
         Restart
       </Button>
-      <Button variant="secondary" onClick={onExit}>
+      <Button variant="secondary w-25" onClick={onExit}>
         Exit
       </Button>
     </Modal.Footer>
@@ -29,7 +29,7 @@ function ModalFooter({ onRestart, onExit }) {
 // Scoreboard component displays the game statistics
 function Scoreboard({ score, moves, completedTime }) {
   return (
-    <div className={styles.scoreboard}>
+    <div className={`${styles.scoreboard} py-4`}>
       <div className={styles.scoreItem}>
         <HiOutlineXMark className={`me-1 ${styles.scoreIcon}`} />
         {moves}
