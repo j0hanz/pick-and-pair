@@ -32,9 +32,9 @@ export default function App() {
         <div className="d-flex justify-content-center">
           <Button
             onClick={handleButtonClick(startGame)}
-            className={styles.button}
+            className={styles.btnStart}
           >
-            Start Game
+            <span>Start Game</span>
           </Button>
         </div>
       )}
