@@ -5,7 +5,7 @@
   perspective: 1200px;
   background: var(--bg-card);
   border: 3px solid var(--border-row);
-  border-radius: 12px;
+  border-radius: 25px;
   box-shadow: 0 2px 6px var(--shadow-card);
   margin-bottom: 1rem;
   cursor: pointer;
@@ -20,7 +20,7 @@
   height: 100%;
   position: absolute;
   left: 0;
-  border-radius: 12px;
+  border-radius: 25px;
   backface-visibility: hidden;
   transform-style: preserve-3d;
 }
@@ -37,7 +37,6 @@
 
 /* Back face */
 .card .back {
-  opacity: 1;
   transition:
     opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -58,10 +57,8 @@
 
 /* Active (flipped) card */
 .card.active {
-  transform: rotateY(180deg) scale(1.1);
-  box-shadow:
-    0 0 2px 2px var(--shadow-card-active),
-    0 0 4px var(--shadow-card-neon);
+  transform: rotateY(180deg) scale(1.05);
+  box-shadow: 0 0 2px 2px var(--shadow-card-active);
   transition:
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -81,9 +78,7 @@
 /* Matched cards */
 .card.matched {
   transform: rotateY(180deg) scale(0.9);
-  box-shadow:
-    0 0 2px 2px var(--shadow-card-matched),
-    0 0 4px var(--shadow-card-matched);
+  box-shadow: 0 0 2px 2px var(--shadow-card-matched);
   transition:
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
