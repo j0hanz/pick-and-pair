@@ -1,51 +1,89 @@
-.stats {
-  display: flex;
-  justify-content: space-between;
+/* Container */
+.container {
+  max-width: 100%;
+  width: 50rem;
+}
+
+/* Row */
+.row {
+  backdrop-filter: blur(10px);
+  background: var(--bg-row);
+  border: 1px solid var(--border-row);
+  border-radius: 25px;
+  gap: 1rem 0;
+  margin-left: 0;
+  margin-right: 0;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Stats */
+.statsTop {
   align-items: center;
-  font-size: 1.5rem;
+  background: var(--bg-card);
+  border-bottom: 3px solid var(--border-row);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 2px 6px var(--shadow-card);
   color: var(--color-text);
+  display: flex;
+  font-size: 1.25rem;
+  justify-content: space-between;
+}
+
+/* Button */
+.exitButton {
+  background: var(--btn-bg-secondary);
+  border: none;
+  border-radius: 12.5px;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 7rem;
+}
+
+.exitButton:hover {
+  background: var(--btn-bg-secondary-hover);
+  color: var(--color-text);
+}
+
+.exitButton:active {
+  background: var(--btn-bg-secondary-hover) !important;
+  color: var(--color-text);
+  transform: scale(0.95);
+}
+
+.resetButton,
+.resetIcon {
+  background: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.resetButton:hover,
+.resetIcon:hover {
+  background: none;
+}
+
+.resetButton:active,
+.resetIcon:active {
+  background: none !important;
+  transform: scale(0.95);
 }
 
 .resetIcon {
   font-size: 1.5rem;
 }
 
-.resetButton {
-  --bs-btn-bg: none !important;
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.resetButton:hover {
-  opacity: 0.6;
-  --bs-btn-hover-bg: none !important;
-}
-
-/* Row styles */
-.row {
-  gap: 1rem 0;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0.5rem;
-  border: 1px solid var(--border-row);
-  background: var(--bg-row);
-  border-radius: 0.7rem;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition:
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
-}
-
-/* Container styles */
-.container {
-  width: 50rem;
-  max-width: 100%;
-  padding: 0 1rem;
-}
-
 @media (max-width: 575px) {
   .container {
     width: 100%;
+  }
+
+  .row {
+    gap: 0.75rem 0;
   }
 }
