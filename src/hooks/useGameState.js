@@ -14,7 +14,7 @@ export function useGameState(onRestart) {
   const previousIndex = useRef(null);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
-  const [timerActive, setTimerActive] = useState(true);
+  const [timerActive, setTimerActive] = useState(false);
 
   const totalPairs = 6;
 
@@ -27,7 +27,8 @@ export function useGameState(onRestart) {
       setCards((prevCards) =>
         prevCards.map((card) => ({ ...card, status: '' }))
       );
-    }, 2000);
+      setTimerActive(true);
+    }, 3000);
     return () => clearTimeout(initialFlipTimer);
   }, [setCards]);
 
@@ -56,7 +57,7 @@ export function useGameState(onRestart) {
     setModalMessage('');
     setStartTime(Date.now());
     setMoves(0);
-    setTimerActive(true);
+    setTimerActive(false);
     onRestart();
   }, [onRestart]);
 
