@@ -43,7 +43,13 @@ export default function App() {
           </Button>
         </div>
       )}
-      {isGameActive && <Game onRestart={handleRestart} onExit={handleExit} />}
+      {isGameActive && (
+        <Game
+          onRestart={handleRestart}
+          onExit={handleExit}
+          startGame={startGame}
+        />
+      )}
     </>
   );
 }
