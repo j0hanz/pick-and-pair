@@ -12,12 +12,13 @@ export default function Cards({
   handleCardSelection,
   moves,
   onReset,
+  timerActive,
 }) {
   return (
     <Container className={styles.container}>
       <Row className={styles.row}>
         <div className={`${styles.statsTop} py-1`}>
-          <Timer />
+          <Timer timerActive={timerActive} />
           <WrongMoves moves={moves} />
           <Button className={styles.resetButton} onClick={onReset}>
             <HiArrowPath className={styles.resetIcon} />
