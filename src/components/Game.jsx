@@ -23,6 +23,7 @@ export default function GameLogic({ onRestart, onExit }) {
     setShowModal,
     modalMessage,
     handleRestart,
+    timerActive,
   } = useGameState(onRestart);
 
   const { handleCardSelection } = useGameLogic({
@@ -49,6 +50,7 @@ export default function GameLogic({ onRestart, onExit }) {
         matchedPairs={matchedPairs}
         moves={moves}
         onReset={handleReset}
+        timerActive={timerActive}
       />
       {isGameOver && (
         <Modal
