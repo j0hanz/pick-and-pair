@@ -16,7 +16,7 @@ export default function Cards({
   return (
     <Container className={styles.container}>
       <Row className={styles.row}>
-        <div className={`${styles.stats} px-2 py-1`}>
+        <div className={`${styles.statsTop} py-1`}>
           <Timer />
           <WrongMoves moves={moves} />
           <Button className={styles.resetButton} onClick={onReset}>
