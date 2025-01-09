@@ -3,15 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import styles from './styles/global/App.module.css';
 import Game from './components/Game';
+import LoadingSpinner from './components/Spinner';
 import { handleButtonClick } from './utils/soundManager';
 
 // Main app component
 export default function App() {
   const [isGameActive, setIsGameActive] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Start game
   const startGame = useCallback(() => {
-    setIsGameActive(true);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsGameActive(true);
+    }, 3000);
   }, []);
 
   // Restart game
@@ -26,9 +32,8 @@ export default function App() {
 
   return (
     <>
-      {isGameActive ? (
-        <Game onRestart={handleRestart} onExit={handleExit} />
-      ) : (
+      <LoadingSpinner isLoading={isLoading} />
+      {!isLoading && !isGameActive && (
         <div className="d-flex justify-content-center">
           <Button
             onClick={handleButtonClick(startGame)}
@@ -38,6 +43,7 @@ export default function App() {
           </Button>
         </div>
       )}
+      {isGameActive && <Game onRestart={handleRestart} onExit={handleExit} />}
     </>
   );
 }
