@@ -3,6 +3,7 @@ import { shuffleCards } from '../utils/shuffleCards';
 import { generateCards } from '../data/cardData';
 import { completionMessage } from '../data/messages';
 
+// Hook to manage the game state
 export function useGameState(onRestart) {
   const [cards, setCards] = useState(() => shuffleCards(generateCards()));
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
@@ -10,7 +11,7 @@ export function useGameState(onRestart) {
   const [isGameOver, setIsGameOver] = useState(false);
   const [moves, setMoves] = useState(0);
   const [completedTime, setCompletedTime] = useState(0);
-  const [startTime, setStartTime] = useState(Date.now());
+  const [startTime, setStartTime] = useState(null);
   const previousIndex = useRef(null);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
@@ -28,6 +29,7 @@ export function useGameState(onRestart) {
         prevCards.map((card) => ({ ...card, status: '' }))
       );
       setTimerActive(true);
+      setStartTime(Date.now());
     }, 3000);
     return () => clearTimeout(initialFlipTimer);
   }, [setCards]);
@@ -55,7 +57,7 @@ export function useGameState(onRestart) {
     setIsGameOver(false);
     setShowModal(false);
     setModalMessage('');
-    setStartTime(Date.now());
+    setStartTime(null);
     setMoves(0);
     setTimerActive(false);
     onRestart();
