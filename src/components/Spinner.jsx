@@ -2,11 +2,14 @@ import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import styles from './styles/Spinner.module.css';
 
-const LoadingSpinner = () => (
-  <div className={styles.spinnerContainer}>
-    <Spinner animation="border" role="status">
-      <span className="sr-only"></span>
-    </Spinner>
+const LoadingSpinner = ({ isLoading }) => (
+  <div
+    className={`${styles.spinnerContainer} ${!isLoading ? styles.hidden : ''}`}
+  >
+    <div className={styles.spinnerBox}>
+      <Spinner animation="border" role="status" className="mb-2"></Spinner>
+      <span className="opacity-75">Starting</span>
+    </div>
   </div>
 );
 
