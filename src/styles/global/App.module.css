@@ -29,13 +29,27 @@ body {
 }
 
 /* Button styles */
-button {
-  background-color: none !important;
-  border: none !important;
-  transition: all 0.3s ease !important;
+.btnStart {
+  background: var(--btn-primary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 25px;
+  width: 12rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-button:active {
+.btnStart:hover {
+  background: var(--btn-primary-hover);
+  color: var(--color-text);
+  box-shadow: 0 0 4px 2px var(--shadow-card-active);
+}
+
+.btnStart:active {
+  background: var(--btn-primary-hover) !important;
+  color: var(--color-text);
+  box-shadow: 0 0 4px 2px var(--shadow-card-active);
   transform: scale(0.95);
 }
 
