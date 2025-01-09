@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 
-export function useTimer(onTimeUpdate = () => {}) {
+export function useTimer(timerActive, onTimeUpdate = () => {}) {
   const [elapsedTime, setElapsedTime] = useState(0);
 
   useEffect(() => {
+    if (!timerActive) return;
     const timerId = setInterval(() => {
       setElapsedTime((prevTime) => {
         const newTime = prevTime + 1;
@@ -13,7 +14,7 @@ export function useTimer(onTimeUpdate = () => {}) {
     }, 1000);
 
     return () => clearInterval(timerId);
-  }, [onTimeUpdate]);
+  }, [timerActive, onTimeUpdate]);
 
   return elapsedTime;
 }
