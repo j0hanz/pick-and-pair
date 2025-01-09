@@ -1,13 +1,13 @@
 .modal :global(.modal-content) {
   background: var(--bg-modal);
-  color: var(--color-white);
+  color: var(--color-text);
   box-shadow: var(--shadow-primary);
 }
 
 .modal :global(.modal-header),
 .modal :global(.modal-footer) {
   background: var(--bg-modal);
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 /* Button styles */
@@ -32,7 +32,7 @@
 }
 
 .modal :global(.close) {
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 /* Scoreboard styles */
