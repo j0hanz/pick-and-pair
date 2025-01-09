@@ -3,8 +3,8 @@ import { HiOutlineClock } from 'react-icons/hi2';
 import { useTimer } from '../hooks/useTimer';
 import styles from './styles/Timer.module.css';
 
-const Timer = memo(() => {
-  const elapsedTime = useTimer();
+const Timer = memo(({ timerActive }) => {
+  const elapsedTime = useTimer(timerActive);
 
   return (
     <div className={styles.timer}>
