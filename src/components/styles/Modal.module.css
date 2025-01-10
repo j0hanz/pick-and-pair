@@ -1,5 +1,5 @@
 .modal :global(.modal-content) {
-  background: var(--bg-row);
+  background: var(--bg-modal);
   color: var(--color-text);
   box-shadow: var(--shadow-primary);
   border: none !important;
