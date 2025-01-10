@@ -21,7 +21,6 @@ export default function Cards({
       <Row className={styles.row}>
         <div className={`${styles.statsTop} py-1`}>
           <Timer timerActive={timerActive} />
-          <WrongMoves moves={moves} />
           <Button className={styles.resetButton} onClick={onReset}>
             <HiArrowPath className={styles.resetIcon} />
           </Button>
@@ -36,6 +35,8 @@ export default function Cards({
           </Col>
         ))}
         <div className={styles.statsBottom}>
+          <Feedback message={feedback} />
+          <WrongMoves moves={moves} />
           <Feedback message={feedback} />
         </div>
       </Row>
