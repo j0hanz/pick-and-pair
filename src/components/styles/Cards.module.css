@@ -6,39 +6,28 @@
 
 /* Row */
 .row {
-  backdrop-filter: blur(10px);
-  background: var(--bg-row);
-  border: 1px solid var(--border-row);
-  border-radius: 25px;
-  gap: 0.8rem 0;
+  gap: 1rem 0;
+  min-height: 80vh;
   margin-left: 0;
   margin-right: 0;
-  transition:
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
-  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Stats */
 .statsTop {
   align-items: center;
-  background: var(--bg-card);
   border-bottom: 3px solid var(--border-row);
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
   color: var(--color-text);
-  min-height: 5vh;
   display: flex;
   font-size: 1.25rem;
   justify-content: space-around;
 }
 
 .statsBottom {
-  background: var(--bg-card);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
   border-top: 3px solid var(--border-row);
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  min-height: 5vh;
 }
 
 /* Button */
