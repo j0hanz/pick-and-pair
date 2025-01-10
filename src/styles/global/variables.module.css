@@ -1,14 +1,12 @@
 :root {
   --bg-primary: linear-gradient(130deg, #192aa0 0%, #6a16a9 100%);
-  --btn-primary: #2a0d88;
-  --btn-primary-hover: #192aa0;
+  --btn-primary: #192aa0;
+  --btn-primary-hover: #192ba081;
   --shadow-primary: 0 4px 8px #00000033;
-  --btn-bg-primary: #1a2b3d;
-  --btn-bg-primary-hover: #007bff;
-  --btn-bg-secondary: #1a2b3d;
-  --btn-bg-secondary-hover: #6c757d;
+  --btn-secondary: #20262c;
+  --btn-secondary-hover: #20262c81;
   --bg-card: #2a0d88;
-  --bg-row: #d1d1d110;
+  --bg-row: #0000007a;
   --shadow-card: #00000080;
   --shadow-card-active: #ff8c00d9;
   --shadow-card-hover: #00000040;

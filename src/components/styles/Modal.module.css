@@ -1,38 +1,19 @@
 .modal :global(.modal-content) {
-  background: var(--bg-modal);
+  background: var(--bg-row);
   color: var(--color-text);
   box-shadow: var(--shadow-primary);
+  border: none !important;
+  border-bottom-left-radius: 25px;
 }
 
 .modal :global(.modal-header),
 .modal :global(.modal-footer) {
-  background: var(--bg-modal);
   color: var(--color-text);
 }
 
-/* Button styles */
-.modal :global(.btn-primary) {
-  background-color: var(--btn-bg-primary);
-  border-color: var(--btn-bg-primary);
-}
-
-.modal :global(.btn-primary:hover) {
-  background-color: var(--btn-bg-primary-hover);
-  border-color: var(--btn-bg-primary-hover);
-}
-
-.modal :global(.btn-secondary) {
-  background-color: var(--btn-bg-secondary);
-  border-color: var(--btn-bg-secondary);
-}
-
-.modal :global(.btn-secondary:hover) {
-  background-color: var(--btn-bg-secondary-hover);
-  border-color: var(--btn-bg-secondary-hover);
-}
-
-.modal :global(.close) {
-  color: var(--color-text);
+.modal :global(.modal-footer) {
+  --bs-modal-footer-gap: 0;
+  border-bottom-left-radius: 25px;
 }
 
 /* Scoreboard styles */
@@ -52,4 +33,48 @@
 
 .scoreIcon {
   font-size: 1.5rem;
+}
+
+.btnExit {
+  background: var(--btn-secondary);
+  border: none !important;
+}
+
+.btnRestart {
+  background: var(--btn-primary);
+  border: none !important;
+}
+
+/* Button styles */
+.modalButton,
+.btnRestart,
+.btnExit {
+  flex: 1;
+  color: var(--color-text);
+  width: 100%;
+  border-radius: 0;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btnRestart:hover {
+  background: var(--btn-primary-hover);
+  color: var(--color-text);
+}
+
+.btnRestart:active {
+  background: var(--btn-primary-hover) !important;
+  color: var(--color-text);
+  transform: scale(0.95);
+}
+
+.btnExit:hover {
+  background: var(--btn-secondary-hover);
+  color: var(--color-text);
+}
+
+.btnExit:active {
+  background: var(--btn-secondary-hover) !important;
+  color: var(--color-text);
+  transform: scale(0.95);
 }
