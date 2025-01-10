@@ -3,7 +3,7 @@
   color: var(--color-text);
   box-shadow: var(--shadow-primary);
   border: none !important;
-  border-bottom-left-radius: 25px;
+  --bs-modal-border-radius: 15px;
 }
 
 .modal :global(.modal-header),
@@ -13,7 +13,6 @@
 
 .modal :global(.modal-footer) {
   --bs-modal-footer-gap: 0;
-  border-bottom-left-radius: 25px;
 }
 
 /* Scoreboard styles */
@@ -21,8 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--color-text);
 }
 
@@ -38,22 +36,35 @@
 .btnExit {
   background: var(--btn-secondary);
   border: none !important;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 15px;
 }
 
 .btnRestart {
   background: var(--btn-primary);
   border: none !important;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btnIcon {
+  font-size: 1.2rem;
 }
 
 /* Button styles */
-.modalButton,
-.btnRestart,
-.btnExit {
+.modalButton {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none !important;
   color: var(--color-text);
   width: 100%;
-  border-radius: 0;
-  font-weight: 600;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
 }
 
