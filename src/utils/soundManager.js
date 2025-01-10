@@ -26,11 +26,7 @@ export const playSound = (soundName) => {
 };
 
 // Function to handle button clicks and play button sound
-export const handleButtonClick = (callback) => {
-  return (event) => {
-    playSound('button');
-    if (callback) {
-      callback(event);
-    }
-  };
+export const handleButtonClick = (callback) => (event) => {
+  playSound('button');
+  callback?.(event);
 };
