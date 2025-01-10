@@ -5,7 +5,8 @@ import styles from './styles/WrongMoves.module.css';
 const Moves = memo(({ moves }) => {
   return (
     <div className={styles.moves}>
-      <HiXMark className={`${styles.statsIcon} me-1`} /> {moves}
+      <HiXMark className={`${styles.statsIcon} me-1`} />
+      {moves}
     </div>
   );
 });
