@@ -16,6 +16,7 @@ export function useGameState(onRestart) {
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const [timerActive, setTimerActive] = useState(false);
+  const [feedback, setFeedback] = useState('');
 
   const totalPairs = 6;
 
@@ -60,6 +61,7 @@ export function useGameState(onRestart) {
     setStartTime(null);
     setMoves(0);
     setTimerActive(false);
+    setFeedback('');
     onRestart();
   }, [onRestart]);
 
@@ -82,5 +84,7 @@ export function useGameState(onRestart) {
     modalMessage,
     timerActive,
     handleRestart,
+    feedback,
+    setFeedback,
   };
 }
