@@ -1,20 +1,16 @@
 import { useState, useEffect } from 'react';
 
-export function useTimer(timerActive, onTimeUpdate = () => {}) {
+export function useTimer(timerActive) {
   const [elapsedTime, setElapsedTime] = useState(0);
 
   useEffect(() => {
     if (!timerActive) return;
     const timerId = setInterval(() => {
-      setElapsedTime((prevTime) => {
-        const newTime = prevTime + 1;
-        onTimeUpdate(newTime);
-        return newTime;
-      });
+      setElapsedTime((prevTime) => prevTime + 1);
     }, 1000);
 
     return () => clearInterval(timerId);
-  }, [timerActive, onTimeUpdate]);
+  }, [timerActive]);
 
   return elapsedTime;
 }
