@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoMdCheckmarkCircle, IoMdCloseCircle } from 'react-icons/io';
+import { HiCheck, HiXMark } from 'react-icons/hi2';
 import styles from './styles/Feedback.module.css';
 
 // Display feedback messages based on the message prop
@@ -10,13 +10,11 @@ const Feedback = ({ message }) => {
     <div className={styles.feedback}>
       {message === 'success' ? (
         <>
-          <IoMdCheckmarkCircle className={styles.success} />
-          <IoMdCheckmarkCircle className={styles.success} />
+          <HiCheck className={styles.success} />
         </>
       ) : (
         <>
-          <IoMdCloseCircle className={styles.error} />
-          <IoMdCloseCircle className={styles.error} />
+          <HiXMark className={styles.error} />
         </>
       )}
     </div>
