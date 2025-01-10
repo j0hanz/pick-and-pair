@@ -16,10 +16,16 @@ function ModalHeader({ title }) {
 function ModalFooter({ onReset, onExit }) {
   return (
     <Modal.Footer className="border-0 justify-content-between p-0">
-      <Button className={styles.resetButton} onClick={onReset}>
+      <Button
+        className={`${styles.btnRestart} ${styles.modalButton}`}
+        onClick={onReset}
+      >
         Restart
       </Button>
-      <Button variant="secondary w-25" onClick={onExit}>
+      <Button
+        className={`${styles.btnExit} ${styles.modalButton}`}
+        onClick={onExit}
+      >
         Exit
       </Button>
     </Modal.Footer>
