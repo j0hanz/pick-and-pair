@@ -23,6 +23,11 @@ export default function App() {
   // Restart game
   const handleRestart = useCallback(() => {
     setIsGameActive(false);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsGameActive(true);
+    }, 3000);
   }, []);
 
   // Exit game

@@ -42,8 +42,8 @@ export default function GameLogic({ onRestart, onExit }) {
   });
 
   const handleReset = useCallback(() => {
-    handleRestart();
-  }, [handleRestart]);
+    onRestart();
+  }, [onRestart]);
 
   return (
     <>
