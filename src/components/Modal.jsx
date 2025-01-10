@@ -13,10 +13,10 @@ function ModalHeader({ title }) {
 }
 
 // Footer with close and restart buttons
-function ModalFooter({ onRestart, onExit }) {
+function ModalFooter({ onReset, onExit }) {
   return (
     <Modal.Footer className="border-0 justify-content-between p-0">
-      <Button variant="primary w-25" onClick={onRestart}>
+      <Button className={styles.resetButton} onClick={onReset}>
         Restart
       </Button>
       <Button variant="secondary w-25" onClick={onExit}>
@@ -47,7 +47,7 @@ function Scoreboard({ score, moves, completedTime }) {
 export default function CustomModal({
   show,
   onClose,
-  onRestart,
+  onReset,
   onExit,
   title,
   children,
@@ -68,7 +68,7 @@ export default function CustomModal({
         {children}
         <Scoreboard score={score} moves={moves} completedTime={completedTime} />
       </Modal.Body>
-      <ModalFooter onRestart={onRestart} onExit={onExit} />
+      <ModalFooter onReset={onReset} onExit={onExit} />
     </Modal>
   );
 }
