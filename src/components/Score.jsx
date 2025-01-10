@@ -18,10 +18,17 @@ export default function Score({ moves, completedTime }) {
   }
 
   return (
-    <div>
-      {Array.from({ length: stars }, (_, index) => (
-        <HiStar key={index} className={style.scoreIcon} />
+    <>
+      {Array.from({ length: 5 }, (_, index) => (
+        <HiStar
+          key={index}
+          className={
+            index < stars
+              ? style.scoreIcon
+              : `${style.scoreIcon} ${style.grayedOut}`
+          }
+        />
       ))}
-    </div>
+    </>
   );
 }
