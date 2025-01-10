@@ -24,6 +24,8 @@ export default function GameLogic({ onRestart, onExit }) {
     modalMessage,
     handleRestart,
     timerActive,
+    feedback,
+    setFeedback,
   } = useGameState(onRestart);
 
   const { handleCardSelection } = useGameLogic({
@@ -36,6 +38,7 @@ export default function GameLogic({ onRestart, onExit }) {
     previousIndex,
     setIsGameOver,
     setMoves,
+    setFeedback,
   });
 
   const handleReset = useCallback(() => {
@@ -51,6 +54,7 @@ export default function GameLogic({ onRestart, onExit }) {
         moves={moves}
         onReset={handleReset}
         timerActive={timerActive}
+        feedback={feedback}
       />
       {isGameOver && (
         <Modal
