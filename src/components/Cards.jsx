@@ -4,6 +4,7 @@ import { Row, Col, Container, Button } from 'react-bootstrap';
 import { HiArrowPath } from 'react-icons/hi2';
 import Timer from './Timer';
 import WrongMoves from './WrongMoves';
+import Feedback from './Feedback';
 import styles from './styles/Cards.module.css';
 
 export default function Cards({
@@ -13,6 +14,7 @@ export default function Cards({
   moves,
   onReset,
   timerActive,
+  feedback,
 }) {
   return (
     <Container className={styles.container}>
@@ -33,6 +35,9 @@ export default function Cards({
             />
           </Col>
         ))}
+        <div className={styles.statsBottom}>
+          <Feedback message={feedback} />
+        </div>
       </Row>
     </Container>
   );
