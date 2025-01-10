@@ -20,7 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: var(--color-text);
 }
 
@@ -30,7 +30,7 @@
 }
 
 .scoreIcon {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .btnExit {
