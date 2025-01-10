@@ -1,13 +1,11 @@
-.feedback {
-  font-size: 3rem;
-}
-
 .success {
   color: var(--feedback-correct);
+  font-size: 3rem;
 }
 
 .error {
   color: var(--feedback-wrong);
+  font-size: 3rem;
 }
 
 @media (max-width: 450px) {
