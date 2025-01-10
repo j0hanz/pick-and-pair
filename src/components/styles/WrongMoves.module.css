@@ -1,9 +1,21 @@
 .moves {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   display: flex;
   align-items: center;
 }
 
 .statsIcon {
-  font-size: 1.75rem;
+  font-size: 2rem;
+  color: var(--feedback-wrong);
+}
+
+@media (max-width: 450px) {
+  .moves {
+    font-size: 1.3rem;
+  }
+
+  .statsIcon {
+    font-size: 1.7rem;
+    color: var(--feedback-wrong);
+  }
 }
