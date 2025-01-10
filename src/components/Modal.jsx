@@ -1,12 +1,17 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { HiOutlineXMark, HiOutlineClock } from 'react-icons/hi2';
+import {
+  HiXMark,
+  HiOutlineClock,
+  HiArrowPath,
+  HiOutlineArrowRightOnRectangle,
+} from 'react-icons/hi2';
 import styles from './styles/Modal.module.css';
 
 // Header with title and close button
-function ModalHeader({ title }) {
+function ModalHeader({ title = 'Game completed!' }) {
   return (
-    <Modal.Header closeVariant="white" className="border-0 p-0">
+    <Modal.Header className="border-0 d-flex justify-content-center">
       <Modal.Title>{title}</Modal.Title>
     </Modal.Header>
   );
@@ -15,17 +20,19 @@ function ModalHeader({ title }) {
 // Footer with close and restart buttons
 function ModalFooter({ onReset, onExit }) {
   return (
-    <Modal.Footer className="border-0 justify-content-between p-0">
+    <Modal.Footer className="border-0">
       <Button
         className={`${styles.btnRestart} ${styles.modalButton}`}
         onClick={onReset}
       >
+        <HiArrowPath className={`${styles.btnIcon} me-1`} />
         Restart
       </Button>
       <Button
         className={`${styles.btnExit} ${styles.modalButton}`}
         onClick={onExit}
       >
+        <HiOutlineArrowRightOnRectangle className={`${styles.btnIcon} me-1`} />
         Exit
       </Button>
     </Modal.Footer>
@@ -35,14 +42,14 @@ function ModalFooter({ onReset, onExit }) {
 // Scoreboard component displays the game statistics
 function Scoreboard({ score, moves, completedTime }) {
   return (
-    <div className={`${styles.scoreboard} py-4`}>
+    <div className={styles.scoreboard}>
       <div className={styles.scoreItem}>
-        <HiOutlineXMark className={`me-1 ${styles.scoreIcon}`} />
+        <HiXMark className={`me-1 ${styles.scoreIcon}`} />
         {moves}
       </div>
       <div className={styles.scoreItem}>{score}</div>
       <div className={styles.scoreItem}>
-        <HiOutlineClock className={`me-1 ${styles.scoreIcon}`} />
+        <HiOutlineClock className={`me-2 ${styles.scoreIcon}`} />
         {completedTime}
       </div>
     </div>
