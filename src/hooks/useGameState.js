@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { shuffleCards } from '../utils/shuffleCards';
 import { generateCards } from '../data/cardData';
-import { completionMessage } from '../data/messages';
 
 // Hook to manage the game state
 export function useGameState(onRestart) {
@@ -40,7 +39,6 @@ export function useGameState(onRestart) {
     if (matchedPairs === totalPairs) {
       setTimerActive(false);
       setCompletedTime(Math.floor((Date.now() - startTime) / 1000));
-      setModalMessage(completionMessage);
       setShowModal(true);
       setIsGameOver(true);
     }
