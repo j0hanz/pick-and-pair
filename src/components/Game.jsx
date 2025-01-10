@@ -60,7 +60,7 @@ export default function GameLogic({ onRestart, onExit }) {
         <Modal
           show={showModal}
           onClose={() => setShowModal(false)}
-          onRestart={handleRestart}
+          onReset={handleReset}
           onExit={onExit}
           backdrop="static"
           completedTime={completedTime}
