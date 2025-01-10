@@ -7,7 +7,7 @@ const LoadingSpinner = ({ isLoading }) => (
     className={`${styles.spinnerContainer} ${!isLoading ? styles.hidden : ''}`}
   >
     <div className={styles.spinnerBox}>
-      <Spinner animation="border" role="status" className="mb-2"></Spinner>
+      <Spinner animation="grow" role="status" className="mb-2"></Spinner>
       <span className="opacity-75">Starting</span>
     </div>
   </div>
