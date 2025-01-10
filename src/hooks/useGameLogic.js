@@ -12,6 +12,7 @@ export function useGameLogic({
   previousIndex,
   setIsGameOver,
   setMoves,
+  setFeedback,
 }) {
   const totalPairs = 6;
 
@@ -26,7 +27,8 @@ export function useGameLogic({
         setSelectedCardIndex,
         previousIndex,
         () => setMatchedPairs((prev) => prev + 1),
-        () => setMoves((prev) => prev + 1)
+        () => setMoves((prev) => prev + 1),
+        setFeedback
       );
     },
     [
@@ -37,6 +39,7 @@ export function useGameLogic({
       previousIndex,
       setMatchedPairs,
       setMoves,
+      setFeedback,
     ]
   );
 
