@@ -9,9 +9,55 @@
   display: none;
 }
 
-.spinnerBox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--color-text);
+.loader {
+  width: 80px;
+  aspect-ratio: 1;
+  animation:
+    l3-1 1.5s infinite linear,
+    l3-2 1.5s infinite steps(1) -0.75s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid var(--border-row);
+  border-radius: 15px;
+  box-shadow: 0 0 1px 1px var(--shadow-card-active);
+}
+.loader::before {
+  background: var(--bg-card);
+}
+.loader::after {
+  background: var(--bg-card);
+  background-image: url('../../assets/img/card-back.webp');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+@keyframes l3-1 {
+  0% {
+    transform: perspective(150px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(150px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(150px) rotateY(360deg);
+  }
+}
+@keyframes l3-2 {
+  0%,
+  50%,
+  100% {
+    background: var(--bg-card);
+    border: 1px solid var(--border-row);
+    border-radius: 15px;
+    box-shadow: 0 0 1px 1px var(--shadow-card-active);
+  }
 }
