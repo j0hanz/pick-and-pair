@@ -7,6 +7,7 @@ import {
   HiCheck,
   HiArrowPath,
   HiStar,
+  HiOutlineArrowRightOnRectangle,
 } from 'react-icons/hi2';
 import styles from './styles/Modal.module.css';
 
@@ -23,99 +24,122 @@ function ModalHeader({ title = 'How to Play' }) {
 function ModalBody() {
   return (
     <Modal.Body className="p-0">
-      <Tabs defaultActiveKey="info" className="mb-3" justify>
+      <Tabs defaultActiveKey="gameplay" className="mb-3" justify>
         <Tab eventKey="info" title="Info">
-          <p>
-            Welcome to the memory game! The objective is to match all pairs of
-            cards. At the start of each game, the cards will briefly reveal
-            themselves. Use this time to memorize their positions. Each game
-            consists of 6 matching pairs (12 cards in total).
-          </p>
-          <p>
-            Test your memory and concentration by pairing all matching cards.
-            Sharpen your mind, race against time, and aim for a perfect score.
-            Good luck and have fun!
-          </p>
+          <ListGroup variant="flush">
+            <ListGroup.Item>
+              Welcome to the memory game! Match all pairs of cards. At the
+              start, cards briefly reveal themselves. Memorize their positions.
+              The game has 6 pairs (12 cards).
+            </ListGroup.Item>
+          </ListGroup>
+          <ListGroup variant="flush">
+            <ListGroup.Item>
+              Test your memory and concentration. Pair all matching cards and
+              aim for a perfect score.
+            </ListGroup.Item>
+          </ListGroup>
         </Tab>
         <Tab eventKey="gameplay" title="Gameplay">
           <ListGroup horizontal>
             <ListGroup.Item>
-              <HiArrowPath className={`${styles.listIcon} me-1`} />
+              <HiArrowPath className={styles.listIcon} />
             </ListGroup.Item>
-            <ListGroup.Item>Restart the game</ListGroup.Item>
+            <ListGroup.Item>Restart game</ListGroup.Item>
+          </ListGroup>
+          <ListGroup horizontal>
+            <ListGroup.Item>
+              <HiOutlineArrowRightOnRectangle className={styles.listIcon} />
+            </ListGroup.Item>
+            <ListGroup.Item>Exit game</ListGroup.Item>
           </ListGroup>
           <ListGroup horizontal>
             <ListGroup.Item>
               <HiOutlineClock
-                className={`${styles.listIcon} me-1 ${styles.clockIcon}`}
+                className={`${styles.listIcon} ${styles.clockIcon}`}
               />
             </ListGroup.Item>
-            <ListGroup.Item>Show game time</ListGroup.Item>
+            <ListGroup.Item>Game time</ListGroup.Item>
           </ListGroup>
-          Fewer moves and faster completion lead to better ratings.
           <ListGroup horizontal>
             <ListGroup.Item>
-              <HiXMark
-                className={`${styles.listIcon} me-1 ${styles.statsIcon}`}
-              />
+              <HiXMark className={`${styles.listIcon} ${styles.statsIcon}`} />
             </ListGroup.Item>
             <ListGroup.Item>Wrong moves</ListGroup.Item>
           </ListGroup>
           <ListGroup horizontal>
             <ListGroup.Item>
-              <HiCheck
-                className={`${styles.listIcon} me-1 ${styles.success}`}
-              />
+              <HiCheck className={`${styles.listIcon} ${styles.success}`} />
             </ListGroup.Item>
             <ListGroup.Item>Correct moves</ListGroup.Item>
           </ListGroup>
           <ListGroup horizontal>
             <ListGroup.Item>
-              <HiStar
-                className={`${styles.listIcon} me-1 ${styles.scoreIcon}`}
-              />
+              <HiStar className={styles.scoreIcon} />
             </ListGroup.Item>
             <ListGroup.Item>Stars earned</ListGroup.Item>
           </ListGroup>
-          Your performance is rated based on the time taken and the number of
-          moves made. Aim for a higher score by completing the game quickly and
-          with fewer moves.
+          <hr />
+          <ListGroup horizontal>
+            <ListGroup.Item>
+              <HiOutlineInformationCircle className={styles.listIcon} />
+            </ListGroup.Item>
+            <ListGroup.Item>
+              Your performance is rated based on time and number of moves made.
+            </ListGroup.Item>
+          </ListGroup>
         </Tab>
         <Tab eventKey="scoring" title="Scoring">
-          <ListGroup.Item>
-            <ListGroup variant="flush" className="mb-0 mt-1">
-              <ListGroup.Item>
-                <HiStar
-                  className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
-                />
-                5 stars: Complete within 60 seconds with 0 moves.
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <HiStar
-                  className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
-                />
-                4 stars: Complete within 60 seconds with 1 move.
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <HiStar
-                  className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
-                />
-                3 stars: Complete within 60 seconds with 2 moves.
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <HiStar
-                  className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
-                />
-                2 stars: Complete within 60 seconds with 3 moves.
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <HiStar
-                  className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
-                />
-                1 star: Complete within 60 seconds with 4 or more moves.
-              </ListGroup.Item>
-            </ListGroup>
-          </ListGroup.Item>
+          <ListGroup>
+            <ListGroup.Item>
+              <HiStar className={styles.scoreIcon} />
+            </ListGroup.Item>
+            <ListGroup.Item>
+              Complete within 60 seconds with 4 or more moves.
+            </ListGroup.Item>
+          </ListGroup>
+          <ListGroup>
+            <ListGroup.Item>
+              <HiStar className={styles.scoreIcon} />
+              <HiStar className={styles.scoreIcon} />
+            </ListGroup.Item>
+            <ListGroup.Item>
+              Complete within 60 seconds with 3 moves.
+            </ListGroup.Item>
+          </ListGroup>
+          <ListGroup>
+            <ListGroup.Item>
+              <HiStar className={styles.scoreIcon} />
+              <HiStar className={styles.scoreIcon} />
+              <HiStar className={styles.scoreIcon} />
+            </ListGroup.Item>
+            <ListGroup.Item>
+              Complete within 60 seconds with 2 moves.
+            </ListGroup.Item>
+          </ListGroup>
+          <ListGroup>
+            <ListGroup.Item>
+              <HiStar className={styles.scoreIcon} />
+              <HiStar className={styles.scoreIcon} />
+              <HiStar className={styles.scoreIcon} />
+              <HiStar className={styles.scoreIcon} />
+            </ListGroup.Item>
+            <ListGroup.Item>
+              Complete within 60 seconds with 1 move.
+            </ListGroup.Item>
+          </ListGroup>
+          <ListGroup>
+            <ListGroup.Item>
+              <HiStar className={styles.scoreIcon} />
+              <HiStar className={styles.scoreIcon} />
+              <HiStar className={styles.scoreIcon} />
+              <HiStar className={styles.scoreIcon} />
+              <HiStar className={styles.scoreIcon} />
+            </ListGroup.Item>
+            <ListGroup.Item>
+              Complete within 60 seconds with 0 moves.
+            </ListGroup.Item>
+          </ListGroup>
         </Tab>
       </Tabs>
     </Modal.Body>
@@ -127,7 +151,6 @@ function ModalFooter({ onClose }) {
   return (
     <Modal.Footer className="border-0">
       <Button className={styles.btnClose} onClick={onClose}>
-        <HiOutlineInformationCircle className={`${styles.btnIcon} me-1`} />
         Close
       </Button>
     </Modal.Footer>
