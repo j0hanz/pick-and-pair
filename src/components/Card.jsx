@@ -21,7 +21,7 @@ const Card = memo(({ card, index, clickHandler }) => {
       aria-label={`Card ${card.name}`}
     >
       <div className={styles.back}>
-        <Image src={cardBack} alt="Card Back" className={styles.img} />
+        <Image src={cardBack} alt="Card Back" className={styles.img} fluid />
       </div>
       <Image
         src={card.img}
