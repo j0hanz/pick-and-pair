@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { useGameState } from '../hooks/useGameState';
 import { useGameLogic } from '../hooks/useGameLogic';
 import Cards from './Cards';
-import Scoreboard from './Scoreboard';
+import Scoreboard from './Modal';
 import Score from './Score';
 
 export default function GameLogic({ onRestart, onExit }) {
