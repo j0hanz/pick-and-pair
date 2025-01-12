@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { useGameState } from '../hooks/useGameState';
 import { useGameLogic } from '../hooks/useGameLogic';
 import Cards from './Cards';
-import Modal from './Modal';
+import Scoreboard from './Scoreboard';
 import Score from './Score';
 
 export default function GameLogic({ onRestart, onExit }) {
@@ -22,7 +22,6 @@ export default function GameLogic({ onRestart, onExit }) {
     showModal,
     setShowModal,
     modalMessage,
-    handleRestart,
     timerActive,
     feedback,
     setFeedback,
@@ -57,7 +56,7 @@ export default function GameLogic({ onRestart, onExit }) {
         feedback={feedback}
       />
       {isGameOver && (
-        <Modal
+        <Scoreboard
           show={showModal}
           onClose={() => setShowModal(false)}
           onReset={handleReset}
@@ -68,7 +67,7 @@ export default function GameLogic({ onRestart, onExit }) {
           moves={moves}
         >
           {modalMessage}
-        </Modal>
+        </Scoreboard>
       )}
     </>
   );
