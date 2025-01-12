@@ -4,12 +4,14 @@ import { Button } from 'react-bootstrap';
 import styles from './styles/global/App.module.css';
 import Game from './components/Game';
 import LoadingSpinner from './components/Spinner';
+import HowtoPlay from './components/HowtoPlay';
 import { handleButtonClick } from './utils/soundManager';
 
 // Main app component
 export default function App() {
   const [isGameActive, setIsGameActive] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [showHowToPlay, setShowHowToPlay] = useState(false);
 
   // Start game
   const startGame = useCallback(() => {
@@ -35,16 +37,32 @@ export default function App() {
     setIsGameActive(false);
   }, []);
 
+  // Open How to Play modal
+  const openHowToPlay = useCallback(() => {
+    setShowHowToPlay(true);
+  }, []);
+
+  // Close How to Play modal
+  const closeHowToPlay = useCallback(() => {
+    setShowHowToPlay(false);
+  }, []);
+
   return (
     <>
       <LoadingSpinner isLoading={isLoading} />
       {!isLoading && !isGameActive && (
-        <div className="d-flex justify-content-center">
+        <div className="d-flex flex-column align-items-center">
           <Button
             onClick={handleButtonClick(startGame)}
             className={styles.btnStart}
           >
             <span>Start Game</span>
+          </Button>
+          <Button
+            onClick={handleButtonClick(openHowToPlay)}
+            className={`${styles.btnGuide} mt-3`}
+          >
+            <span>How to Play</span>
           </Button>
         </div>
       )}
@@ -55,6 +73,7 @@ export default function App() {
           startGame={startGame}
         />
       )}
+      <HowtoPlay show={showHowToPlay} onClose={closeHowToPlay} />
     </>
   );
 }
