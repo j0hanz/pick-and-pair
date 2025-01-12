@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, ListGroup, Tab, Tabs, Figure } from 'react-bootstrap';
+import { Modal, Button, ListGroup, Tab, Tabs } from 'react-bootstrap';
 import {
   HiOutlineInformationCircle,
   HiOutlineClock,
@@ -9,7 +9,6 @@ import {
   HiStar,
 } from 'react-icons/hi2';
 import styles from './styles/Modal.module.css';
-import gameGif from '../assets/img/how-to-play.gif';
 
 // Header with title and close button
 function ModalHeader({ title = 'How to Play' }) {
@@ -26,63 +25,61 @@ function ModalBody() {
     <Modal.Body className="p-0">
       <Tabs defaultActiveKey="info" className="mb-3" justify>
         <Tab eventKey="info" title="Info">
-          <ListGroup horizontal>
-            <ListGroup.Item>
-              <Figure>
-                <Figure.Image
-                  src={gameGif}
-                  alt="How to play"
-                  className="rounded"
-                />
-                <Figure.Caption>
-                  Test your memory and concentration by pairing all matching
-                  cards. Sharpen your mind, race against time, and aim for a
-                  perfect score. Good luck and have fun!
-                </Figure.Caption>
-              </Figure>
-            </ListGroup.Item>
-          </ListGroup>
+          <p>
+            Welcome to the memory game! The objective is to match all pairs of
+            cards. At the start of each game, the cards will briefly reveal
+            themselves. Use this time to memorize their positions. Each game
+            consists of 6 matching pairs (12 cards in total).
+          </p>
+          <p>
+            Test your memory and concentration by pairing all matching cards.
+            Sharpen your mind, race against time, and aim for a perfect score.
+            Good luck and have fun!
+          </p>
         </Tab>
         <Tab eventKey="gameplay" title="Gameplay">
-          <ListGroup as="ol">
+          <ListGroup horizontal>
             <ListGroup.Item>
-              Cards briefly reveal themselves at the start for easier
-              memorization. Each game has 6 matching pairs (12 cards total).
+              <HiArrowPath className={`${styles.listIcon} me-1`} />
             </ListGroup.Item>
-            <hr />
-            <ListGroup variant="flush">
-              <ListGroup.Item>
-                <HiArrowPath className={`${styles.listIcon} me-1`} />
-                Restart the game.
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <HiOutlineClock
-                  className={`${styles.listIcon} me-1 ${styles.clockIcon}`}
-                />
-                Shows game time. Fewer moves and faster completion lead to
-                better ratings.
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <HiXMark
-                  className={`${styles.listIcon} me-1 ${styles.statsIcon}`}
-                />
-                Displays failed attempts.
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <HiCheck
-                  className={`${styles.listIcon} me-1 ${styles.success}`}
-                />
-                Match all pairs to win. Matched pairs stay revealed; mismatched
-                cards flip back.
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <HiStar
-                  className={`${styles.listIcon} me-1 ${styles.scoreIcon}`}
-                />
-                Shows the number of stars earned.
-              </ListGroup.Item>
-            </ListGroup>
+            <ListGroup.Item>Restart the game</ListGroup.Item>
           </ListGroup>
+          <ListGroup horizontal>
+            <ListGroup.Item>
+              <HiOutlineClock
+                className={`${styles.listIcon} me-1 ${styles.clockIcon}`}
+              />
+            </ListGroup.Item>
+            <ListGroup.Item>Show game time</ListGroup.Item>
+          </ListGroup>
+          Fewer moves and faster completion lead to better ratings.
+          <ListGroup horizontal>
+            <ListGroup.Item>
+              <HiXMark
+                className={`${styles.listIcon} me-1 ${styles.statsIcon}`}
+              />
+            </ListGroup.Item>
+            <ListGroup.Item>Wrong moves</ListGroup.Item>
+          </ListGroup>
+          <ListGroup horizontal>
+            <ListGroup.Item>
+              <HiCheck
+                className={`${styles.listIcon} me-1 ${styles.success}`}
+              />
+            </ListGroup.Item>
+            <ListGroup.Item>Correct moves</ListGroup.Item>
+          </ListGroup>
+          <ListGroup horizontal>
+            <ListGroup.Item>
+              <HiStar
+                className={`${styles.listIcon} me-1 ${styles.scoreIcon}`}
+              />
+            </ListGroup.Item>
+            <ListGroup.Item>Stars earned</ListGroup.Item>
+          </ListGroup>
+          Your performance is rated based on the time taken and the number of
+          moves made. Aim for a higher score by completing the game quickly and
+          with fewer moves.
         </Tab>
         <Tab eventKey="scoring" title="Scoring">
           <ListGroup.Item>
