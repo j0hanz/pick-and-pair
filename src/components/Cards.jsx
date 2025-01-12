@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 import { Row, Col, Container, Button } from 'react-bootstrap';
-import { HiArrowPath } from 'react-icons/hi2';
+import { HiArrowPath, HiOutlineArrowRightOnRectangle } from 'react-icons/hi2';
 import Timer from './Timer';
 import WrongMoves from './WrongMoves';
 import Feedback from './Feedback';
@@ -13,6 +13,7 @@ export default function Cards({
   handleCardSelection,
   moves,
   onReset,
+  onExit,
   timerActive,
   feedback,
 }) {
@@ -20,9 +21,14 @@ export default function Cards({
     <Container className={styles.container}>
       <Row className={styles.row}>
         <div className={`${styles.statsTop} py-1`}>
+          <Button className={styles.btnExitRestart} onClick={onReset}>
+            <HiArrowPath className={styles.exitRestartIcon} />
+          </Button>
           <Timer timerActive={timerActive} />
-          <Button className={styles.resetButton} onClick={onReset}>
-            <HiArrowPath className={styles.resetIcon} />
+          <Button className={styles.btnExitRestart} onClick={onExit}>
+            <HiOutlineArrowRightOnRectangle
+              className={styles.exitRestartIcon}
+            />
           </Button>
         </div>
         {cards.map((card, index) => (

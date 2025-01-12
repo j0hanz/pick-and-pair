@@ -52,6 +52,7 @@ export default function GameLogic({ onRestart, onExit }) {
         matchedPairs={matchedPairs}
         moves={moves}
         onReset={handleReset}
+        onExit={onExit}
         timerActive={timerActive}
         feedback={feedback}
       />
