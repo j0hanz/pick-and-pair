@@ -1,25 +1,23 @@
 import React from 'react';
-import { HiStar } from 'react-icons/hi2';
+import { HiStar } from 'react-icons/hi';
 import style from './styles/Score.module.css';
 
 export default function Score({ moves, completedTime }) {
-  let stars = 1;
-
-  if (completedTime <= 60) {
-    if (moves === 0) {
-      stars = 5;
-    } else if (moves === 1) {
-      stars = 4;
-    } else if (moves === 2) {
-      stars = 3;
-    } else if (moves === 3) {
-      stars = 2;
-    }
+  // Helper function to compute the star rating
+  function getStars(m, t) {
+    if (t > 60) return 1;
+    if (m <= 6) return 5;
+    if (m <= 7) return 4;
+    if (m <= 8) return 3;
+    if (m <= 9) return 2;
+    return 1;
   }
+
+  const stars = getStars(moves, completedTime);
 
   return (
     <>
-      {Array.from({ length: 5 }, (_, index) => (
+      {[...Array(5)].map((_, index) => (
         <HiStar
           key={index}
           className={
