@@ -4,9 +4,9 @@
   height: 13rem;
   perspective: 1200px;
   background: var(--bg-card);
-  border: 3px solid var(--border-row);
+  border: 2px solid var(--border-card);
   border-radius: 25px;
-  box-shadow: 0 2px 6px var(--shadow-card);
+  box-shadow: 0 2px 8px var(--shadow-card);
   margin-bottom: 0.5rem;
   cursor: pointer;
   transition:
@@ -44,6 +44,7 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  filter: drop-shadow(0 0 4px var(--drop-shadow-card));
 }
 
 /* Card Hover */
@@ -79,7 +80,6 @@
 .card.matched {
   transform: rotateY(180deg) scale(0.9);
   box-shadow: 0 0 2px 2px var(--shadow-card-matched);
-  opacity: 0.8;
   transition:
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
