@@ -5,7 +5,7 @@ const LoadingSpinner = ({ isLoading }) => (
   <div
     className={`${styles.spinnerContainer} ${!isLoading ? styles.hidden : ''}`}
   >
-    <div class={styles.loader}></div>
+    <div className={styles.loader}></div>
   </div>
 );
 
