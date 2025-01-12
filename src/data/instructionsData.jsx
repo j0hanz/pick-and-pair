@@ -86,7 +86,7 @@ export default function InstructionsData() {
               <HiStar className={styles.scoreIcon} />
             </ListGroup.Item>
             <ListGroup.Item>
-              Complete within 60 seconds with 4 or more moves.
+              Complete within 60 seconds with 10 moves or more.
             </ListGroup.Item>
           </ListGroup>
           <ListGroup>
@@ -95,7 +95,7 @@ export default function InstructionsData() {
               <HiStar className={styles.scoreIcon} />
             </ListGroup.Item>
             <ListGroup.Item>
-              Complete within 60 seconds with 3 moves.
+              Complete within 60 seconds with 9 moves.
             </ListGroup.Item>
           </ListGroup>
           <ListGroup>
@@ -105,7 +105,7 @@ export default function InstructionsData() {
               <HiStar className={styles.scoreIcon} />
             </ListGroup.Item>
             <ListGroup.Item>
-              Complete within 60 seconds with 2 moves.
+              Complete within 60 seconds with 8 moves.
             </ListGroup.Item>
           </ListGroup>
           <ListGroup>
@@ -116,7 +116,7 @@ export default function InstructionsData() {
               <HiStar className={styles.scoreIcon} />
             </ListGroup.Item>
             <ListGroup.Item>
-              Complete within 60 seconds with 1 move.
+              Complete within 60 seconds with 7 move.
             </ListGroup.Item>
           </ListGroup>
           <ListGroup>
@@ -128,7 +128,7 @@ export default function InstructionsData() {
               <HiStar className={styles.scoreIcon} />
             </ListGroup.Item>
             <ListGroup.Item>
-              Complete within 60 seconds with 0 moves.
+              Complete within 60 seconds with 6 moves.
             </ListGroup.Item>
           </ListGroup>
         </Tab>
