@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, ListGroup, Tab, Tabs } from 'react-bootstrap';
+import { Modal, ListGroup, Tab, Tabs } from 'react-bootstrap';
 import {
   HiOutlineInformationCircle,
   HiOutlineClock,
@@ -9,19 +9,10 @@ import {
   HiStar,
   HiOutlineArrowRightOnRectangle,
 } from 'react-icons/hi2';
-import styles from './styles/Modal.module.css';
+import styles from '../components/styles/Modal.module.css';
 
-// Header with title and close button
-function ModalHeader({ title = 'How to Play' }) {
-  return (
-    <Modal.Header className="border-0 d-flex flex-column align-items-center">
-      <Modal.Title>{title}</Modal.Title>
-    </Modal.Header>
-  );
-}
-
-// Body with how-to-play content
-function ModalBody() {
+// This renders the instructions for the game
+export default function InstructionsData() {
   return (
     <Modal.Body className="p-0">
       <Tabs defaultActiveKey="gameplay" className="mb-3" justify>
@@ -143,27 +134,5 @@ function ModalBody() {
         </Tab>
       </Tabs>
     </Modal.Body>
-  );
-}
-
-// Footer with close button
-function ModalFooter({ onClose }) {
-  return (
-    <Modal.Footer className="border-0">
-      <Button className={styles.btnClose} onClick={onClose}>
-        Close
-      </Button>
-    </Modal.Footer>
-  );
-}
-
-// Main modal component
-export default function HowtoPlay({ show, onClose }) {
-  return (
-    <Modal show={show} onHide={onClose} centered className={styles.modal}>
-      <ModalHeader />
-      <ModalBody />
-      <ModalFooter onClose={onClose} />
-    </Modal>
   );
 }
