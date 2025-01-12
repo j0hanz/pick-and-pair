@@ -43,13 +43,37 @@ body {
 .btnStart:hover {
   background: var(--btn-primary-hover);
   color: var(--color-text);
-  box-shadow: 0 0 4px 2px var(--shadow-card-active);
+  box-shadow: 0 0 2px 1px var(--shadow-card-active);
 }
 
 .btnStart:active {
   background: var(--btn-primary-hover) !important;
   color: var(--color-text);
-  box-shadow: 0 0 4px 2px var(--shadow-card-active);
+  box-shadow: 0 0 2px 1px var(--shadow-card-active);
+  transform: scale(0.95);
+}
+
+.btnGuide {
+  background: var(--btn-secondary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 25px;
+  width: 12rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btnGuide:hover {
+  background: var(--btn-secondary-hover);
+  color: var(--color-text);
+  box-shadow: 0 0 2px 1px var(--shadow-card-active);
+}
+
+.btnGuide:active {
+  background: var(--btn-secondary-hover) !important;
+  color: var(--color-text);
+  box-shadow: 0 0 2px 1px var(--shadow-card-active);
   transform: scale(0.95);
 }
 

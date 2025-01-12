@@ -68,6 +68,20 @@
   transition: all 0.3s ease;
 }
 
+.btnClose {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--btn-secondary);
+  border: none !important;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 15px;
+  color: var(--color-text);
+}
+
 .btnRestart:hover {
   background: var(--btn-primary-hover);
   color: var(--color-text);
@@ -79,7 +93,8 @@
   transform: scale(0.95);
 }
 
-.btnExit:hover {
+.btnExit:hover,
+.btnClose:hover {
   background: var(--btn-secondary-hover);
   color: var(--color-text);
 }
@@ -88,4 +103,24 @@
   background: var(--btn-secondary-hover) !important;
   color: var(--color-text);
   transform: scale(0.95);
+}
+
+.listIcon {
+  font-size: 1.5rem;
+}
+
+.clockIcon {
+  color: var(--color-clock-icon);
+}
+
+.statsIcon {
+  color: var(--feedback-wrong);
+}
+
+.success {
+  color: var(--feedback-correct);
+}
+
+.scoreIcon {
+  color: var(--color-star-icon);
 }

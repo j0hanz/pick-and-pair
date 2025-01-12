@@ -1,4 +1,11 @@
 :root {
+  --bs-secondary-color: none;
+  --bs-emphasis-color: none;
+  --bs-link-color: none;
+  --bs-link-hover-color: none;
+  --bs-border-color: none;
+  --bs-body-color: none;
+  --bs-body-bg: none;
   --bg-primary: linear-gradient(130deg, #192aa0 0%, #6a16a9 100%);
   --btn-primary: #192aa0;
   --btn-primary-hover: #192ba081;
