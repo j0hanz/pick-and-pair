@@ -114,7 +114,7 @@
 }
 
 .statsIcon {
-  color: var(--feedback-wrong);
+  color: var(--moves);
 }
 
 .success {

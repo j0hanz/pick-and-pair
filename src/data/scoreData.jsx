@@ -1,5 +1,8 @@
 import React from 'react';
-import { HiXMark, HiOutlineClock } from 'react-icons/hi2';
+import {
+  HiOutlineArrowPathRoundedSquare,
+  HiOutlineClock,
+} from 'react-icons/hi2';
 import styles from '../components/styles/Modal.module.css';
 import Score from '../components/Score';
 
@@ -8,7 +11,9 @@ export default function Scoreboard({ score, moves, completedTime }) {
   return (
     <div className={styles.scoreboard}>
       <div className={styles.scoreItem}>
-        <HiXMark className={`me-1 ${styles.statsIcon}`} />
+        <HiOutlineArrowPathRoundedSquare
+          className={`me-1 ${styles.statsIcon}`}
+        />
         {moves}
       </div>
       <div className={styles.scoreItem}>
