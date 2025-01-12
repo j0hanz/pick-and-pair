@@ -6,7 +6,7 @@
 
 .statsIcon {
   font-size: 2rem;
-  color: var(--feedback-wrong);
+  color: var(--moves);
 }
 
 @media (max-width: 450px) {
@@ -16,6 +16,6 @@
 
   .statsIcon {
     font-size: 1.7rem;
-    color: var(--feedback-wrong);
+    color: var(--moves);
   }
 }

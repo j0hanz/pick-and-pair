@@ -21,7 +21,8 @@ export function handleCardClick(
   previousIndex,
   handleMatchUpdate,
   handleMismatchUpdate,
-  setFeedback
+  setFeedback,
+  setMoves
 ) {
   if (!canClickCard(index, cards, selectedCardIndex, previousIndex)) {
     return;
@@ -53,4 +54,5 @@ export function handleCardClick(
   playSound(isMatch ? 'correct' : 'wrong');
   setFeedback(isMatch ? 'success' : 'error');
   previousIndex.current = null;
+  setMoves((prev) => prev + 1);
 }

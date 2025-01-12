@@ -3,7 +3,7 @@ import Card from './Card';
 import { Row, Col, Container, Button } from 'react-bootstrap';
 import { HiArrowPath, HiOutlineArrowRightOnRectangle } from 'react-icons/hi2';
 import Timer from './Timer';
-import WrongMoves from './WrongMoves';
+import Moves from './Moves';
 import Feedback from './Feedback';
 import styles from './styles/Cards.module.css';
 
@@ -42,7 +42,7 @@ export default function Cards({
         ))}
         <div className={styles.statsBottom}>
           <Feedback message={feedback} />
-          <WrongMoves moves={moves} />
+          <Moves moves={moves} />
           <Feedback message={feedback} />
         </div>
       </Row>

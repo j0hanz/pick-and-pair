@@ -27,8 +27,9 @@ export function useGameLogic({
         setSelectedCardIndex,
         previousIndex,
         () => setMatchedPairs((prev) => prev + 1),
-        () => setMoves((prev) => prev + 1),
-        setFeedback
+        () => {},
+        setFeedback,
+        setMoves
       );
     },
     [
@@ -38,8 +39,8 @@ export function useGameLogic({
       setSelectedCardIndex,
       previousIndex,
       setMatchedPairs,
-      setMoves,
       setFeedback,
+      setMoves,
     ]
   );
 

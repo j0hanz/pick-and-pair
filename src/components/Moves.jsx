@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
-import { HiXMark } from 'react-icons/hi2';
-import styles from './styles/WrongMoves.module.css';
+import { HiOutlineArrowPathRoundedSquare } from 'react-icons/hi2';
+import styles from './styles/Moves.module.css';
 
 const Moves = memo(({ moves }) => {
   return (
     <div className={styles.moves}>
-      <HiXMark className={`${styles.statsIcon} me-1`} />
+      <HiOutlineArrowPathRoundedSquare className={`${styles.statsIcon} me-2`} />
       {moves}
     </div>
   );
