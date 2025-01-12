@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, ListGroup, Tab, Tabs } from 'react-bootstrap';
+import { Modal, Button, ListGroup, Tab, Tabs, Figure } from 'react-bootstrap';
 import {
   HiOutlineInformationCircle,
   HiOutlineClock,
@@ -9,6 +9,7 @@ import {
   HiStar,
 } from 'react-icons/hi2';
 import styles from './styles/Modal.module.css';
+import gameGif from '../assets/img/how-to-play.gif';
 
 // Header with title and close button
 function ModalHeader({ title = 'How to Play' }) {
@@ -23,7 +24,7 @@ function ModalHeader({ title = 'How to Play' }) {
 function ModalBody() {
   return (
     <Modal.Body className="p-0">
-      <Tabs defaultActiveKey="gameplay" className="mb-3" justify>
+      <Tabs defaultActiveKey="info" className="mb-3" justify>
         <Tab eventKey="gameplay" title="Gameplay">
           <ListGroup as="ol" numbered>
             <ListGroup.Item>
@@ -95,42 +96,40 @@ function ModalBody() {
           </ListGroup>
         </Tab>
         <Tab eventKey="scoring" title="Scoring">
-          <ListGroup variant="flush">
-            <ListGroup.Item>
-              <ListGroup variant="flush" className="mb-0 mt-1">
-                <ListGroup.Item>
-                  <HiStar
-                    className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
-                  />
-                  5 stars: Complete within 60 seconds with 0 moves.
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <HiStar
-                    className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
-                  />
-                  4 stars: Complete within 60 seconds with 1 move.
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <HiStar
-                    className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
-                  />
-                  3 stars: Complete within 60 seconds with 2 moves.
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <HiStar
-                    className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
-                  />
-                  2 stars: Complete within 60 seconds with 3 moves.
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <HiStar
-                    className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
-                  />
-                  1 star: Complete within 60 seconds with 4 or more moves.
-                </ListGroup.Item>
-              </ListGroup>
-            </ListGroup.Item>
-          </ListGroup>
+          <ListGroup.Item>
+            <ListGroup variant="flush" className="mb-0 mt-1">
+              <ListGroup.Item>
+                <HiStar
+                  className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
+                />
+                5 stars: Complete within 60 seconds with 0 moves.
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <HiStar
+                  className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
+                />
+                4 stars: Complete within 60 seconds with 1 move.
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <HiStar
+                  className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
+                />
+                3 stars: Complete within 60 seconds with 2 moves.
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <HiStar
+                  className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
+                />
+                2 stars: Complete within 60 seconds with 3 moves.
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <HiStar
+                  className={`${styles.listIcon} me-1 ${styles.scoreIcon} me-2`}
+                />
+                1 star: Complete within 60 seconds with 4 or more moves.
+              </ListGroup.Item>
+            </ListGroup>
+          </ListGroup.Item>
         </Tab>
 
         <Tab eventKey="symbols" title="Symbols">
@@ -177,6 +176,24 @@ function ModalBody() {
             <ListGroup.Item>Stars earned</ListGroup.Item>
           </ListGroup>
           <hr />
+        </Tab>
+        <Tab eventKey="info" title="Info">
+          <ListGroup horizontal>
+            <ListGroup.Item>
+              <Figure>
+                <Figure.Image
+                  src={gameGif}
+                  alt="How to play"
+                  className="rounded"
+                />
+                <Figure.Caption>
+                  Test your memory and concentration by pairing all the matching
+                  cards. Sharpen your mind as you race against time and aim for
+                  a perfect score. Good luck and have fun!
+                </Figure.Caption>
+              </Figure>
+            </ListGroup.Item>
+          </ListGroup>
         </Tab>
       </Tabs>
     </Modal.Body>
