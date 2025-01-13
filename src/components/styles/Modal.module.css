@@ -141,6 +141,42 @@
   font-size: 1.2rem;
 }
 
+.navItemLeft {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: none;
+  background: var(--btn-primary);
+  transition: all 0.3s ease;
+}
+
+.navItemLeft:hover,
+.navItemCenter:hover,
+.navItemRight:hover {
+  background: var(--btn-primary-hover);
+}
+
+.navItemCenter {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: none;
+  background: var(--btn-primary);
+  transition: all 0.3s ease;
+}
+
+.navItemRight {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 0;
+  border: none;
+  background: var(--btn-primary);
+  transition: all 0.3s ease;
+}
+
 @media (max-width: 425px) {
   .scoreListIcon {
     font-size: 1.4rem;

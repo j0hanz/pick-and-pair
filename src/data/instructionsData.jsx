@@ -1,5 +1,5 @@
-import React from 'react';
-import { Modal, ListGroup, Tab, Tabs, Badge, Row, Col } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Modal, ListGroup, Nav, Badge, Row, Col } from 'react-bootstrap';
 import {
   HiOutlineInformationCircle,
   HiOutlineClock,
@@ -15,10 +15,30 @@ import styles from '../components/styles/Modal.module.css';
 
 // This renders the instructions for the game
 export default function InstructionsData() {
+  const [activeKey, setActiveKey] = useState('overview');
+
   return (
     <Modal.Body className="p-0">
-      <Tabs defaultActiveKey="gameplay" className="mb-3" justify>
-        <Tab eventKey="info" title="Info">
+      <Nav
+        variant="tabs"
+        activeKey={activeKey}
+        onSelect={(selectedKey) => setActiveKey(selectedKey)}
+        className="mb-3"
+        justify
+      >
+        <Nav.Item className={styles.navItemLeft}>
+          <Nav.Link eventKey="overview">Overview</Nav.Link>
+        </Nav.Item>
+        <Nav.Item className={styles.navItemCenter}>
+          <Nav.Link eventKey="icons">Icons</Nav.Link>
+        </Nav.Item>
+        <Nav.Item className={styles.navItemRight}>
+          <Nav.Link eventKey="scoring">Scoring</Nav.Link>
+        </Nav.Item>
+      </Nav>
+
+      {activeKey === 'overview' && (
+        <>
           <ListGroup variant="flush">
             <ListGroup.Item>
               Welcome to Pick & Pair memory game! Your goal is to match all
@@ -39,8 +59,11 @@ export default function InstructionsData() {
               Scoring tab.
             </ListGroup.Item>
           </ListGroup>
-        </Tab>
-        <Tab eventKey="gameplay" title="Gameplay">
+        </>
+      )}
+
+      {activeKey === 'icons' && (
+        <>
           <ListGroup variant="flush">
             <ListGroup.Item>
               Symbols used in the game and their functions.
@@ -92,8 +115,11 @@ export default function InstructionsData() {
             </ListGroup.Item>
             <ListGroup.Item>Stars earned</ListGroup.Item>
           </ListGroup>
-        </Tab>
-        <Tab eventKey="scoring" title="Scoring">
+        </>
+      )}
+
+      {activeKey === 'scoring' && (
+        <>
           <ListGroup variant="flush">
             <ListGroup.Item>
               Stars are earned based on moves and time. Here's the breakdown.
@@ -218,8 +244,8 @@ export default function InstructionsData() {
               </Badge>
             </Col>
           </Row>
-        </Tab>
-      </Tabs>
+        </>
+      )}
     </Modal.Body>
   );
 }

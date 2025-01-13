@@ -62,9 +62,6 @@ export function GameInstructions({ show, onClose }) {
       centered
       className={`${styles.modal} ${styles.instructionsModal}`}
     >
-      <Modal.Header className="border-0 d-flex flex-column align-items-center">
-        <Modal.Title>How to Play</Modal.Title>
-      </Modal.Header>
       <InstructionsData />
       <Modal.Footer className="border-0">
         <Button className={styles.btnClose} onClick={onClose}>
