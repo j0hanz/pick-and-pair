@@ -4,6 +4,9 @@
   box-shadow: var(--shadow-primary);
   border: none !important;
   --bs-modal-border-radius: 15px;
+}
+
+.instructionsModal :global(.modal-content) {
   min-height: 55vh;
 }
 
@@ -139,15 +142,15 @@
 }
 
 @media (max-width: 425px) {
-  .modal :global(.modal-content) {
-    min-height: 75vh;
-  }
-
   .scoreListIcon {
     font-size: 1.4rem;
   }
 
   .scoreIcon {
     font-size: 0.8rem;
+  }
+
+  .instructionsModal :global(.modal-content) {
+    min-height: 80vh;
   }
 }

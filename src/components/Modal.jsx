@@ -56,7 +56,12 @@ export default function ScoreboardModal({
 
 export function GameInstructions({ show, onClose }) {
   return (
-    <Modal show={show} onHide={onClose} centered className={styles.modal}>
+    <Modal
+      show={show}
+      onHide={onClose}
+      centered
+      className={`${styles.modal} ${styles.instructionsModal}`}
+    >
       <Modal.Header className="border-0 d-flex flex-column align-items-center">
         <Modal.Title>How to Play</Modal.Title>
       </Modal.Header>
