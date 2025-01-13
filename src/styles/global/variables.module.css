@@ -1,5 +1,6 @@
 :root {
-  --bs-secondary-color: none;
+  --bs-primary-rgb: none;
+  --bs-secondary-rgb: none;
   --bs-emphasis-color: none;
   --bs-link-color: none;
   --bs-link-hover-color: none;

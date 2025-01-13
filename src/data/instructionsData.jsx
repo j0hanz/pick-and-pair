@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, ListGroup, Tab, Tabs } from 'react-bootstrap';
+import { Modal, ListGroup, Tab, Tabs, Badge } from 'react-bootstrap';
 import {
   HiOutlineInformationCircle,
   HiOutlineClock,
@@ -8,7 +8,9 @@ import {
   HiArrowPath,
   HiStar,
   HiOutlineArrowRightOnRectangle,
+  HiOutlineArrowPathRoundedSquare,
 } from 'react-icons/hi2';
+import { LiaInfinitySolid } from 'react-icons/lia';
 import styles from '../components/styles/Modal.module.css';
 
 // This renders the instructions for the game
@@ -19,15 +21,22 @@ export default function InstructionsData() {
         <Tab eventKey="info" title="Info">
           <ListGroup variant="flush">
             <ListGroup.Item>
-              Welcome to the memory game! Match all pairs of cards. At the
-              start, cards briefly reveal themselves. Memorize their positions.
-              The game has 6 pairs (12 cards).
+              Welcome to Pick & Pair memory game! Your goal is to match all
+              pairs of cards. When the game starts, all cards will briefly
+              reveal themselves for 3 seconds before flipping back over.
+              Memorize their positions during this time. The game consists of 6
+              pairs of cards (12 cards in total).
             </ListGroup.Item>
           </ListGroup>
-          <ListGroup variant="flush">
+          <hr className="my-2" />
+          <ListGroup horizontal>
             <ListGroup.Item>
-              Test your memory and concentration. Pair all matching cards and
-              aim for a perfect score.
+              <HiOutlineInformationCircle className={styles.listIcon} />
+            </ListGroup.Item>
+            <ListGroup.Item>
+              The game rates your performance based on the number of moves and
+              time taken to complete the game. Details are available in the
+              Scoring tab.
             </ListGroup.Item>
           </ListGroup>
         </Tab>
@@ -54,81 +63,159 @@ export default function InstructionsData() {
           </ListGroup>
           <ListGroup horizontal>
             <ListGroup.Item>
-              <HiXMark className={`${styles.listIcon} ${styles.statsIcon}`} />
+              <HiOutlineArrowPathRoundedSquare
+                className={`${styles.listIcon} ${styles.statsIcon}`}
+              />
             </ListGroup.Item>
-            <ListGroup.Item>Wrong moves</ListGroup.Item>
+            <ListGroup.Item>Moves</ListGroup.Item>
+          </ListGroup>
+          <ListGroup horizontal>
+            <ListGroup.Item>
+              <HiXMark className={`${styles.listIcon} ${styles.wrongPick}`} />
+            </ListGroup.Item>
+            <ListGroup.Item>Wrong pick</ListGroup.Item>
           </ListGroup>
           <ListGroup horizontal>
             <ListGroup.Item>
               <HiCheck className={`${styles.listIcon} ${styles.success}`} />
             </ListGroup.Item>
-            <ListGroup.Item>Correct moves</ListGroup.Item>
+            <ListGroup.Item>Correct pick</ListGroup.Item>
           </ListGroup>
           <ListGroup horizontal>
             <ListGroup.Item>
-              <HiStar className={styles.scoreIcon} />
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
             </ListGroup.Item>
             <ListGroup.Item>Stars earned</ListGroup.Item>
-          </ListGroup>
-          <hr />
-          <ListGroup horizontal>
-            <ListGroup.Item>
-              <HiOutlineInformationCircle className={styles.listIcon} />
-            </ListGroup.Item>
-            <ListGroup.Item>
-              Your performance is rated based on time and number of moves made.
-            </ListGroup.Item>
           </ListGroup>
         </Tab>
         <Tab eventKey="scoring" title="Scoring">
           <ListGroup>
-            <ListGroup.Item>
-              <HiStar className={styles.scoreIcon} />
-            </ListGroup.Item>
-            <ListGroup.Item>
-              Complete within 60 seconds with 10 moves or more.
-            </ListGroup.Item>
-          </ListGroup>
-          <ListGroup>
-            <ListGroup.Item>
-              <HiStar className={styles.scoreIcon} />
-              <HiStar className={styles.scoreIcon} />
-            </ListGroup.Item>
-            <ListGroup.Item>
-              Complete within 60 seconds with 9 moves.
-            </ListGroup.Item>
-          </ListGroup>
-          <ListGroup>
-            <ListGroup.Item>
-              <HiStar className={styles.scoreIcon} />
-              <HiStar className={styles.scoreIcon} />
-              <HiStar className={styles.scoreIcon} />
-            </ListGroup.Item>
-            <ListGroup.Item>
-              Complete within 60 seconds with 8 moves.
+            <ListGroup.Item className="d-flex justify-content-between align-items-center">
+              <div>
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+              </div>
+              <div>
+                <HiOutlineArrowPathRoundedSquare
+                  className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+                />
+                10
+              </div>
+              <div>
+                <Badge className="px-2">
+                  <HiOutlineClock
+                    className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
+                  />
+                  <LiaInfinitySolid className={styles.scoreListIcon} />
+                </Badge>
+              </div>
             </ListGroup.Item>
           </ListGroup>
+          <hr className="my-2" />
           <ListGroup>
-            <ListGroup.Item>
-              <HiStar className={styles.scoreIcon} />
-              <HiStar className={styles.scoreIcon} />
-              <HiStar className={styles.scoreIcon} />
-              <HiStar className={styles.scoreIcon} />
-            </ListGroup.Item>
-            <ListGroup.Item>
-              Complete within 60 seconds with 7 move.
+            <ListGroup.Item className="d-flex justify-content-between align-items-center">
+              <div>
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+              </div>
+              <div>
+                <HiOutlineArrowPathRoundedSquare
+                  className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+                />
+                9
+              </div>
+              <div>
+                <Badge className="px-2">
+                  <HiOutlineClock
+                    className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
+                  />
+                  60s
+                </Badge>
+              </div>
             </ListGroup.Item>
           </ListGroup>
+          <hr className="my-2" />
           <ListGroup>
-            <ListGroup.Item>
-              <HiStar className={styles.scoreIcon} />
-              <HiStar className={styles.scoreIcon} />
-              <HiStar className={styles.scoreIcon} />
-              <HiStar className={styles.scoreIcon} />
-              <HiStar className={styles.scoreIcon} />
+            <ListGroup.Item className="d-flex justify-content-between align-items-center">
+              <div>
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+              </div>
+              <div>
+                <HiOutlineArrowPathRoundedSquare
+                  className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+                />
+                8
+              </div>
+              <div>
+                <Badge className="px-2">
+                  <HiOutlineClock
+                    className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
+                  />
+                  60s
+                </Badge>
+              </div>
             </ListGroup.Item>
-            <ListGroup.Item>
-              Complete within 60 seconds with 6 moves.
+          </ListGroup>
+          <hr className="my-2" />
+          <ListGroup>
+            <ListGroup.Item className="d-flex justify-content-between align-items-center">
+              <div>
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+              </div>
+              <div>
+                <HiOutlineArrowPathRoundedSquare
+                  className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+                />
+                7
+              </div>
+              <div>
+                <Badge className="px-2">
+                  <HiOutlineClock
+                    className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
+                  />
+                  60s
+                </Badge>
+              </div>
+            </ListGroup.Item>
+          </ListGroup>
+          <hr className="my-2" />
+          <ListGroup>
+            <ListGroup.Item className="d-flex justify-content-between align-items-center">
+              <div>
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              </div>
+              <div>
+                <HiOutlineArrowPathRoundedSquare
+                  className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+                />
+                6
+              </div>
+              <div>
+                <Badge className="px-2">
+                  <HiOutlineClock
+                    className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
+                  />
+                  60s
+                </Badge>
+              </div>
             </ListGroup.Item>
           </ListGroup>
         </Tab>

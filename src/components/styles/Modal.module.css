@@ -4,6 +4,7 @@
   box-shadow: var(--shadow-primary);
   border: none !important;
   --bs-modal-border-radius: 15px;
+  min-height: 55vh;
 }
 
 .modal :global(.modal-header),
@@ -27,10 +28,6 @@
 .scoreItem {
   display: flex;
   align-items: center;
-}
-
-.scoreIcon {
-  font-size: 1.4rem;
 }
 
 .btnExit {
@@ -117,10 +114,32 @@
   color: var(--moves);
 }
 
+.wrongPick {
+  color: var(--feedback-wrong);
+}
+
 .success {
   color: var(--feedback-correct);
 }
 
-.scoreIcon {
+.starIcon {
   color: var(--color-star-icon);
+}
+
+.grayedOut {
+  color: var(--color-star-icon-gray);
+}
+
+.scoreListIcon {
+  font-size: 1.4rem;
+}
+
+.scoreIcon {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 425px) {
+  .modal :global(.modal-content) {
+    min-height: 80vh;
+  }
 }
