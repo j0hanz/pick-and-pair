@@ -147,14 +147,9 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border: none;
-  background: var(--btn-primary);
+  border-right: 1px solid var(--shadow-row);
+  background: var(--btn-secondary);
   transition: all 0.3s ease;
-}
-
-.navItemLeft:hover,
-.navItemCenter:hover,
-.navItemRight:hover {
-  background: var(--btn-primary-hover);
 }
 
 .navItemCenter {
@@ -163,7 +158,9 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border: none;
-  background: var(--btn-primary);
+  border-left: 1px solid var(--shadow-row);
+  border-right: 1px solid var(--shadow-row);
+  background: var(--btn-secondary);
   transition: all 0.3s ease;
 }
 
@@ -173,8 +170,21 @@
   border-top-right-radius: 15px;
   border-bottom-right-radius: 0;
   border: none;
-  background: var(--btn-primary);
+  border-left: 1px solid var(--shadow-row);
+  background: var(--btn-secondary);
   transition: all 0.3s ease;
+}
+
+.navItemLeft:hover,
+.navItemCenter:hover,
+.navItemRight:hover {
+  background: var(--btn-secondary-hover);
+}
+
+.navItemLeft.active,
+.navItemCenter.active,
+.navItemRight.active {
+  background: var(--btn-secondary-active);
 }
 
 @media (max-width: 425px) {

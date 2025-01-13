@@ -26,13 +26,19 @@ export default function InstructionsData() {
         className="mb-3"
         justify
       >
-        <Nav.Item className={styles.navItemLeft}>
+        <Nav.Item
+          className={`py-1 ${styles.navItemLeft} ${activeKey === 'overview' ? styles.active : ''}`}
+        >
           <Nav.Link eventKey="overview">Overview</Nav.Link>
         </Nav.Item>
-        <Nav.Item className={styles.navItemCenter}>
-          <Nav.Link eventKey="icons">Icons</Nav.Link>
+        <Nav.Item
+          className={`py-1 ${styles.navItemCenter} ${activeKey === 'icons' ? styles.active : ''}`}
+        >
+          <Nav.Link eventKey="icons">Symbols</Nav.Link>
         </Nav.Item>
-        <Nav.Item className={styles.navItemRight}>
+        <Nav.Item
+          className={`py-1 ${styles.navItemRight} ${activeKey === 'scoring' ? styles.active : ''}`}
+        >
           <Nav.Link eventKey="scoring">Scoring</Nav.Link>
         </Nav.Item>
       </Nav>
