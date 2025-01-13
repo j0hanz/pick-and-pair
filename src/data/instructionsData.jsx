@@ -41,6 +41,11 @@ export default function InstructionsData() {
           </ListGroup>
         </Tab>
         <Tab eventKey="gameplay" title="Gameplay">
+          <ListGroup variant="flush">
+            <ListGroup.Item>
+              Symbols used in the game and their functions.
+            </ListGroup.Item>
+          </ListGroup>
           <ListGroup horizontal>
             <ListGroup.Item>
               <HiArrowPath className={styles.listIcon} />
@@ -89,7 +94,12 @@ export default function InstructionsData() {
           </ListGroup>
         </Tab>
         <Tab eventKey="scoring" title="Scoring">
-          <Row className="d-flex justify-content-between px-3 align-items-center">
+          <ListGroup variant="flush">
+            <ListGroup.Item>
+              Stars are earned based on moves and time. Here's the breakdown.
+            </ListGroup.Item>
+          </ListGroup>
+          <Row className="d-flex justify-content-between mx-1 align-items-center">
             <Col className="text-start">
               <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
               <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
@@ -113,7 +123,7 @@ export default function InstructionsData() {
             </Col>
           </Row>
           <hr className="my-2" />
-          <Row className="d-flex justify-content-between px-3 align-items-center">
+          <Row className="d-flex justify-content-between mx-1 align-items-center">
             <Col className="text-start">
               <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
               <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
@@ -137,7 +147,7 @@ export default function InstructionsData() {
             </Col>
           </Row>
           <hr className="my-2" />
-          <Row className="d-flex justify-content-between px-3 align-items-center">
+          <Row className="d-flex justify-content-between mx-1 align-items-center">
             <Col className="text-start">
               <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
               <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
@@ -161,7 +171,7 @@ export default function InstructionsData() {
             </Col>
           </Row>
           <hr className="my-2" />
-          <Row className="d-flex justify-content-between px-3 align-items-center">
+          <Row className="d-flex justify-content-between mx-1 align-items-center">
             <Col className="text-start">
               <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
               <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
@@ -185,7 +195,7 @@ export default function InstructionsData() {
             </Col>
           </Row>
           <hr className="my-2" />
-          <Row className="d-flex justify-content-between px-3 align-items-center">
+          <Row className="d-flex justify-content-between mx-1 align-items-center">
             <Col className="text-start">
               <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
               <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
