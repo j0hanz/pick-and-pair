@@ -131,7 +131,7 @@
 }
 
 .scoreListIcon {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .scoreIcon {
@@ -140,6 +140,14 @@
 
 @media (max-width: 425px) {
   .modal :global(.modal-content) {
-    min-height: 80vh;
+    min-height: 75vh;
+  }
+
+  .scoreListIcon {
+    font-size: 1.4rem;
+  }
+
+  .scoreIcon {
+    font-size: 0.8rem;
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, ListGroup, Tab, Tabs, Badge } from 'react-bootstrap';
+import { Modal, ListGroup, Tab, Tabs, Badge, Row, Col } from 'react-bootstrap';
 import {
   HiOutlineInformationCircle,
   HiOutlineClock,
@@ -89,135 +89,125 @@ export default function InstructionsData() {
           </ListGroup>
         </Tab>
         <Tab eventKey="scoring" title="Scoring">
-          <ListGroup>
-            <ListGroup.Item className="d-flex justify-content-between align-items-center">
-              <div>
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
-              </div>
-              <div>
-                <HiOutlineArrowPathRoundedSquare
-                  className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+          <Row className="d-flex justify-content-between px-3 align-items-center">
+            <Col className="text-start">
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+            </Col>
+            <Col className="text-center">
+              <HiOutlineArrowPathRoundedSquare
+                className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+              />
+              10
+            </Col>
+            <Col className="text-end">
+              <Badge>
+                <HiOutlineClock
+                  className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
                 />
-                10
-              </div>
-              <div>
-                <Badge className="px-2">
-                  <HiOutlineClock
-                    className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
-                  />
-                  <LiaInfinitySolid className={styles.scoreListIcon} />
-                </Badge>
-              </div>
-            </ListGroup.Item>
-          </ListGroup>
+                <LiaInfinitySolid className={styles.scoreListIcon} />
+              </Badge>
+            </Col>
+          </Row>
           <hr className="my-2" />
-          <ListGroup>
-            <ListGroup.Item className="d-flex justify-content-between align-items-center">
-              <div>
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
-              </div>
-              <div>
-                <HiOutlineArrowPathRoundedSquare
-                  className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+          <Row className="d-flex justify-content-between px-3 align-items-center">
+            <Col className="text-start">
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+            </Col>
+            <Col className="text-center">
+              <HiOutlineArrowPathRoundedSquare
+                className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+              />
+              9
+            </Col>
+            <Col className="text-end">
+              <Badge>
+                <HiOutlineClock
+                  className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
                 />
-                9
-              </div>
-              <div>
-                <Badge className="px-2">
-                  <HiOutlineClock
-                    className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
-                  />
-                  60s
-                </Badge>
-              </div>
-            </ListGroup.Item>
-          </ListGroup>
+                60s
+              </Badge>
+            </Col>
+          </Row>
           <hr className="my-2" />
-          <ListGroup>
-            <ListGroup.Item className="d-flex justify-content-between align-items-center">
-              <div>
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
-              </div>
-              <div>
-                <HiOutlineArrowPathRoundedSquare
-                  className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+          <Row className="d-flex justify-content-between px-3 align-items-center">
+            <Col className="text-start">
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+            </Col>
+            <Col className="text-center">
+              <HiOutlineArrowPathRoundedSquare
+                className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+              />
+              8
+            </Col>
+            <Col className="text-end">
+              <Badge>
+                <HiOutlineClock
+                  className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
                 />
-                8
-              </div>
-              <div>
-                <Badge className="px-2">
-                  <HiOutlineClock
-                    className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
-                  />
-                  60s
-                </Badge>
-              </div>
-            </ListGroup.Item>
-          </ListGroup>
+                60s
+              </Badge>
+            </Col>
+          </Row>
           <hr className="my-2" />
-          <ListGroup>
-            <ListGroup.Item className="d-flex justify-content-between align-items-center">
-              <div>
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
-              </div>
-              <div>
-                <HiOutlineArrowPathRoundedSquare
-                  className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+          <Row className="d-flex justify-content-between px-3 align-items-center">
+            <Col className="text-start">
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.grayedOut}`} />
+            </Col>
+            <Col className="text-center">
+              <HiOutlineArrowPathRoundedSquare
+                className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+              />
+              7
+            </Col>
+            <Col className="text-end">
+              <Badge>
+                <HiOutlineClock
+                  className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
                 />
-                7
-              </div>
-              <div>
-                <Badge className="px-2">
-                  <HiOutlineClock
-                    className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
-                  />
-                  60s
-                </Badge>
-              </div>
-            </ListGroup.Item>
-          </ListGroup>
+                60s
+              </Badge>
+            </Col>
+          </Row>
           <hr className="my-2" />
-          <ListGroup>
-            <ListGroup.Item className="d-flex justify-content-between align-items-center">
-              <div>
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-                <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
-              </div>
-              <div>
-                <HiOutlineArrowPathRoundedSquare
-                  className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+          <Row className="d-flex justify-content-between px-3 align-items-center">
+            <Col className="text-start">
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+              <HiStar className={`${styles.scoreIcon} ${styles.starIcon}`} />
+            </Col>
+            <Col className="text-center">
+              <HiOutlineArrowPathRoundedSquare
+                className={`${styles.scoreListIcon} ${styles.statsIcon} me-1`}
+              />
+              6
+            </Col>
+            <Col className="text-end">
+              <Badge>
+                <HiOutlineClock
+                  className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
                 />
-                6
-              </div>
-              <div>
-                <Badge className="px-2">
-                  <HiOutlineClock
-                    className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
-                  />
-                  60s
-                </Badge>
-              </div>
-            </ListGroup.Item>
-          </ListGroup>
+                60s
+              </Badge>
+            </Col>
+          </Row>
         </Tab>
       </Tabs>
     </Modal.Body>
