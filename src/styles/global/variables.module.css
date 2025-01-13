@@ -6,6 +6,7 @@
   --bs-link-color: none;
   --bs-link-hover-color: none;
   --bs-border-color: none;
+  --bs-border-width: 0;
   --bs-body-color: none;
   --bs-body-bg: none;
   --bg-primary: linear-gradient(180deg, #15227d 0%, #2a1a85 50%, #3a1588 100%);
