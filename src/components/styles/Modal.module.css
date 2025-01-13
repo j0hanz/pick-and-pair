@@ -105,6 +105,10 @@
   transform: scale(0.95);
 }
 
+.btnClose:active {
+  background: var(--btn-secondary-hover) !important;
+}
+
 .listIcon {
   font-size: 1.5rem;
 }
