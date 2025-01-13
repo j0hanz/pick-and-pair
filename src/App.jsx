@@ -56,13 +56,13 @@ export default function App() {
             onClick={handleButtonClick(startGame)}
             className={styles.btnStart}
           >
-            <span>Start Game</span>
+            Start Game
           </Button>
           <Button
             onClick={handleButtonClick(openInstructions)}
             className={`${styles.btnGuide} mt-3`}
           >
-            <span>How to Play</span>
+            Instructions
           </Button>
         </div>
       )}
