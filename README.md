@@ -103,3 +103,12 @@ The game rates your performance based on the number of moves and the time taken 
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
+
+## Credits
+
+GIFs used in this project are sourced from [Pixabay](https://pixabay.com/). Special thanks to the following creators:
+
+- [Volkan Akın](https://pixabay.com/users/aknkidshouse-21218370/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=12627) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=12627)
+- [Marijana Jakelich](https://pixabay.com/users/mxjfiles-41050463/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=15692) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=15692)
+- [SuperGSATB](https://pixabay.com/users/supergsatb-32809140/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=5068) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=5068)
+- [Peace, love, happiness](https://pixabay.com/users/placidplace-25572496/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=7437) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=7437)
