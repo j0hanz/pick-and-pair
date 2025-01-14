@@ -6,6 +6,8 @@ import styles from './styles/global/App.module.css';
 import Game from './components/Game';
 import LoadingSpinner from './components/Spinner';
 import { GameInstructions, LatestUpdates } from './components/Modal';
+import StartButton from './components/StartButton';
+import InstructionsButton from './components/InstructionsButton';
 import { handleButtonClick } from './utils/soundManager';
 import { HiOutlineNewspaper } from 'react-icons/hi2';
 import { LiaGithub } from 'react-icons/lia';
@@ -38,18 +40,8 @@ export default function App() {
       <LoadingSpinner isLoading={isLoading} />
       {!isLoading && !isGameActive && (
         <div className="d-flex flex-column align-items-center">
-          <Button
-            onClick={handleButtonClick(startGame)}
-            className={styles.btnStart}
-          >
-            Start Game
-          </Button>
-          <Button
-            onClick={handleButtonClick(openInstructions)}
-            className={`${styles.btnGuide} mt-3`}
-          >
-            Instructions
-          </Button>
+          <StartButton onClick={startGame} />
+          <InstructionsButton onClick={openInstructions} />
           <div className={styles.smallButtonsDiv}>
             <Button
               onClick={handleButtonClick(openLatestUpdates)}
