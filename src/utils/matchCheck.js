@@ -7,6 +7,7 @@ function applyCardStatus(cards, indices, status) {
   });
 }
 
+// Update card status based on match result
 function updateCardStatus({
   cards,
   setCards,
@@ -27,6 +28,7 @@ function updateCardStatus({
   }, 500);
 }
 
+// Check if selected cards match
 export function matchCheck(
   currentCardIndex,
   cards,

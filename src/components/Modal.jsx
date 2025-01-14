@@ -7,7 +7,7 @@ import InstructionsData from '../data/instructionsData';
 import { handleButtonClick } from '../utils/soundManager';
 import CommitStatus from './CommitStatus';
 
-// Main modal component
+// Main modal
 export default function ScoreboardModal({
   show,
   onClose,
@@ -56,6 +56,7 @@ export default function ScoreboardModal({
   );
 }
 
+// Game instructions modal
 export function GameInstructions({ show, onClose }) {
   return (
     <Modal
@@ -77,6 +78,7 @@ export function GameInstructions({ show, onClose }) {
   );
 }
 
+// Latest updates modal
 export function LatestUpdates({ show, onClose }) {
   return (
     <Modal

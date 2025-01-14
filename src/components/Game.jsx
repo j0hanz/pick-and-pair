@@ -40,10 +40,12 @@ export default function GameLogic({ onRestart, onExit }) {
     setFeedback,
   });
 
+  // Handle game reset
   const handleReset = useCallback(() => {
     onRestart();
   }, [onRestart]);
 
+  // Play sound when game is over
   useEffect(() => {
     if (isGameOver) {
       playSound('complete');

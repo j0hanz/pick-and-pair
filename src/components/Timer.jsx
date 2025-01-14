@@ -4,6 +4,7 @@ import { useTimer } from '../hooks/useTimer';
 import styles from './styles/Timer.module.css';
 
 const Timer = memo(({ timerActive }) => {
+  // Get elapsed time using custom hook
   const elapsedTime = useTimer(timerActive);
 
   return (

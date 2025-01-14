@@ -5,6 +5,7 @@ import { Badge, ListGroup } from 'react-bootstrap';
 const LatestCommits = () => {
   const [commits, setCommits] = useState([]);
 
+  // Fetch latest commits on component mount
   useEffect(() => {
     const getCommitData = async () => {
       const data = await fetchLatestCommits();

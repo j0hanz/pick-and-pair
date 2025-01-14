@@ -1,7 +1,7 @@
 import { matchCheck } from './matchCheck';
 import { playSound } from './soundManager';
 
-// Function to check if a card can be clicked
+// Check if a card can be clicked
 export function canClickCard(index, cards, selectedCardIndex, previousIndex) {
   return (
     index !== previousIndex.current &&
@@ -11,7 +11,7 @@ export function canClickCard(index, cards, selectedCardIndex, previousIndex) {
   );
 }
 
-// Function to handle the logic when a card is clicked
+// Handle the logic when a card is clicked
 export function handleCardClick(
   index,
   cards,

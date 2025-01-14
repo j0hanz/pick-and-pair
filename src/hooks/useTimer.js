@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+// Manage timer
 export function useTimer(timerActive) {
   const [elapsedTime, setElapsedTime] = useState(0);
 

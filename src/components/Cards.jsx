@@ -8,6 +8,7 @@ import Feedback from './Feedback';
 import styles from './styles/Cards.module.css';
 import { handleButtonClick } from '../utils/soundManager';
 
+// Render all cards
 export default function Cards({
   cards,
   isInitialFlip,
