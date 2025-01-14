@@ -21,6 +21,7 @@
   --shadow-card-active: #ff8c00d9;
   --shadow-card-hover: #00000040;
   --shadow-card-matched: #008000d9;
+  --shadow-card-wrong: #ff0000d9;
   --shadow-primary: #00000059;
   --bg-wrong: #d9534f;
   --feedback-wrong: #c9302c;

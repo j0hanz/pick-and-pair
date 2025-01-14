@@ -5,10 +5,16 @@
 
 .success {
   color: var(--feedback-correct);
+  background: var(--bg-card);
+  box-shadow: 0 0 1px 1px var(--shadow-card-matched);
+  border-radius: 15px;
 }
 
 .error {
   color: var(--feedback-wrong);
+  background: var(--bg-card);
+  box-shadow: 0 0 1px 1px var(--shadow-card-wrong);
+  border-radius: 15px;
 }
 
 @media (max-width: 450px) {

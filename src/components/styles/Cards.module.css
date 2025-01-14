@@ -32,27 +32,29 @@
 
 /* Button */
 
-.btnExitRestart,
-.exitRestartIcon {
-  background: none;
-  border: none;
+.btnExitRestart {
+  background: var(--bg-card);
+  box-shadow: 0 1px 3px var(--shadow-card);
+  border: 2px solid var(--border-card);
+  border-radius: 15px;
   transition: all 0.3s ease;
 }
 
-.btnExitRestart:hover,
-.exitRestartIcon:hover {
-  background: none;
-  opacity: 0.7;
-}
-
-.btnExitRestart:active,
-.exitRestartIcon:active {
-  background: none !important;
-  transform: scale(0.96);
+.btnExitRestart:hover {
+  box-shadow: 0 0 4px var(--color-secondary);
+  --bs-btn-hover-border-color: transparent;
 }
 
 .exitRestartIcon {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
+}
+
+.btnExitRestart:active,
+.exitRestartIcon:active,
+.exitRestartIcon:active {
+  background: var(--bg-card);
+  --bs-btn-active-border-color: transparent;
+  transform: scale(0.98);
 }
 
 @media (max-width: 575px) {
