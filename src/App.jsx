@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/global/variables.css';
 import { Button } from 'react-bootstrap';
 import styles from './styles/global/App.module.css';
 import Game from './components/Game';
