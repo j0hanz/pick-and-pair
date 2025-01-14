@@ -10,6 +10,13 @@ Pick & Pair is a memory game built with React. The objective of the game is to m
 - **Sound Effects**: Audio feedback for correct and incorrect matches.
 - **Latest Updates**: View the latest commits from the GitHub repository.
 
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **React Bootstrap**: Bootstrap components built with React.
+- **Howler.js**: JavaScript library for audio effects.
+- **Axios**: Promise-based HTTP client for the browser and Node.js.
+
 ## Getting Started
 
 ### Prerequisites
@@ -84,4 +91,3 @@ src/
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
-
