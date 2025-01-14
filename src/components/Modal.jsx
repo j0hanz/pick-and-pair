@@ -65,7 +65,10 @@ export function GameInstructions({ show, onClose }) {
     >
       <InstructionsData />
       <Modal.Footer className="border-0">
-        <Button className={styles.btnClose} onClick={onClose}>
+        <Button
+          className={styles.btnClose}
+          onClick={handleButtonClick(onClose)}
+        >
           Close
         </Button>
       </Modal.Footer>
