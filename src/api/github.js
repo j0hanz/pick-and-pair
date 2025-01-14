@@ -19,6 +19,7 @@ export const fetchLatestCommits = async () => {
       message: commit.commit.message,
       date: commit.commit.author.date,
       url: commit.html_url,
+      author: commit.author ? commit.author.login : 'Unknown',
     }));
   } catch (error) {
     console.error('Error fetching latest commits:', error);
