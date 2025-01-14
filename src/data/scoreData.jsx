@@ -7,7 +7,7 @@ import styles from '../components/styles/Modal.module.css';
 import Score from '../components/Score';
 
 // Displays the game statistics
-export default function Scoreboard({ score, moves, completedTime }) {
+export default function Scoreboard({ moves, completedTime }) {
   return (
     <div className={styles.scoreboard}>
       <div className={styles.scoreItem}>
@@ -20,7 +20,7 @@ export default function Scoreboard({ score, moves, completedTime }) {
         <Score moves={moves} completedTime={completedTime} />
       </div>
       <div className={styles.scoreItem}>
-        <HiOutlineClock className={`me-2 ${styles.scoreIcon}`} />
+        <HiOutlineClock className={`me-2 ${styles.clockIcon}`} />
         {completedTime}
       </div>
     </div>
