@@ -1,16 +1,17 @@
 /* Import fonts and variables */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
 @import './variables.module.css';
 
 /* General styles */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background: var(--bg-primary);
   color: var(--color-text);
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  font-size: 1.05rem;
 }
 
 /* Game title styles */
