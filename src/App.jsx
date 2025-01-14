@@ -4,14 +4,16 @@ import { Button } from 'react-bootstrap';
 import styles from './styles/global/App.module.css';
 import Game from './components/Game';
 import LoadingSpinner from './components/Spinner';
-import { GameInstructions } from './components/Modal';
+import { GameInstructions, LatestUpdates } from './components/Modal';
 import { handleButtonClick } from './utils/soundManager';
+import { HiOutlineNewspaper } from 'react-icons/hi2';
 
 // Main app component
 export default function App() {
   const [isGameActive, setIsGameActive] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
+  const [showLatestUpdates, setShowLatestUpdates] = useState(false);
 
   // Start game
   const startGame = useCallback(() => {
@@ -47,6 +49,16 @@ export default function App() {
     setShowInstructions(false);
   }, []);
 
+  // Open Latest Updates modal
+  const openLatestUpdates = useCallback(() => {
+    setShowLatestUpdates(true);
+  }, []);
+
+  // Close Latest Updates modal
+  const closeLatestUpdates = useCallback(() => {
+    setShowLatestUpdates(false);
+  }, []);
+
   return (
     <>
       <LoadingSpinner isLoading={isLoading} />
@@ -64,6 +76,12 @@ export default function App() {
           >
             Instructions
           </Button>
+          <Button
+            onClick={handleButtonClick(openLatestUpdates)}
+            className={`${styles.btnUpdates} mt-3`}
+          >
+            <HiOutlineNewspaper className={styles.btnUpdatesIcon} />
+          </Button>
         </div>
       )}
       {isGameActive && (
@@ -74,6 +92,7 @@ export default function App() {
         />
       )}
       <GameInstructions show={showInstructions} onClose={closeInstructions} />
+      <LatestUpdates show={showLatestUpdates} onClose={closeLatestUpdates} />
     </>
   );
 }
