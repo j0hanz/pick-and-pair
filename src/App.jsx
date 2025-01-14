@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/global/variables.css';
 import { Button } from 'react-bootstrap';
@@ -9,6 +9,7 @@ import { GameInstructions, LatestUpdates } from './components/Modal';
 import { handleButtonClick } from './utils/soundManager';
 import { HiOutlineNewspaper } from 'react-icons/hi2';
 import { LiaGithub } from 'react-icons/lia';
+import { useGameHandlers } from './utils/gameHandlers';
 
 // Main app component
 export default function App() {
@@ -17,49 +18,20 @@ export default function App() {
   const [showInstructions, setShowInstructions] = useState(false);
   const [showLatestUpdates, setShowLatestUpdates] = useState(false);
 
-  // Start game
-  const startGame = useCallback(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsGameActive(true);
-    }, 3000);
-  }, []);
-
-  // Restart game
-  const handleRestart = useCallback(() => {
-    setIsGameActive(false);
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsGameActive(true);
-    }, 3000);
-  }, []);
-
-  // Exit game
-  const handleExit = useCallback(() => {
-    setIsGameActive(false);
-  }, []);
-
-  // Open Instructions modal
-  const openInstructions = useCallback(() => {
-    setShowInstructions(true);
-  }, []);
-
-  // Close Instructions modal
-  const closeInstructions = useCallback(() => {
-    setShowInstructions(false);
-  }, []);
-
-  // Open Latest Updates modal
-  const openLatestUpdates = useCallback(() => {
-    setShowLatestUpdates(true);
-  }, []);
-
-  // Close Latest Updates modal
-  const closeLatestUpdates = useCallback(() => {
-    setShowLatestUpdates(false);
-  }, []);
+  const {
+    startGame,
+    handleRestart,
+    handleExit,
+    openInstructions,
+    closeInstructions,
+    openLatestUpdates,
+    closeLatestUpdates,
+  } = useGameHandlers({
+    setIsLoading,
+    setIsGameActive,
+    setShowInstructions,
+    setShowLatestUpdates,
+  });
 
   return (
     <>
