@@ -77,6 +77,27 @@ body {
   transform: scale(0.95);
 }
 
+.btnUpdates {
+  background: var(--btn-secondary);
+  border: 1px solid var(--border-card);
+  color: var(--color-text);
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.btnUpdates:hover {
+  background: var(--btn-secondary-hover);
+  box-shadow: 0 0 1px 1px var(--shadow-card-active);
+  color: var(--color-text);
+}
+
+.btnUpdatesIcon {
+  font-size: 1.8rem;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
 /* Animations */
 @keyframes shake {
   0%,
