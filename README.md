@@ -73,7 +73,9 @@ npm test
 
 ## Project Structure
 
-```
+The project is organized into several directories:
+
+```sh
 src/
   ├── api/
   ├── assets/
@@ -87,6 +89,16 @@ src/
   ├── reportWebVitals.js
   └── setupTests.js
 ```
+
+## Scoring System
+
+The game rates your performance based on the number of moves and the time taken to complete the game. You can earn up to 5 stars:
+
+- **5 stars**: Complete the game in 6 moves and within 15 seconds.
+- **4 stars**: Complete the game in 7 moves and within 30 seconds.
+- **3 stars**: Complete the game in 8 moves and within 45 seconds.
+- **2 stars**: Complete the game in 9 moves and within 60 seconds.
+- **1 star**: Complete the game in 10 or more moves or take longer than 60 seconds.
 
 ## Contributing
 
