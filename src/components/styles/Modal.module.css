@@ -10,6 +10,10 @@
   min-height: 55vh;
 }
 
+.latestUpdatesModal :global(.modal-content) {
+  min-height: 65vh;
+}
+
 .modal :global(.modal-header),
 .modal :global(.modal-footer) {
   color: var(--color-text);
@@ -202,5 +206,9 @@
 
   .instructionsModal :global(.modal-content) {
     min-height: 80vh;
+  }
+
+  .latestUpdatesModal :global(.modal-content) {
+    min-height: 90vh;
   }
 }

@@ -83,8 +83,11 @@ export function LatestUpdates({ show, onClose }) {
       show={show}
       onHide={onClose}
       centered
-      className={`${styles.modal} ${styles.instructionsModal}`}
+      className={`${styles.modal} ${styles.latestUpdatesModal}`}
     >
+      <Modal.Header className="border-0 d-flex justify-content-center">
+        <Modal.Title>Latest Updates</Modal.Title>
+      </Modal.Header>
       <Modal.Body>
         <CommitStatus />
       </Modal.Body>
