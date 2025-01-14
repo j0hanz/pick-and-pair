@@ -6,6 +6,7 @@ import Timer from './Timer';
 import Moves from './Moves';
 import Feedback from './Feedback';
 import styles from './styles/Cards.module.css';
+import { handleButtonClick } from '../utils/soundManager';
 
 export default function Cards({
   cards,
@@ -21,11 +22,17 @@ export default function Cards({
     <Container className={styles.container}>
       <Row className={styles.row}>
         <div className={`${styles.statsTop} py-1`}>
-          <Button className={styles.btnExitRestart} onClick={onReset}>
+          <Button
+            className={styles.btnExitRestart}
+            onClick={handleButtonClick(onReset)}
+          >
             <HiArrowPath className={styles.exitRestartIcon} />
           </Button>
           <Timer timerActive={timerActive} />
-          <Button className={styles.btnExitRestart} onClick={onExit}>
+          <Button
+            className={styles.btnExitRestart}
+            onClick={handleButtonClick(onExit)}
+          >
             <HiOutlineArrowRightOnRectangle
               className={styles.exitRestartIcon}
             />

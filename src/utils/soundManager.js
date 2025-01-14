@@ -3,6 +3,7 @@ import correctSound from '../assets/sounds/correct.mp3';
 import wrongSound from '../assets/sounds/wrong.mp3';
 import clickSound from '../assets/sounds/click.mp3';
 import buttonSound from '../assets/sounds/button.mp3';
+import completeSound from '../assets/sounds/complete.mp3';
 
 // Helper function to create a Howl instance
 const createSound = (src) => new Howl({ src: [src] });
@@ -13,6 +14,7 @@ const sounds = {
   wrong: createSound(wrongSound),
   click: createSound(clickSound),
   button: createSound(buttonSound),
+  complete: createSound(completeSound),
 };
 
 // Function to play a sound by key

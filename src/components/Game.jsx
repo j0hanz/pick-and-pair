@@ -1,8 +1,9 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useGameState } from '../hooks/useGameState';
 import { useGameLogic } from '../hooks/useGameLogic';
 import Cards from './Cards';
 import Scoreboard from './Modal';
+import { playSound } from '../utils/soundManager';
 
 export default function GameLogic({ onRestart, onExit }) {
   const {
@@ -42,6 +43,12 @@ export default function GameLogic({ onRestart, onExit }) {
   const handleReset = useCallback(() => {
     onRestart();
   }, [onRestart]);
+
+  useEffect(() => {
+    if (isGameOver) {
+      playSound('complete');
+    }
+  }, [isGameOver]);
 
   return (
     <>

@@ -4,6 +4,7 @@ import { HiArrowPath, HiOutlineArrowRightOnRectangle } from 'react-icons/hi2';
 import styles from './styles/Modal.module.css';
 import Scoreboard from '../data/scoreData';
 import InstructionsData from '../data/instructionsData';
+import { handleButtonClick } from '../utils/soundManager';
 
 // Main modal component
 export default function ScoreboardModal({
@@ -35,14 +36,14 @@ export default function ScoreboardModal({
       <Modal.Footer className="border-0">
         <Button
           className={`${styles.btnRestart} ${styles.modalButton}`}
-          onClick={onReset}
+          onClick={handleButtonClick(onReset)}
         >
           <HiArrowPath className={`${styles.btnIcon} me-1`} />
           Restart
         </Button>
         <Button
           className={`${styles.btnExit} ${styles.modalButton}`}
-          onClick={onExit}
+          onClick={handleButtonClick(onExit)}
         >
           <HiOutlineArrowRightOnRectangle
             className={`${styles.btnIcon} me-1`}
