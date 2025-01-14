@@ -7,6 +7,7 @@ import LoadingSpinner from './components/Spinner';
 import { GameInstructions, LatestUpdates } from './components/Modal';
 import { handleButtonClick } from './utils/soundManager';
 import { HiOutlineNewspaper } from 'react-icons/hi2';
+import { LiaGithub } from 'react-icons/lia';
 
 // Main app component
 export default function App() {
@@ -76,12 +77,22 @@ export default function App() {
           >
             Instructions
           </Button>
-          <Button
-            onClick={handleButtonClick(openLatestUpdates)}
-            className={`${styles.btnUpdates} mt-3`}
-          >
-            <HiOutlineNewspaper className={styles.btnUpdatesIcon} />
-          </Button>
+          <div className="d-flex align-items-center mt-5">
+            <Button
+              onClick={handleButtonClick(openLatestUpdates)}
+              className={`${styles.btnUpdates} me-4`}
+            >
+              <HiOutlineNewspaper className={styles.btnUpdatesIcon} />
+            </Button>
+            <Button
+              onClick={() =>
+                window.open('https://github.com/j0hanz/pick-and-pair', '_blank')
+              }
+              className={`${styles.btnUpdates}`}
+            >
+              <LiaGithub className={styles.btnUpdatesIcon} />
+            </Button>
+          </div>
         </div>
       )}
       {isGameActive && (
