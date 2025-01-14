@@ -1,18 +1,47 @@
 import React, { useEffect, useState } from 'react';
-import { fetchLatestCommit } from '../api/github';
+import { fetchLatestCommits } from '../api/github';
+import { Badge, ListGroup } from 'react-bootstrap';
 
-const CommitStatus = () => {
-  const [commit, setCommit] = useState(null);
+const LatestCommits = () => {
+  const [commits, setCommits] = useState([]);
 
   useEffect(() => {
     const getCommitData = async () => {
-      const data = await fetchLatestCommit();
-      setCommit(data);
+      const data = await fetchLatestCommits();
+      setCommits(data);
     };
     getCommitData();
   }, []);
 
-  if (!commit) return <div>Loading...</div>;
+  if (!commits.length) {
+    return <div>Loading commit data...</div>;
+  }
+
+  return (
+    <>
+      <ListGroup>
+        {commits.map((commit, index) => {
+          const username = commit.author ? commit.author : 'Unknown';
+
+          return (
+            <ListGroup.Item
+              as="li"
+              className="d-flex justify-content-between align-items-start"
+              key={commit.sha || index}
+            >
+              <div>
+                <div>{new Date(commit.date).toISOString().split('T')[0]}</div>
+                <a href={commit.url}>{commit.message}</a>
+              </div>
+              <Badge bg="primary" pill>
+                {username}
+              </Badge>
+            </ListGroup.Item>
+          );
+        })}
+      </ListGroup>
+    </>
+  );
 };
 
-export default CommitStatus;
+export default LatestCommits;
