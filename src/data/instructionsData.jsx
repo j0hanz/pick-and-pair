@@ -198,7 +198,7 @@ export default function InstructionsData() {
                 <HiOutlineClock
                   className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
                 />
-                60s
+                45s
               </Badge>
             </Col>
           </Row>
@@ -222,7 +222,7 @@ export default function InstructionsData() {
                 <HiOutlineClock
                   className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
                 />
-                60s
+                30s
               </Badge>
             </Col>
           </Row>
@@ -246,7 +246,7 @@ export default function InstructionsData() {
                 <HiOutlineClock
                   className={`${styles.scoreListIcon} ${styles.clockIcon} me-1`}
                 />
-                60s
+                15s
               </Badge>
             </Col>
           </Row>

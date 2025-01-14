@@ -5,11 +5,10 @@ import style from './styles/Score.module.css';
 export default function Score({ moves, completedTime }) {
   // Helper function to compute the star rating
   function getStars(m, t) {
-    if (t > 60) return 1;
-    if (m <= 6) return 5;
-    if (m <= 7) return 4;
-    if (m <= 8) return 3;
-    if (m <= 9) return 2;
+    if (m <= 6 && t <= 15) return 5;
+    if (m <= 7 && t <= 30) return 4;
+    if (m <= 8 && t <= 45) return 3;
+    if (m <= 9 && t <= 60) return 2;
     return 1;
   }
 
