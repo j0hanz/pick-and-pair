@@ -77,7 +77,7 @@ export default function App() {
           >
             Instructions
           </Button>
-          <div className="d-flex align-items-center mt-5">
+          <div className={styles.smallButtonsDiv}>
             <Button
               onClick={handleButtonClick(openLatestUpdates)}
               className={`${styles.btnUpdates} me-4`}
