@@ -15,17 +15,18 @@ body {
 
 /* Game title styles */
 .gameTitle {
-  font-size: 4.5rem;
+  font-family: 'Fredoka One', cursive;
+  font-size: 3.8rem;
   color: var(--color-highlight);
-  text-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
-  transition:
-    color 0.3s ease,
-    text-shadow 0.3s ease;
+  text-shadow: 0 4px 4px var(--shadow-card);
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
 }
 
-.gameTitle:hover {
-  color: #ff4500;
-  text-shadow: 0 0 20px rgba(255, 69, 0, 0.7);
+.symbol {
+  font-size: 4rem;
+  color: var(--moves);
+  text-shadow: 0 2px 4px var(--shadow-card);
 }
 
 .smallButtonsDiv {
@@ -105,28 +106,11 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Animations */
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
+@media (max-width: 425px) {
+  .gameTitle {
+    font-size: 3rem;
   }
-  25%,
-  75% {
-    transform: translateX(-10px);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
+  .symbol {
+    font-size: 3.1rem;
   }
 }

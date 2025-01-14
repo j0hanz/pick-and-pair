@@ -40,6 +40,9 @@ export default function App() {
       <LoadingSpinner isLoading={isLoading} />
       {!isLoading && !isGameActive && (
         <div className="d-flex flex-column align-items-center">
+          <div className={styles.gameTitle}>
+            Pick <span className={styles.symbol}>&</span> Pair
+          </div>
           <StartButton onClick={startGame} />
           <InstructionsButton onClick={openInstructions} />
           <div className={styles.smallButtonsDiv}>
