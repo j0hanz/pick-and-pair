@@ -22,7 +22,7 @@ export default function Cards({
   return (
     <Container className={styles.container}>
       <Row className={styles.row}>
-        <div className={`${styles.statsTop} py-1`}>
+        <div className={styles.statsTop}>
           <Button
             className={styles.btnExitRestart}
             onClick={handleButtonClick(onReset)}
