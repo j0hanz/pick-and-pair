@@ -55,8 +55,8 @@ export default function App() {
   // Page transition settings
   const pageTransition = {
     type: 'spring',
-    stiffness: 40,
-    damping: 10,
+    stiffness: 50,
+    damping: 20,
   };
 
   return (
