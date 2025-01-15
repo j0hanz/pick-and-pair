@@ -113,4 +113,8 @@ body {
   .symbol {
     font-size: 3.1rem;
   }
+
+  body {
+    font-size: 1rem;
+  }
 }
