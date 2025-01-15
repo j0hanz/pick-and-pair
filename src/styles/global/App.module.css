@@ -19,7 +19,7 @@ body {
   color: var(--color-highlight);
   text-shadow: 0 4px 4px var(--shadow-card);
   margin-bottom: 2rem;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 .symbol {
