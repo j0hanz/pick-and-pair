@@ -4,6 +4,6 @@
 }
 
 .clockIcon {
-  font-size: 1.75rem;
-  color: var(--color-clock-icon);
+  font-size: 1.5rem;
+  color: var(--moves);
 }

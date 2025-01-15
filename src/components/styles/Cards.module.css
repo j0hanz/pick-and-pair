@@ -11,7 +11,6 @@
   align-items: center;
   border-bottom: 3px solid var(--border-row);
   color: var(--color-text);
-  font-size: 1.25rem;
   justify-content: space-between;
 }
 
@@ -29,7 +28,7 @@
   background: var(--bg-card);
   box-shadow: 0 1px 3px var(--shadow-card);
   border: 2px solid var(--border-card);
-  border-radius: 15px;
+  border-radius: 10px;
   transition: all 0.3s ease;
 }
 
@@ -49,22 +48,3 @@
   --bs-btn-active-border-color: transparent;
   transform: scale(0.98);
 }
-
-/* @media (max-width: 1200px) {
-  .container {
-    width: 40rem;
-  }
-}
-
-@media (max-width: 775px) {
-  .container {
-    width: 80%;
-  }
-}
-
-@media (max-width: 575px) {
-  .container {
-    width: 100%;
-  }
-}
- */
