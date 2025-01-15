@@ -2,7 +2,7 @@
 .card {
   position: relative;
   height: 11rem;
-  perspective: 1000px;
+  perspective: 1200px;
   background: var(--bg-card);
   border: 2px solid var(--border-card);
   border-radius: 25px;
