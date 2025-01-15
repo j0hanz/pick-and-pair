@@ -1,4 +1,4 @@
-![Logo](docs/images/logo-README.png)
+# Pick & Pair
 
 **Pick & Pair** is a memory game built with React. The objective is to match all pairs of cards with the least number of moves and time.
 
