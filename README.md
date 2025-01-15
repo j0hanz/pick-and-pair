@@ -1,28 +1,35 @@
-# Pick & Pair Memory Game
+![Logo](docs/images/logo-README.png)
 
-Pick & Pair is a memory game built with React. The objective of the game is to match all pairs of cards within the least number of moves and time.
+**Pick & Pair** is a memory game built with React. The objective is to match all pairs of cards with the least number of moves and time.
+
+---
 
 ## Features
 
-- **Responsive Design**: The game is fully responsive and works on various screen sizes.
-- **Animated Card Flips**: Smooth animations for card flips and matches.
-- **Scoring System**: Earn stars based on the number of moves and time taken.
-- **Sound Effects**: Audio feedback for correct and incorrect matches.
-- **Latest Updates**: View the latest commits from the GitHub repository.
+- **Responsive Design**: Fully adaptable to various screen sizes.
+- **Animated Card Flips**: Smooth animations for flips and matches.
+- **Scoring System**: Earn stars based on your performance.
+- **Sound Effects**: Audio feedback for matches and misses.
+- **Latest Updates**: Displays the latest commits from the GitHub repository.
+
+---
 
 ## Technologies Used
 
-- **React**: JavaScript library for building user interfaces.
-- **React Bootstrap**: Bootstrap components built with React.
-- **Howler.js**: JavaScript library for audio effects.
-- **Axios**: Promise-based HTTP client for the browser and Node.js.
+- **React**: For building the user interface.
+- **React Bootstrap**: Bootstrap components for responsive design.
+- **Framer Motion**: For animations and transitions.
+- **Howler.js**: For handling audio effects.
+- **Axios**: For HTTP requests.
+
+---
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (version 20.x)
-- npm (version 10.x)
+- Node.js (v20.x)
+- npm (v10.x)
 
 ### Installation
 
@@ -47,17 +54,17 @@ Pick & Pair is a memory game built with React. The objective of the game is to m
 
 ### Running the Application
 
-To start the development server, run:
+To start the development server:
 
 ```sh
 npm start
 ```
 
-The application will be available at `http://localhost:3000`.
+Access the application at `http://localhost:3000`.
 
 ### Building for Production
 
-To create a production build, run:
+To create a production build:
 
 ```sh
 npm run build
@@ -65,15 +72,86 @@ npm run build
 
 ### Running Tests
 
-To run the tests, use:
+To run tests:
 
 ```sh
 npm test
 ```
 
-## Project Structure
+---
 
-The project is organized into several directories:
+## Usage Instructions
+
+1. Start the game by clicking the **Start Game** button.
+2. Memorize the positions of the cards during the initial flip.
+3. Click cards to reveal them and match pairs.
+4. The game ends when all pairs are matched. Your score is based on moves and time taken.
+
+---
+
+## Scoring System
+
+Earn up to 5 stars based on moves and time:
+
+- **5 stars**: Complete in 6 moves within 15 seconds.
+- **4 stars**: Complete in 7 moves within 30 seconds.
+- **3 stars**: Complete in 8 moves within 45 seconds.
+- **2 stars**: Complete in 9 moves within 60 seconds.
+- **1 star**: 10+ moves or more than 60 seconds.
+
+---
+
+## Configuration
+
+Customize the game by editing the following environment variable in the `.env` file:
+
+- `REACT_APP_GITHUB_TOKEN`: GitHub token to fetch the latest commits.
+
+---
+
+## Deployment
+
+To deploy to a hosting service like Heroku:
+
+1. Create a Heroku account and install the Heroku CLI.
+2. Log in to Heroku:
+
+   ```sh
+   heroku login
+   ```
+
+3. Create a new Heroku app:
+
+   ```sh
+   heroku create
+   ```
+
+4. Deploy the application:
+
+   ```sh
+   git push heroku main
+   ```
+
+---
+
+## Acknowledgements
+
+- [React](https://reactjs.org/)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Howler.js](https://howlerjs.com/)
+- [Axios](https://axios-http.com/)
+
+Special thanks to creators of GIFs used in the project from [Pixabay](https://pixabay.com/):
+
+- [Volkan Akın](https://pixabay.com/users/aknkidshouse-21218370)
+- [Marijana Jakelich](https://pixabay.com/users/mxjfiles-41050463)
+- [SuperGSATB](https://pixabay.com/users/supergsatb-32809140)
+- [Peace, love, happiness](https://pixabay.com/users/placidplace-25572496)
+
+---
+
+## Project Structure
 
 ```sh
 src/
@@ -89,26 +167,3 @@ src/
   ├── reportWebVitals.js
   └── setupTests.js
 ```
-
-## Scoring System
-
-The game rates your performance based on the number of moves and the time taken to complete the game. You can earn up to 5 stars:
-
-- **5 stars**: Complete the game in 6 moves and within 15 seconds.
-- **4 stars**: Complete the game in 7 moves and within 30 seconds.
-- **3 stars**: Complete the game in 8 moves and within 45 seconds.
-- **2 stars**: Complete the game in 9 moves and within 60 seconds.
-- **1 star**: Complete the game in 10 or more moves or take longer than 60 seconds.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
-
-## Credits
-
-GIFs used in this project are sourced from [Pixabay](https://pixabay.com/). Special thanks to the following creators:
-
-- [Volkan Akın](https://pixabay.com/users/aknkidshouse-21218370/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=12627) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=12627)
-- [Marijana Jakelich](https://pixabay.com/users/mxjfiles-41050463/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=15692) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=15692)
-- [SuperGSATB](https://pixabay.com/users/supergsatb-32809140/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=5068) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=5068)
-- [Peace, love, happiness](https://pixabay.com/users/placidplace-25572496/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=7437) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=7437)
