@@ -102,18 +102,18 @@
 
 @media (max-width: 550px) {
   .card {
-    height: 8.5rem;
+    height: 8rem;
   }
 }
 
 @media (max-width: 450px) {
   .card {
-    height: 7.5rem;
+    height: 7rem;
   }
 }
 
 @media (max-width: 374px) {
   .card {
-    height: 7rem;
+    height: 6rem;
   }
 }
