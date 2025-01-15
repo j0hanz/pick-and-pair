@@ -1,15 +1,8 @@
-/* Container */
-.container {
-  max-width: 100%;
-  width: 50rem;
-}
-
 /* Row */
 .row {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  min-height: 100dvh;
+  align-items: center;
+  height: 100dvh;
 }
 
 /* Stats */
@@ -57,7 +50,7 @@
   transform: scale(0.98);
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .container {
     width: 40rem;
   }
@@ -74,3 +67,4 @@
     width: 100%;
   }
 }
+ */

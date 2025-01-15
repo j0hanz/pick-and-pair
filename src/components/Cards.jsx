@@ -20,7 +20,7 @@ export default function Cards({
   feedback,
 }) {
   return (
-    <Container className={styles.container}>
+    <Container>
       <Row className={styles.row}>
         <div className={styles.statsTop}>
           <Button
