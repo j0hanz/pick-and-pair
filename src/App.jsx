@@ -12,6 +12,7 @@ import { handleButtonClick } from './utils/soundManager';
 import { HiOutlineNewspaper } from 'react-icons/hi2';
 import { LiaGithub } from 'react-icons/lia';
 import { useGameHandlers } from './utils/gameHandlers';
+import { motion } from 'framer-motion';
 
 // Main app component
 export default function App() {
@@ -35,11 +36,41 @@ export default function App() {
     setShowLatestUpdates,
   });
 
+  // Page transition animations
+  const pageVariants = {
+    initial: {
+      opacity: 0,
+      scale: 0.7,
+    },
+    in: {
+      opacity: 1,
+      scale: 1,
+    },
+    out: {
+      opacity: 0,
+      scale: 0.7,
+    },
+  };
+
+  // Page transition settings
+  const pageTransition = {
+    type: 'spring',
+    stiffness: 50,
+    damping: 20,
+  };
+
   return (
     <>
       <LoadingSpinner isLoading={isLoading} />
       {!isLoading && !isGameActive && (
-        <div className="d-flex flex-column align-items-center">
+        <motion.div
+          initial="initial"
+          animate="in"
+          exit="out"
+          variants={pageVariants}
+          transition={pageTransition}
+          className="d-flex flex-column align-items-center"
+        >
           <div className={styles.gameTitle}>
             Pick <span className={styles.symbol}>&</span> Pair
           </div>
@@ -61,14 +92,22 @@ export default function App() {
               <LiaGithub className={styles.btnUpdatesIcon} />
             </Button>
           </div>
-        </div>
+        </motion.div>
       )}
       {isGameActive && (
-        <Game
-          onRestart={handleRestart}
-          onExit={handleExit}
-          startGame={startGame}
-        />
+        <motion.div
+          initial="initial"
+          animate="in"
+          exit="out"
+          variants={pageVariants}
+          transition={pageTransition}
+        >
+          <Game
+            onRestart={handleRestart}
+            onExit={handleExit}
+            startGame={startGame}
+          />
+        </motion.div>
       )}
       <GameInstructions show={showInstructions} onClose={closeInstructions} />
       <LatestUpdates show={showLatestUpdates} onClose={closeLatestUpdates} />
