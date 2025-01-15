@@ -19,20 +19,21 @@ body {
   color: var(--color-highlight);
   text-shadow: 0 4px 4px var(--shadow-card);
   margin-bottom: 2rem;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .symbol {
   display: inline-block;
   line-height: 1;
   font-size: 3rem;
+  padding: 0.1rem;
   background: var(--bg-card);
-  border: 1px solid var(--border-card);
+  border: 1px solid #ff0077;
   border-radius: 12px;
   box-shadow: 0 0 2px 1px var(--shadow-card-active);
   color: var(--moves);
-  animation: rotate3D 5s linear infinite;
-  perspective: 1000px;
+  animation: rotate3D 4s linear infinite;
+  perspective: 1200px;
 }
 
 @keyframes rotate3D {
