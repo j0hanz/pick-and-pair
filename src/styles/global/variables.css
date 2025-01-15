@@ -15,10 +15,10 @@
   --shadow-primary: 0 4px 8px #00000033;
   --btn-secondary: #20262c;
   --btn-secondary-hover: #20262c81;
-  --bg-card: linear-gradient(180deg, #221547 0%, #331558 100%);
+  --bg-card: #241549;
   --shadow-card: rgba(0, 0, 0, 0.6);
   --drop-shadow-card: rgba(230, 100, 255, 0.7);
-  --shadow-card-active: #ff8c00d9;
+  --shadow-card-active: #ff0077;
   --shadow-card-hover: #00000040;
   --shadow-card-matched: #008000d9;
   --shadow-card-wrong: #ff0000d9;
@@ -29,7 +29,7 @@
   --color-highlight: #ff0077;
   --bg-modal: #0000008c;
   --color-text: #f5f5f5;
-  --border-card: rgba(255, 255, 255, 0.1);
+  --border-card: rgba(255, 255, 255, 0.171);
   --shadow-row: #000000d9;
   --color-secondary: #ff5722;
   --color-star-icon: #ffd700;
@@ -39,7 +39,8 @@
 }
 
 :root {
+  --card-active: 0 0 2px 2px #ff8c00d9;
   --text-color-highlight: #ff0077;
-  --border-primary: 1px solid #ff0077;
+  --border-primary: 2px solid #f59118;
   --bg-primary: #19207f;
 }

@@ -4,7 +4,7 @@
   height: 12rem;
   perspective: 1200px;
   background: var(--bg-card);
-  border: 2px solid var(--border-card);
+  border: var(--border-primary);
   border-radius: 15px;
   box-shadow: 0 2px 8px var(--shadow-card);
   cursor: pointer;
@@ -41,7 +41,7 @@
     opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   background-image: url('../../assets/img/card-back.webp');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -58,7 +58,7 @@
 /* Active (flipped) card */
 .card.active {
   transform: rotateY(180deg) scale(1.05);
-  box-shadow: 0 0 2px 2px var(--shadow-card-active);
+  box-shadow: var(--card-active);
   transition:
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);

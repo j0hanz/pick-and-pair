@@ -25,9 +25,8 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border: 1px solid var(--border-card);
+  border: var(--border-primary);
   border-radius: 15px;
-  box-shadow: 0 0 1px 1px var(--shadow-card-active);
 }
 .loader::before {
   background: var(--bg-card);
@@ -35,7 +34,7 @@
 .loader::after {
   background: var(--bg-card);
   background-image: url('../../assets/img/card-back.webp');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transform: rotateY(180deg);
@@ -56,8 +55,6 @@
   50%,
   100% {
     background: var(--bg-card);
-    border: 1px solid var(--border-row);
     border-radius: 15px;
-    box-shadow: 0 0 1px 1px var(--shadow-card-active);
   }
 }
