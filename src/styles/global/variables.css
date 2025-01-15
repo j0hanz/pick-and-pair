@@ -15,7 +15,7 @@
   --shadow-primary: 0 4px 8px #00000033;
   --btn-secondary: #20262c;
   --btn-secondary-hover: #20262c81;
-  --bg-card: linear-gradient(to right, #221547 0%, #371a5a 100%);
+  --bg-card: linear-gradient(180deg, #221547 0%, #331558 100%);
   --shadow-card: rgba(0, 0, 0, 0.6);
   --drop-shadow-card: rgba(230, 100, 255, 0.7);
   --shadow-card-active: #ff8c00d9;

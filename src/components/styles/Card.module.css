@@ -2,7 +2,7 @@
 .card {
   position: relative;
   height: 11rem;
-  perspective: 1200px;
+  perspective: 1000px;
   background: var(--bg-card);
   border: 2px solid var(--border-card);
   border-radius: 25px;
@@ -44,7 +44,6 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  filter: drop-shadow(0 0 4px var(--drop-shadow-card));
 }
 
 /* Card Hover */
