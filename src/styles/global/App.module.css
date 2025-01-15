@@ -16,7 +16,7 @@ body {
 .gameTitle {
   font-family: 'Fredoka One', cursive;
   font-size: 4rem;
-  color: var(--color-highlight);
+  color: var(--text-color-highlight);
   text-shadow: 0 4px 4px var(--shadow-card);
   margin-bottom: 2rem;
   letter-spacing: 1px;
@@ -28,7 +28,7 @@ body {
   font-size: 3rem;
   padding: 0.1rem;
   background: var(--bg-card);
-  border: 1px solid #ff0077;
+  border: var(--border-primary);
   border-radius: 12px;
   box-shadow: 0 0 2px 1px var(--shadow-card-active);
   color: var(--moves);

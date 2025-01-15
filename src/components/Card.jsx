@@ -1,7 +1,6 @@
 import React, { memo, useState } from 'react';
 import { Image } from 'react-bootstrap';
 import styles from './styles/Card.module.css';
-import cardBack from '../assets/img/card-back.gif';
 
 const Card = memo(({ card, index, clickHandler }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -20,9 +19,7 @@ const Card = memo(({ card, index, clickHandler }) => {
       role="button"
       aria-label={`Card ${card.name}`}
     >
-      <div className={styles.back}>
-        <Image src={cardBack} alt="Card Back" className={styles.img} fluid />
-      </div>
+      <div className={styles.back}></div>
       <Image
         src={card.img}
         alt={card.name}

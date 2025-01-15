@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   height: 100dvh;
+  width: 40em;
 }
 
 /* Stats */
@@ -47,4 +48,10 @@
   background: var(--bg-card);
   --bs-btn-active-border-color: transparent;
   transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .row {
+    width: auto;
+  }
 }

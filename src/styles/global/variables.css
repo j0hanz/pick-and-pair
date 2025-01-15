@@ -9,7 +9,7 @@
   --bs-border-width: 0;
   --bs-body-color: none;
   --bs-body-bg: none;
-  --bg-primary: linear-gradient(180deg, #15227d 0%, #2a1a85 50%, #3a1588 100%);
+  --bg-primary: #19207f;
   --btn-primary: #192aa0;
   --btn-primary-hover: #192ba081;
   --shadow-primary: 0 4px 8px #00000033;
@@ -35,5 +35,11 @@
   --color-star-icon: #ffd700;
   --color-clock-icon: #ffd700;
   --color-star-icon-gray: #282e35;
-  --moves: #ff8c00d9;
+  --moves: #f59118;
+}
+
+:root {
+  --text-color-highlight: #ff0077;
+  --border-primary: 1px solid #ff0077;
+  --bg-primary: #19207f;
 }
