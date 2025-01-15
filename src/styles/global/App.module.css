@@ -9,7 +9,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100dvh;
+
   font-size: 1.05rem;
 }
 
