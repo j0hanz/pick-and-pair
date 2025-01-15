@@ -10,24 +10,42 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100dvh;
-
   font-size: 1.05rem;
 }
 
 /* Game title styles */
 .gameTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Fredoka One', cursive;
-  font-size: 3.8rem;
+  font-size: 4rem;
   color: var(--color-highlight);
   text-shadow: 0 4px 4px var(--shadow-card);
   margin-bottom: 2rem;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 .symbol {
-  font-size: 4rem;
+  display: inline-block;
+  line-height: 1;
+  font-size: 3rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  box-shadow: 0 0 2px 1px var(--shadow-card-active);
   color: var(--moves);
-  text-shadow: 0 2px 4px var(--shadow-card);
+  animation: rotate3D 5s linear infinite;
+  perspective: 1000px;
+}
+
+@keyframes rotate3D {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 
 .smallButtonsDiv {
@@ -101,6 +119,13 @@ body {
   color: var(--color-text);
 }
 
+.btnUpdates:active {
+  background: var(--btn-secondary-hover) !important;
+  box-shadow: 0 0 1px 1px var(--shadow-card-active);
+  color: var(--color-text);
+  transform: scale(0.95);
+}
+
 .btnUpdatesIcon {
   font-size: 1.5rem;
   color: var(--color-text);
@@ -109,10 +134,10 @@ body {
 
 @media (max-width: 425px) {
   .gameTitle {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
   .symbol {
-    font-size: 3.1rem;
+    font-size: 2.5rem;
   }
 
   body {
