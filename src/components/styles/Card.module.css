@@ -1,7 +1,7 @@
 /* Flip Card Effects */
 .card {
   position: relative;
-  height: 10rem;
+  height: 11rem;
   perspective: 1200px;
   background: var(--bg-card);
   border: 2px solid var(--border-card);
@@ -107,18 +107,18 @@
 
 @media (max-width: 550px) {
   .card {
-    height: 6rem;
+    height: 7rem;
   }
 }
 
 @media (max-width: 450px) {
   .card {
-    height: 5.5rem;
+    height: 6.5rem;
   }
 }
 
 @media (max-width: 374px) {
   .card {
-    height: 5rem;
+    height: 6rem;
   }
 }
