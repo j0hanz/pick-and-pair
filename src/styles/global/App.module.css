@@ -1,14 +1,15 @@
 /* Import fonts and variables */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@500;600;700&display=swap');
 
 /* General styles */
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Fredoka', sans-serif;
   background-image: var(--bg-primary);
   color: var(--text-color);
   display: grid;
   place-items: center;
   height: 100dvh;
+  letter-spacing: var(--text-spacing);
   font-size: 1.05rem;
 }
 
@@ -17,9 +18,8 @@ body {
   font-family: 'Fredoka One', cursive;
   font-size: 5rem;
   color: var(--text-color-highlight);
-  text-shadow: 0 4px 4px var(--shadow-card);
+  text-shadow: var(--text-title-shadow);
   margin-bottom: 2rem;
-  letter-spacing: 1px;
 }
 
 .symbol {
@@ -58,7 +58,7 @@ body {
   border-radius: 15px;
   width: 11rem;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 400;
   transition: all 0.3s ease;
 }
 
@@ -82,7 +82,7 @@ body {
   border-radius: 15px;
   width: 11rem;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 400;
   transition: all 0.3s ease;
 }
 
