@@ -4,8 +4,8 @@
 /* General styles */
 body {
   font-family: 'Nunito', sans-serif;
-  background: var(--bg-primary);
-  color: var(--color-text);
+  background-image: var(--bg-primary);
+  color: var(--text-color);
   display: grid;
   place-items: center;
   height: 100dvh;
@@ -15,7 +15,7 @@ body {
 /* Game title styles */
 .gameTitle {
   font-family: 'Fredoka One', cursive;
-  font-size: 4rem;
+  font-size: 5rem;
   color: var(--text-color-highlight);
   text-shadow: 0 4px 4px var(--shadow-card);
   margin-bottom: 2rem;
@@ -26,10 +26,9 @@ body {
   display: inline-block;
   line-height: 1;
   font-size: 3rem;
-  padding: 0.1rem;
+  padding: 0.25rem;
   background: var(--bg-card);
-  border: var(--border-primary);
-  border-radius: 12px;
+  border-radius: 10px;
   color: var(--moves);
   animation: rotate3D 4s linear infinite;
   perspective: 1200px;
@@ -54,7 +53,7 @@ body {
 /* Button styles */
 .btnStart {
   background: var(--btn-primary);
-  color: var(--color-text);
+  color: var(--text-color);
   border: none;
   border-radius: 15px;
   width: 11rem;
@@ -65,20 +64,20 @@ body {
 
 .btnStart:hover {
   background: var(--btn-primary-hover);
-  color: var(--color-text);
+  color: var(--text-color);
   box-shadow: 0 0 2px 1px var(--shadow-card-active);
 }
 
 .btnStart:active {
   background: var(--btn-primary-hover) !important;
-  color: var(--color-text);
+  color: var(--text-color);
   box-shadow: 0 0 2px 1px var(--shadow-card-active);
   transform: scale(0.95);
 }
 
 .btnGuide {
   background: var(--btn-secondary);
-  color: var(--color-text);
+  color: var(--text-color);
   border: none;
   border-radius: 15px;
   width: 11rem;
@@ -89,13 +88,13 @@ body {
 
 .btnGuide:hover {
   background: var(--btn-secondary-hover);
-  color: var(--color-text);
+  color: var(--text-color);
   box-shadow: 0 0 2px 1px var(--shadow-card-active);
 }
 
 .btnGuide:active {
   background: var(--btn-secondary-hover) !important;
-  color: var(--color-text);
+  color: var(--text-color);
   box-shadow: 0 0 2px 1px var(--shadow-card-active);
   transform: scale(0.95);
 }
@@ -103,7 +102,7 @@ body {
 .btnUpdates {
   background: var(--btn-secondary);
   border: 1px solid var(--border-card);
-  color: var(--color-text);
+  color: var(--text-color);
   border: none;
   border-radius: 10px;
   transition: all 0.3s ease;
@@ -112,19 +111,19 @@ body {
 .btnUpdates:hover {
   background: var(--btn-secondary-hover);
   box-shadow: 0 0 1px 1px var(--shadow-card-active);
-  color: var(--color-text);
+  color: var(--text-color);
 }
 
 .btnUpdates:active {
   background: var(--btn-secondary-hover) !important;
   box-shadow: 0 0 1px 1px var(--shadow-card-active);
-  color: var(--color-text);
+  color: var(--text-color);
   transform: scale(0.95);
 }
 
 .btnUpdatesIcon {
   font-size: 1.5rem;
-  color: var(--color-text);
+  color: var(--text-color);
   transition: all 0.3s ease;
 }
 
