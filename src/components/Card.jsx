@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import { Image } from 'react-bootstrap';
+import { Image, Card as GameCard } from 'react-bootstrap';
 import styles from './styles/Card.module.css';
 
 const Card = memo(({ card, index, clickHandler }) => {
@@ -13,23 +13,25 @@ const Card = memo(({ card, index, clickHandler }) => {
   };
 
   return (
-    <div
+    <GameCard
       className={`${styles.card} ${card.status ? styles.active : ''} ${card.status === 'active matched' ? styles.matched : ''} ${!imageLoaded ? styles.loading : ''}`}
       onClick={handleClick}
       role="button"
       aria-label={`Card ${card.name}`}
     >
-      <div className={styles.back}></div>
-      <Image
-        src={card.img}
-        alt={card.name}
-        className={styles.img}
-        onLoad={() => setImageLoaded(true)}
-        loading="lazy"
-        fluid
-      />
-      {!imageLoaded && <div className={styles.loader} />}
-    </div>
+      <GameCard.Body>
+        <div className={styles.back}></div>
+        <Image
+          src={card.img}
+          alt={card.name}
+          className={styles.img}
+          onLoad={() => setImageLoaded(true)}
+          loading="lazy"
+          fluid
+        />
+        {!imageLoaded && <div className={styles.loader} />}
+      </GameCard.Body>
+    </GameCard>
   );
 });
 

@@ -22,7 +22,7 @@ export default function Cards({
   return (
     <Container>
       <Row className={styles.row}>
-        <div className={styles.statsTop}>
+        <Col xs={12} className={styles.statsTop}>
           <Button
             className={styles.btnExitRestart}
             onClick={handleButtonClick(onReset)}
@@ -39,7 +39,7 @@ export default function Cards({
               className={styles.exitRestartIcon}
             />
           </Button>
-        </div>
+        </Col>
         {cards.map((card, index) => (
           <Col xs={4} sm={4} md={3} lg={3} xl={3} key={index}>
             <Card
@@ -49,10 +49,10 @@ export default function Cards({
             />
           </Col>
         ))}
-        <div className={styles.statsBottom}>
+        <Col xs={12} className={styles.statsBottom}>
           <Feedback message={feedback} />
           <Feedback message={feedback} />
-        </div>
+        </Col>
       </Row>
     </Container>
   );
