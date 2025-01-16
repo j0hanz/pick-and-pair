@@ -1,7 +1,8 @@
 import React from 'react';
 import Card from './Card';
 import { Row, Col, Container, Button } from 'react-bootstrap';
-import { HiArrowPath, HiOutlineArrowRightOnRectangle } from 'react-icons/hi2';
+import { HiArrowPath } from 'react-icons/hi2';
+import { TbDoorExit } from 'react-icons/tb';
 import Timer from './Timer';
 import Moves from './Moves';
 import Feedback from './Feedback';
@@ -35,9 +36,7 @@ export default function Cards({
             className={styles.btnExitRestart}
             onClick={handleButtonClick(onExit)}
           >
-            <HiOutlineArrowRightOnRectangle
-              className={styles.exitRestartIcon}
-            />
+            <TbDoorExit className={styles.exitRestartIcon} />
           </Button>
         </Col>
         {cards.map((card, index) => (

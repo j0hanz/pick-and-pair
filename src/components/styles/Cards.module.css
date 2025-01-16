@@ -9,10 +9,10 @@
 /* Stats */
 .statsTop {
   display: flex;
-  align-items: center;
-  border-bottom: 3px solid var(--border-row);
-  color: var(--text-color);
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: var(--text-color);
 }
 
 .statsBottom {
@@ -24,30 +24,28 @@
 }
 
 /* Button */
-
 .btnExitRestart {
+  display: flex;
+  align-items: center;
   background: var(--bg-card);
-  box-shadow: 0 1px 3px var(--shadow-card);
-  border: 2px solid var(--border-card);
+  color: var(--moves);
+  border: none;
+  font-size: 1.75rem;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .btnExitRestart:hover {
-  box-shadow: 0 0 4px var(--color-secondary);
+  background: var(--bg-card);
+  color: var(--moves);
+  transform: scale(1.05);
   --bs-btn-hover-border-color: transparent;
 }
 
-.exitRestartIcon {
-  font-size: 1.5rem;
-}
-
-.btnExitRestart:active,
-.exitRestartIcon:active,
-.exitRestartIcon:active {
-  background: var(--bg-card);
+.btnExitRestart:active {
+  background: var(--bg-card) !important;
+  color: var(--moves) !important;
   --bs-btn-active-border-color: transparent;
-  transform: scale(0.98);
 }
 
 @media (max-width: 990px) {
