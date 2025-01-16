@@ -30,6 +30,7 @@ export default function Cards({
             <HiArrowPath className={styles.exitRestartIcon} />
           </Button>
           <Timer timerActive={timerActive} />
+          <Moves moves={moves} />
           <Button
             className={styles.btnExitRestart}
             onClick={handleButtonClick(onExit)}
@@ -50,7 +51,6 @@ export default function Cards({
         ))}
         <div className={styles.statsBottom}>
           <Feedback message={feedback} />
-          <Moves moves={moves} />
           <Feedback message={feedback} />
         </div>
       </Row>

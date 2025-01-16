@@ -6,7 +6,7 @@ const Moves = memo(({ moves }) => {
   // Display number of moves
   return (
     <div className={styles.moves}>
-      <HiOutlineArrowPathRoundedSquare className={`${styles.statsIcon} me-2`} />
+      <HiOutlineArrowPathRoundedSquare className={styles.statsIcon} />
       {moves}
     </div>
   );
