@@ -28,6 +28,7 @@
 /* Front image */
 .card img {
   object-fit: contain;
+  filter: brightness(1.1);
   transform: rotateY(180deg);
   opacity: 0;
   transition:
@@ -44,6 +45,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: brightness(1.2);
 }
 
 /* Card Hover */
