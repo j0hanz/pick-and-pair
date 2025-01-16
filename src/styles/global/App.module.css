@@ -30,7 +30,6 @@ body {
   background: var(--bg-card);
   border: var(--border-primary);
   border-radius: 12px;
-  box-shadow: 0 0 2px 1px var(--shadow-card-active);
   color: var(--moves);
   animation: rotate3D 4s linear infinite;
   perspective: 1200px;
