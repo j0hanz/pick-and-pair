@@ -4,7 +4,6 @@
   height: 12rem;
   perspective: 1200px;
   background: var(--bg-card);
-  border: var(--border-primary);
   border-radius: 15px;
   box-shadow: 0 2px 8px var(--shadow-card);
   cursor: pointer;

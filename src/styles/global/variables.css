@@ -39,7 +39,7 @@
 }
 
 :root {
-  --card-active: 0 0 1px 1px #ff8c00d9;
+  --card-active: 0 0 2px 2px #ff8c00d9;
   --text-color-highlight: #ff0077;
   --border-primary: 1px solid #f59118;
   --bg-primary: #19207f;
