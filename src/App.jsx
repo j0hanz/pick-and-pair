@@ -9,7 +9,7 @@ import { GameInstructions, LatestUpdates } from './components/Modal';
 import StartButton from './components/StartButton';
 import InstructionsButton from './components/InstructionsButton';
 import { handleButtonClick } from './utils/soundManager';
-import { HiOutlineNewspaper } from 'react-icons/hi2';
+import { HiNewspaper } from 'react-icons/hi2';
 import { LiaGithub } from 'react-icons/lia';
 import { useGameHandlers } from './utils/gameHandlers';
 import { motion } from 'framer-motion';
@@ -76,20 +76,20 @@ export default function App() {
           </div>
           <StartButton onClick={startGame} />
           <InstructionsButton onClick={openInstructions} />
-          <div className={styles.smallButtonsDiv}>
+          <div className={`${styles.smallButtonsDiv} my-4`}>
             <Button
               onClick={handleButtonClick(openLatestUpdates)}
-              className={`${styles.btnUpdates} me-4`}
+              className={styles.btnUpdates}
             >
-              <HiOutlineNewspaper className={styles.btnUpdatesIcon} />
+              <HiNewspaper />
             </Button>
             <Button
               onClick={() =>
                 window.open('https://github.com/j0hanz/pick-and-pair', '_blank')
               }
-              className={`${styles.btnUpdates}`}
+              className={styles.btnUpdates}
             >
-              <LiaGithub className={styles.btnUpdatesIcon} />
+              <LiaGithub />
             </Button>
           </div>
         </motion.div>
