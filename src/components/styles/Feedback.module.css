@@ -1,18 +1,17 @@
-.success,
-.error {
+.feedback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  background: var(--bg-card);
+  border-radius: 10px;
   font-size: 2rem;
 }
 
 .success {
   color: var(--feedback-correct);
-  background: var(--bg-card);
-  box-shadow: 0 0 1px 1px var(--shadow-card-matched);
-  border-radius: 10px;
 }
 
 .error {
   color: var(--feedback-wrong);
-  background: var(--bg-card);
-  box-shadow: 0 0 1px 1px var(--shadow-card-wrong);
-  border-radius: 10px;
 }

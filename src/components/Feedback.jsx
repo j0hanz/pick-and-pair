@@ -7,13 +7,13 @@ const Feedback = ({ message }) => {
   if (!message) return null;
 
   return (
-    <>
+    <div className={styles.feedback}>
       {message === 'success' ? (
         <HiCheck className={styles.success} />
       ) : (
         <HiXMark className={styles.error} />
       )}
-    </>
+    </div>
   );
 };
 
