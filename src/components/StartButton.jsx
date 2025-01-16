@@ -5,7 +5,10 @@ import styles from '../styles/global/App.module.css';
 
 export default function StartButton({ onClick }) {
   return (
-    <Button onClick={handleButtonClick(onClick)} className={styles.btnStart}>
+    <Button
+      onClick={handleButtonClick(onClick)}
+      className={`${styles.btnStart} mb-4`}
+    >
       Start Game
     </Button>
   );

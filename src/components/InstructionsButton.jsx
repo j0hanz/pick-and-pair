@@ -5,11 +5,8 @@ import styles from '../styles/global/App.module.css';
 
 export default function InstructionsButton({ onClick }) {
   return (
-    <Button
-      onClick={handleButtonClick(onClick)}
-      className={`${styles.btnGuide} mt-3`}
-    >
-      Instructions
+    <Button onClick={handleButtonClick(onClick)} className={styles.btnGuide}>
+      Guide
     </Button>
   );
 }
