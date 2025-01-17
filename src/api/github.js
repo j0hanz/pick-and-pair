@@ -12,7 +12,7 @@ export const fetchLatestCommits = async () => {
         Authorization: `token ${GITHUB_TOKEN}`,
       },
       params: {
-        per_page: 5, // Fetch 5 latest commits
+        per_page: 3, // Fetch 3 latest commits
       },
     });
     return response.data.map((commit) => ({
