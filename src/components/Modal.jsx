@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { HiArrowPath, HiOutlineArrowRightOnRectangle } from 'react-icons/hi2';
+import { HiArrowPath } from 'react-icons/hi2';
+import { TbDoorExit } from 'react-icons/tb';
 import styles from './styles/Modal.module.css';
 import Scoreboard from '../data/scoreData';
 import InstructionsData from '../data/instructionsData';
@@ -46,9 +47,7 @@ export default function ScoreboardModal({
           className={`${styles.btnExit} ${styles.modalButton}`}
           onClick={handleButtonClick(onExit)}
         >
-          <HiOutlineArrowRightOnRectangle
-            className={`${styles.btnIcon} me-1`}
-          />
+          <TbDoorExit className={`${styles.btnIcon} me-1`} />
           Exit
         </Button>
       </Modal.Footer>
@@ -88,7 +87,7 @@ export function LatestUpdates({ show, onClose }) {
       className={`${styles.modal} ${styles.latestUpdatesModal}`}
     >
       <Modal.Header className="border-0 d-flex justify-content-center">
-        <Modal.Title>Latest Updates</Modal.Title>
+        <Modal.Title>Latest Changes</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <CommitStatus />
