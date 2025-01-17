@@ -11,7 +11,7 @@
 }
 
 .latestUpdatesModal :global(.modal-content) {
-  min-height: 65vh;
+  min-height: 50vh;
 }
 
 .modal :global(.modal-header) {
@@ -155,6 +155,10 @@
   font-size: 1.6rem;
 }
 
+.infinityIcon {
+  font-size: 1.3rem;
+}
+
 .scoreIcon {
   font-size: 1.2rem;
 }
@@ -219,6 +223,6 @@
   }
 
   .latestUpdatesModal :global(.modal-content) {
-    min-height: 90vh;
+    min-height: 80vh;
   }
 }
